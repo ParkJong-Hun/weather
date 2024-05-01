@@ -1,3 +1,5 @@
+package ui
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -14,6 +16,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
 import compose_multiplatform_test_airfield.composeapp.generated.resources.compose_multiplatform
+import domain.usecase.GreetingUseCase
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
@@ -26,10 +29,10 @@ fun App() {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
+                val greetingUseCase = remember { GreetingUseCase().greet() }
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
+                    Text("Compose: $greetingUseCase")
                 }
             }
         }
