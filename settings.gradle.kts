@@ -1,4 +1,4 @@
-rootProject.name = "Compose-Multiplatform-Test-Airfield"
+rootProject.name = "compose-multiplatform-test-airfield"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
