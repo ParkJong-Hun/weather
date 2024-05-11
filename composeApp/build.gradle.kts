@@ -39,6 +39,7 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.viewmodel)
             implementation(libs.kotlin.serialization)
             implementation(libs.kotlin.coroutines)
             implementation(libs.kotlin.datetime)
