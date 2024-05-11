@@ -2,10 +2,14 @@ package domain.usecase
 
 import domain.gateway.platform.getPlatform
 
-class GreetingUseCase {
+interface GreetingUseCase {
+    fun greet(): String
+}
+
+class GreetingUseCaseImpl : GreetingUseCase {
     private val platform = getPlatform()
 
-    fun greet(): String {
+    override fun greet(): String {
         return "Hello, ${platform.name}!"
     }
 }
