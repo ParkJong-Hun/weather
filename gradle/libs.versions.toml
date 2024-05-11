@@ -35,6 +35,7 @@ compose-navigation = { module = "androidx.navigation:navigation-compose", versio
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 kodein = { group = "org.kodein.di", name = "kodein-di", version.ref = "kodein" }
+kodein-compose = { group = "org.kodein.di", name = "kodein-di-framework-compose", version.ref = "kodein" }
 okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }

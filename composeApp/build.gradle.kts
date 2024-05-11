@@ -44,6 +44,7 @@ kotlin {
             implementation(libs.kotlin.datetime)
 //            implementation(libs.compose.navigation)
             implementation(libs.kodein)
+            implementation(libs.kodein.compose)
             implementation(libs.okio)
         }
         commonTest.dependencies {
