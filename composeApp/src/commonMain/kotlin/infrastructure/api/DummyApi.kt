@@ -1,6 +1,14 @@
 package infrastructure.api
 
-// FIXME: delete it.
-interface DummyApi
+import infrastructure.model.DummyResponse
 
-class DummyApiImpl : DummyApi
+// FIXME: delete it.
+interface DummyApi {
+    fun getDummy(): DummyResponse
+}
+
+class DummyApiImpl : DummyApi {
+    override fun getDummy(): DummyResponse {
+        return DummyResponse()
+    }
+}

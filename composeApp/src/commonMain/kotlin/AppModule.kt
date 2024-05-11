@@ -1,5 +1,5 @@
 import domain.gateway.repository.DummyRepository
-import infrastructure.DummyRepositoryImpl
+import infrastructure.repository.DummyRepositoryImpl
 import infrastructure.api.DummyApi
 import infrastructure.api.DummyApiImpl
 import org.kodein.di.DI
