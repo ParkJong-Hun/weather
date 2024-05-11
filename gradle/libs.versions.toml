@@ -9,6 +9,7 @@ agp = "8.2.2"
 compose-plugin = "1.6.2"
 
 compose = "1.6.7"
+compose-navigation = "2.7.7"
 kotlin-serialization = "1.6.3"
 kotlin-coroutines = "1.8.1"
 kotlin-datetime = "0.6.0-RC.2"
@@ -30,6 +31,7 @@ kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlin-datetime" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 kodein = { group = "org.kodein.di", name = "kodein-di", version.ref = "kodein" }
