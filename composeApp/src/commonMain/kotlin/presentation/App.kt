@@ -9,11 +9,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
-import org.koin.compose.currentKoinScope
+import presentation.di.koinViewModel
 
 @Composable
 @Preview
@@ -30,13 +28,5 @@ fun App() {
                 Text(text = state.text)
             }
         }
-    }
-}
-
-@Composable
-inline fun <reified T : ViewModel> koinViewModel(): T {
-    val scope = currentKoinScope()
-    return viewModel {
-        scope.get<T>()
     }
 }

@@ -1,5 +1,6 @@
 package presentation
 
+import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import common.DEFAULT_STOP_TIME_OUT_MILLIS
@@ -17,6 +18,7 @@ interface AppViewModelOutput {
     val uiState: StateFlow<AppUiState>
 }
 
+@Stable
 data class AppUiState(
     val text: String = "",
     val isLoading: Boolean = false,
