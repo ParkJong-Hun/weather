@@ -10,7 +10,7 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "17"
+                jvmTarget = "11"
             }
         }
     }
@@ -31,6 +31,8 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -43,9 +45,9 @@ kotlin {
             implementation(libs.kotlin.serialization)
             implementation(libs.kotlin.coroutines)
             implementation(libs.kotlin.datetime)
-//            implementation(libs.compose.navigation)
-            implementation(libs.kodein)
-            implementation(libs.kodein.compose)
+            implementation(libs.compose.navigation)
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
             implementation(libs.okio)
         }
         commonTest.dependencies {

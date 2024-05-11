@@ -9,12 +9,13 @@ agp = "8.2.2"
 compose-plugin = "1.6.2"
 
 compose = "1.6.7"
-compose-navigation = "2.7.7"
+compose-navigation = "2.7.0-alpha03"
 kotlin-serialization = "1.6.3"
 kotlin-coroutines = "1.8.1"
 kotlin-datetime = "0.6.0-RC.2"
 viewmodel = "2.8.0-rc01"
-kodein = "7.21.0"
+koin = "3.6.0-wasm-alpha2"
+koin-compose = "1.2.0-alpha3"
 okio = "3.9.0"
 
 androidx-activityCompose = "1.9.0"
@@ -33,11 +34,13 @@ kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-j
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlin-datetime" }
 viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "viewmodel" }
-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
+compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
-kodein = { group = "org.kodein.di", name = "kodein-di", version.ref = "kodein" }
-kodein-compose = { group = "org.kodein.di", name = "kodein-di-framework-compose", version.ref = "kodein" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
