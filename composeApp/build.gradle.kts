@@ -46,6 +46,10 @@ kotlin {
             implementation(libs.kodein)
             implementation(libs.okio)
         }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+            implementation(libs.kotlin.test.junit)
+        }
     }
 }
 
