@@ -1,4 +1,4 @@
 import androidx.compose.ui.window.ComposeUIViewController
-import ui.App
+import presentation.App
 
 fun MainViewController() = ComposeUIViewController { App() }
