@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.di.koinViewModel
 
-// TODO NavGraphBuilder.() -> Unit
+// TODO use SharedTransitionScope
 @Composable
 fun NavGraphBuilder.HomePage(
     homeViewModel: HomeViewModel = koinViewModel(),

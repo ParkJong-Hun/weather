@@ -1,32 +1,49 @@
 package presentation
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import org.koin.compose.KoinContext
 import presentation.di.koinViewModel
+import presentation.navigation.AppPages
+import presentation.pages.home.HomePage
+import presentation.pages.search.SearchPage
 
 @Composable
-@Preview
 fun App() {
     MaterialTheme {
         KoinContext {
+            val navHostController = rememberNavController()
             val appViewModel: AppViewModel = koinViewModel()
             val state by appViewModel.uiState.collectAsState()
 
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally
+            SideEffect {
+                state.text
+            }
+
+            NavHost(
+                navController = navHostController,
+                startDestination = state.startDestinationRoute,
             ) {
-                Text(text = state.text)
+                appNavigation()
             }
         }
+    }
+}
+
+// TODO use type safety navArgs
+private fun NavGraphBuilder.appNavigation() {
+    composable(AppPages.Home.route) {
+        HomePage()
+    }
+
+    composable(AppPages.Search.route) {
+        SearchPage()
     }
 }

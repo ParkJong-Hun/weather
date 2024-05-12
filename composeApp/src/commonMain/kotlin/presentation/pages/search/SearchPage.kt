@@ -1,12 +1,13 @@
 package presentation.pages.search
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraphBuilder
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.di.koinViewModel
 
-// TODO NavGraphBuilder.() -> Unit
+// TODO use SharedTransitionScope
 @Composable
-fun SearchPage(
+fun NavGraphBuilder.SearchPage(
     searchViewModel: SearchViewModel = koinViewModel(),
 ) {
 
