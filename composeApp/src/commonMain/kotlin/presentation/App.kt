@@ -1,7 +1,7 @@
 package presentation
 
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -11,24 +11,29 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.koin.compose.KoinContext
 import presentation.di.koinViewModel
+import presentation.navigation.AppNavigator
 import presentation.navigation.AppPages
 import presentation.pages.home.HomePage
 import presentation.pages.search.SearchPage
 
 @Composable
-fun App() {
-    MaterialTheme {
+fun App(appNavigator: AppNavigator) {
+    AppTheme {
         KoinContext {
-            val navHostController = rememberNavController()
+            val appNavHostController = rememberNavController()
             val appViewModel: AppViewModel = koinViewModel()
             val state by appViewModel.uiState.collectAsState()
+
+            LaunchedEffect(Unit) {
+                appNavigator.handleEvents(appNavHostController)
+            }
 
             SideEffect {
                 state.text
             }
 
             NavHost(
-                navController = navHostController,
+                navController = appNavHostController,
                 startDestination = state.startDestinationRoute,
             ) {
                 appNavigation()

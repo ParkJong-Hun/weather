@@ -1,24 +1,25 @@
 package co.kr.parkjonghun.composemultiplatformtestairfield
 
-import presentation.App
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.CompositionLocalProvider
+import presentation.App
+import presentation.navigation.AppNavigator
+import presentation.navigation.LocalNavigator
 
 class MainActivity : ComponentActivity() {
+    private val appNavigator = AppNavigator()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            CompositionLocalProvider(
+                LocalNavigator provides appNavigator,
+            ) {
+                App(appNavigator = appNavigator)
+            }
         }
     }
-}
-
-@Preview
-@Composable
-fun AppAndroidPreview() {
-    App()
 }
