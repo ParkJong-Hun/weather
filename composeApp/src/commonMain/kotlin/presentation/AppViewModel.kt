@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import common.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.gateway.repository.DummyRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
@@ -14,10 +13,7 @@ import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
 import presentation.navigation.AppPages
 
-interface AppViewModelInput {
-    fun navigateToSearch()
-    fun popBackStack()
-}
+interface AppViewModelInput
 
 interface AppViewModelOutput {
     val uiState: StateFlow<AppUiState>
@@ -26,7 +22,6 @@ interface AppViewModelOutput {
 @Stable
 data class AppUiState(
     val text: String = "",
-    val currentPageRoute: String = defaultRoute,
 ) {
     val startDestinationRoute: String = defaultRoute
 
@@ -50,27 +45,15 @@ class AppViewModel(
             initialValue = "",
         )
 
-    private val currentPage = MutableStateFlow<AppPages>(AppPages.Home)
-
     override val uiState: StateFlow<AppUiState> = combine(
         text,
-        currentPage,
-    ) { text, currentPage ->
+    ) { text ->
         AppUiState(
-            text = text,
-            currentPageRoute = currentPage.route,
+            text = text.last(),
         )
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(DEFAULT_STOP_TIME_OUT_MILLIS),
         initialValue = AppUiState(),
     )
-
-    override fun navigateToSearch() {
-        currentPage.value = AppPages.Search
-    }
-
-    override fun popBackStack() {
-        currentPage.value = AppPages.Home
-    }
 }
