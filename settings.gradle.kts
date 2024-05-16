@@ -3,6 +3,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
     repositories {
+        includeBuild("build-logic")
         google {
             mavenContent {
                 includeGroupAndSubgroups("androidx")
