@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.ktrofit)
+    alias(libs.plugins.ktorfit)
     alias(libs.plugins.androidApplication)
 }
 
@@ -45,6 +45,7 @@ kotlin {
             implementation(libs.kotlin.coroutines)
             implementation(libs.kotlin.datetime)
             implementation(libs.compose.navigation)
+            implementation(libs.ktorfit.lib)
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.okio)
@@ -52,6 +53,12 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
             implementation(libs.kotlin.test.junit)
+        }
+    }
+
+    dependencies {
+        listOf("IosArm64", "IosX64", "IosSimulatorArm64", "Android", "CommonMainMetadata").forEach {
+            add("ksp$it", libs.ktorfit.ksp)
         }
     }
 }

@@ -4,7 +4,7 @@ android-minSdk = "24"
 android-targetSdk = "34"
 
 kotlin = "1.9.23"
-ktrofit = "1.13.0"
+ktorfit = "1.13.0"
 agp = "8.2.2"
 compose-plugin = "1.6.2"
 ksp = "1.9.23-1.0.20"
@@ -43,6 +43,8 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-com
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
 okio = { group = "com.squareup.okio", name = "okio", version.ref = "okio" }
+ktorfit-ksp = { module = "de.jensklingenberg.ktorfit:ktorfit-ksp", version.ref = "ktorfit" }
+ktorfit-lib = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfit" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
@@ -57,7 +59,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
-ktrofit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktrofit" }
+ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
