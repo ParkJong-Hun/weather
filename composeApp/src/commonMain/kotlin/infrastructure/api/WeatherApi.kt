@@ -5,5 +5,5 @@ import infrastructure.model.WeatherRequest
 
 interface WeatherApi {
     @GET
-    suspend fun getWeather(request: WeatherRequest): String
+    suspend fun getWeather(request: WeatherRequest): String//WeatherResponse
 }
