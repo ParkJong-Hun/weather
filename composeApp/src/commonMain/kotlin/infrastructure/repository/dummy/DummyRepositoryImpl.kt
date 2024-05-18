@@ -1,8 +1,8 @@
-package infrastructure.repository
+package infrastructure.repository.dummy
 
 import domain.gateway.repository.DummyRepository
 import infrastructure.api.DummyApi
-import infrastructure.repository.mapper.asEntity
+import infrastructure.mapper.asEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.flow

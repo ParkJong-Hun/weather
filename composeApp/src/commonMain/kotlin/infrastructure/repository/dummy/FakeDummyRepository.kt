@@ -1,4 +1,4 @@
-package infrastructure.repository
+package infrastructure.repository.dummy
 
 import domain.entity.Dummy
 import domain.gateway.repository.DummyRepository

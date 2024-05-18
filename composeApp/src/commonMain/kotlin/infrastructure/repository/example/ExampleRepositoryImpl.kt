@@ -1,4 +1,4 @@
-package infrastructure.repository
+package infrastructure.repository.example
 
 import domain.gateway.repository.ExampleRepository
 import infrastructure.api.ExampleApi

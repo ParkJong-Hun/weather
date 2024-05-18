@@ -1,4 +1,4 @@
-package infrastructure.repository.mapper
+package infrastructure.mapper
 
 interface EntityMapper<Response, Entity> {
 

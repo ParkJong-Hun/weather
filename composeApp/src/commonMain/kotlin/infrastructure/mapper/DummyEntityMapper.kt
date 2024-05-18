@@ -1,4 +1,4 @@
-package infrastructure.repository.mapper
+package infrastructure.mapper
 
 import domain.entity.Dummy
 import infrastructure.model.DummyResponse
