@@ -3,23 +3,22 @@ package infrastructure.mapper
 import domain.entity.TemperatureType
 import domain.entity.Weather
 import domain.entity.WeatherInfo
-import infrastructure.mapper.util.toCoordinate
-import infrastructure.model.WeatherResponse
+import infrastructure.mapper.util.toEntity
+import infrastructure.model.OpenWeatherResponse
 
-object WeatherInfoEntityMapper : EntityMapper<WeatherResponse, WeatherInfo> {
-    override fun toEntity(response: WeatherResponse): WeatherInfo {
+object WeatherInfoEntityMapper : EntityMapper<OpenWeatherResponse, WeatherInfo> {
+    override fun toEntity(response: OpenWeatherResponse): WeatherInfo {
         return WeatherInfo(
             city = null,
-            coordinate = response.ydf.feature.geometry.coordinates.toCoordinate(),
-            // TODO
+            coordinate = response.coord.toEntity(),
             weather = Weather(
-                temperature = 25.0,
+                temperature = response.main.temp,
                 temperatureType = TemperatureType.CELSIUS,
-                humidityRate = 0.6,
-                rainfallRate = 0.2,
+                humidity = response.main.humidity,
+                rainfallPerHour = response.rain.hour,
             ),
         )
     }
 }
 
-fun WeatherResponse.asEntity() = WeatherInfoEntityMapper.toEntity(this)
+fun OpenWeatherResponse.asEntity() = WeatherInfoEntityMapper.toEntity(this)

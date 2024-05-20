@@ -8,10 +8,14 @@ enum class KtorfitConfig(val qualifier: Qualifier, val baseUrl: String) {
         qualifier = named("exampleKtorfit"),
         baseUrl = "https://swapi.dev/api/",
     ),
-    YahooWeather(
-        qualifier = named("yahooWeatherKtorfit"),
-        baseUrl = "https://map.yahooapis.jp/weather/V1/place"
-    ),
+//    YahooWeather(
+//        qualifier = named("yahooWeatherKtorfit"),
+//        baseUrl = "https://map.yahooapis.jp/weather/V1/place"
+//    ),
+    OpenWeather(
+        qualifier = named("openWeatherKtorfit"),
+        baseUrl = "https://api.openweathermap.org/data/2.5"
+    )
     ;
 
     fun findByQualifierName(qualifierName: String): KtorfitConfig? {
