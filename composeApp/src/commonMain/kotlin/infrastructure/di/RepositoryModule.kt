@@ -11,5 +11,5 @@ import org.koin.dsl.module
 val repositoryModule = module {
     single<DummyRepository> { DummyRepositoryImpl(dummyApi = get()) }
     single<ExampleRepository> { ExampleRepositoryImpl(exampleApi = get()) }
-    single<WeatherRepository> { WeatherRepositoryImpl(weatherApi = get()) }
+    single<WeatherRepository> { WeatherRepositoryImpl(yahooWeatherApi = get()) }
 }

@@ -3,7 +3,7 @@ package infrastructure.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class WeatherRequest(
+data class YahooWeatherRequest(
     val appId: String,
     val coordinates: String,
     val output: String? = null,
