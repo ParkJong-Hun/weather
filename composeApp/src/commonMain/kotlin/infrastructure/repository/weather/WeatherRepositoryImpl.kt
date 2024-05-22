@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.flowOn
 class WeatherRepositoryImpl(
     private val openWeatherApi: OpenWeatherApi,
 ) : WeatherRepository {
-    override suspend fun getWeatherByCoordinate(coordinate: Coordinate): Flow<WeatherInfo> = flow {
+    override fun getWeatherByCoordinate(coordinate: Coordinate): Flow<WeatherInfo> = flow {
         val response = openWeatherApi.getWeatherByCoordinate(
             lat = coordinate.latitude,
             lon = coordinate.longitude,
@@ -25,7 +25,7 @@ class WeatherRepositoryImpl(
         emit(entity)
     }.flowOn(Dispatchers.IO)
 
-    override suspend fun getWeatherByCity(city: City): Flow<WeatherInfo> = flow {
+    override fun getWeatherByCity(city: City): Flow<WeatherInfo> = flow {
         val response = openWeatherApi.getWeatherByCityName(
             cityName = city.cityName,
             appid = APP_ID,

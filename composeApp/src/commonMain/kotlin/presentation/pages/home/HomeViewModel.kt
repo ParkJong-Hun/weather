@@ -4,16 +4,20 @@ import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import common.DEFAULT_STOP_TIME_OUT_MILLIS
-import domain.gateway.repository.ExampleRepository
+import domain.entity.City
+import domain.entity.WeatherInfo
+import domain.gateway.repository.WeatherRepository
+import domain.usecase.GetWeatherByCurrentLocationUseCase
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 
 interface HomeViewModelInput {
-    fun onClickExampleButton()
+    fun onClickCity(clickedCity: City)
 }
 
 interface HomeViewModelOutput {
@@ -22,27 +26,49 @@ interface HomeViewModelOutput {
 
 @Stable
 data class HomeUiState(
-    val person: String = "",
+    val title: String = CURRENT_LOCATION,
+    val temperature: String? = null,
+    val humidity: String? = null,
+    val rainfall: String? = null,
+    val errorMessage: String? = null,
     val isLoading: Boolean = false,
-    val isError: Pair<Boolean, String?> = false to null,
-)
+) {
+    companion object {
+        const val CURRENT_LOCATION = "Current Location"
+    }
+}
 
 class HomeViewModel(
-    private val exampleRepository: ExampleRepository,
-) : ViewModel(),
-    HomeViewModelInput,
-    HomeViewModelOutput {
-    private val dummy = MutableStateFlow("dummy")
-    private val person = MutableStateFlow("")
+    private val weatherRepository: WeatherRepository,
+    getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
+) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
+    private val isLoading = MutableStateFlow(false)
+    private val city = MutableStateFlow<City?>(null)
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private val weatherInfo: StateFlow<WeatherInfo?> = city.flatMapLatest { city ->
+        city?.let { clickedCity -> weatherRepository.getWeatherByCity(clickedCity) }
+            ?: getWeatherByCurrentLocationUseCase()
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(DEFAULT_STOP_TIME_OUT_MILLIS),
+        initialValue = null,
+    )
+    private val weatherInfoError = MutableStateFlow<Throwable?>(null)
 
     override val uiState: StateFlow<HomeUiState> = combine(
-        dummy,
-        person,
-    ) { dummy, person ->
+        weatherInfo,
+        weatherInfoError,
+        isLoading,
+    ) { info, error, loading ->
         HomeUiState(
-            person = person,
-            isLoading = dummy.isEmpty(),
-            isError = false to null,
+            title = weatherInfo.value?.let { it.city?.cityName ?: HomeUiState.CURRENT_LOCATION }
+                ?: HomeUiState.CURRENT_LOCATION,
+            temperature = info?.let { "${it.weather.temperature.toInt()} ${it.weather.temperatureType.symbol}" },
+            humidity = info?.let { "${it.weather.humidity} $PERCENT" },
+            rainfall = info?.let { "${it.weather.rainfallPerHour * 100} $MILLI_MITER_PER_HOUR" },
+            errorMessage = error?.message,
+            isLoading = loading,
         )
     }.stateIn(
         scope = viewModelScope,
@@ -50,15 +76,12 @@ class HomeViewModel(
         initialValue = HomeUiState(),
     )
 
-    override fun onClickExampleButton() {
-        viewModelScope.launch {
-            runCatching {
-                exampleRepository.getPerson()
-            }.onSuccess {
-                person.value = it
-            }.onFailure {
-                person.value = it.message ?: "Unknown error"
-            }
-        }
+    override fun onClickCity(clickedCity: City) {
+        city.value = clickedCity
+    }
+
+    companion object {
+        private const val PERCENT = "%"
+        private const val MILLI_MITER_PER_HOUR = "mm/h"
     }
 }
