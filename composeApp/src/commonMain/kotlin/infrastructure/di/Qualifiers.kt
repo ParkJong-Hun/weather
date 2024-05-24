@@ -14,7 +14,7 @@ enum class KtorfitConfig(val qualifier: Qualifier, val baseUrl: String) {
 //    ),
     OpenWeather(
         qualifier = named("openWeatherKtorfit"),
-        baseUrl = "https://api.openweathermap.org/data/2.5"
+        baseUrl = "https://api.openweathermap.org/data/2.5/"
     )
     ;
 
