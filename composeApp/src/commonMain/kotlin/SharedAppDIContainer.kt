@@ -1,5 +1,3 @@
-import common.Log
-import common.LogImpl
 import domain.di.domainModule
 import infrastructure.di.infrastructureModule
 import org.koin.dsl.module
@@ -11,5 +9,4 @@ val sharedAppDIContainer = module {
         domainModule,
         presentationModule,
     )
-    single<Log> { LogImpl() }
 }

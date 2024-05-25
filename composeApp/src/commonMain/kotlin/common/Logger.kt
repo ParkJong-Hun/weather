@@ -2,7 +2,7 @@ package common
 
 import co.touchlab.kermit.Logger as KermitLogger
 
-interface Log {
+interface LogInterface {
     fun v(message: String)
     fun v(throwable: Throwable)
     fun d(message: String)
@@ -15,7 +15,7 @@ interface Log {
     fun e(throwable: Throwable)
 }
 
-class LogImpl : Log {
+object Log : LogInterface {
     override fun v(message: String) {
         KermitLogger.v(message)
     }
