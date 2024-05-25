@@ -1,3 +1,6 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import com.codingfeline.buildkonfig.compiler.FieldSpec
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
@@ -5,6 +8,7 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ktorfit)
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.buildKonfig)
 }
 
 kotlin {
@@ -98,6 +102,19 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
+    }
+}
+
+// ./gradlew generateBuildKonfig
+buildkonfig {
+    packageName = "co.kr.parkjonghun.composemultiplatformtestairfield"
+
+    defaultConfigs {
+        buildConfigField(
+            type = FieldSpec.Type.STRING,
+            name = "WEATHER_APP_ID",
+            value = gradleLocalProperties(rootDir).getProperty("api_key")
+        )
     }
 }
 
