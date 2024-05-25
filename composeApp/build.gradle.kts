@@ -48,6 +48,7 @@ kotlin {
             implementation(libs.ktorfit.lib)
             implementation(libs.ktor.contentnegotiation)
             implementation(libs.ktor.serialization.json)
+            implementation(libs.ktor.logging)
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.okio)
