@@ -1,5 +1,6 @@
 package infrastructure.api
 
+import co.kr.parkjonghun.composemultiplatformtestairfield.BuildKonfig
 import de.jensklingenberg.ktorfit.http.GET
 import de.jensklingenberg.ktorfit.http.Query
 import infrastructure.model.OpenWeatherResponse
@@ -20,7 +21,7 @@ interface OpenWeatherApi {
     suspend fun getWeatherByCoordinate(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double,
-        @Query("appid") appid: String,
+        @Query("appid") appid: String = BuildKonfig.WEATHER_APP_ID,
         @Query("units") units: String = OpenWeatherUnits.METRIC.value!!,
         @Query("lang") lang: String = JAPANESE_CODE,
     ): OpenWeatherResponse
@@ -28,7 +29,7 @@ interface OpenWeatherApi {
     @GET("weather")
     suspend fun getWeatherByCityName(
         @Query("q") cityName: String,
-        @Query("appid") appid: String,
+        @Query("appid") appid: String = BuildKonfig.WEATHER_APP_ID,
         @Query("units") units: String = OpenWeatherUnits.METRIC.value!!,
         @Query("lang") lang: String = JAPANESE_CODE,
     ): OpenWeatherResponse
