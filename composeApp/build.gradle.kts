@@ -46,6 +46,8 @@ kotlin {
             implementation(libs.kotlin.datetime)
             implementation(libs.compose.navigation)
             implementation(libs.ktorfit.lib)
+            implementation(libs.ktor.contentnegotiation)
+            implementation(libs.ktor.serialization.json)
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.okio)
