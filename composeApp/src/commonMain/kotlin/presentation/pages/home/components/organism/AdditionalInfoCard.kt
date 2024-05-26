@@ -39,7 +39,12 @@ internal fun AdditionalInfoCard(
                 title = "降雨量:",
                 description = rainfall,
                 color = Color.DarkGray,
-                valueColor = Color.Blue,
+                valueColor = if (rainfall.filter { it.isDigit() }
+                        .toInt() > 0) {
+                    Color.Blue
+                } else {
+                    Color.Gray
+                },
             )
         }
     }
