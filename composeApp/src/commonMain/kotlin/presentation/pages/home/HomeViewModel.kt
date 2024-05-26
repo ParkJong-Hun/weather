@@ -3,9 +3,9 @@ package presentation.pages.home
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import common.DEFAULT_STOP_TIME_OUT_MILLIS
+import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
-import domain.entity.WeatherInfo
+import domain.entity.WeatherSnapshot
 import domain.gateway.repository.WeatherRepository
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -46,7 +46,7 @@ class HomeViewModel(
     private val city = MutableStateFlow<City?>(null)
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    private val weatherInfo: StateFlow<WeatherInfo?> = city.flatMapLatest { city ->
+    private val weatherSnapshot: StateFlow<WeatherSnapshot?> = city.flatMapLatest { city ->
         city?.let { clickedCity -> weatherRepository.getWeatherByCity(clickedCity) }
             ?: getWeatherByCurrentLocationUseCase()
     }.stateIn(
@@ -57,12 +57,12 @@ class HomeViewModel(
     private val weatherInfoError = MutableStateFlow<Throwable?>(null)
 
     override val uiState: StateFlow<HomeUiState> = combine(
-        weatherInfo,
+        weatherSnapshot,
         weatherInfoError,
         isLoading,
     ) { info, error, loading ->
         HomeUiState(
-            title = weatherInfo.value?.let { it.city?.cityName ?: HomeUiState.CURRENT_LOCATION }
+            title = weatherSnapshot.value?.let { it.city?.cityName ?: HomeUiState.CURRENT_LOCATION }
                 ?: HomeUiState.CURRENT_LOCATION,
             temperature = info?.let { "${it.weather.temperature.toInt()} ${it.weather.temperatureType.symbol}" },
             humidity = info?.let { "${it.weather.humidity} $PERCENT" },

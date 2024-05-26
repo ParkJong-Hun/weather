@@ -1,7 +1,6 @@
 package domain.entity
 
-
-data class WeatherInfo(
+data class WeatherSnapshot(
     val city: City?,
     val coordinate: Coordinate,
     val weather: Weather,

@@ -3,7 +3,7 @@ package presentation.pages.search
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import common.DEFAULT_STOP_TIME_OUT_MILLIS
+import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
