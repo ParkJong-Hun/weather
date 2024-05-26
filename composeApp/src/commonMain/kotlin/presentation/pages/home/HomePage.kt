@@ -1,33 +1,27 @@
 package presentation.pages.home
 
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.material.Icon
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextMotion
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavGraphBuilder
-import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
-import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map_24
 import domain.entity.City
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.di.koinViewModel
-import presentation.pages.home.components.AdditionalInfoText
+import presentation.pages.home.components.organism.AdditionalInfoCard
+import presentation.pages.home.components.organism.MainInfo
+import presentation.pages.home.components.organism.Title
 
 // TODO use SharedTransitionScope
 @Composable
@@ -41,58 +35,45 @@ fun NavGraphBuilder.HomePage(
     )
 }
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 private fun HomePageBody(
     state: HomeUiState,
     onClickSetting: (City) -> Unit,
 ) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = MaterialTheme.colors.background)
+            .padding(20.dp),
+        contentAlignment = Alignment.Center,
     ) {
-        Row {
-            Text(
-                text = state.title,
-                style = TextStyle(
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 24.sp,
-                    textMotion = TextMotion.Animated,
-                ),
-                maxLines = 1,
+        Column(
+            Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Title(
+                title = state.title,
+                onClickSetting = onClickSetting,
             )
-            Icon(
-                painter = painterResource(Res.drawable.ic_map_24),
-                contentDescription = "Location",
-                tint = MaterialTheme.colors.primary,
-                // FIXME : Navigate to the search page
-                modifier = Modifier.clickable {
-                    onClickSetting(City.Osaka)
-                }
-            )
+            if (state.temperature != null || state.description != null) {
+                MainInfo(
+                    temperature = state.temperature,
+                    description = state.description,
+                )
+                Spacer(
+                    modifier = Modifier.height(16.dp),
+                )
+            }
+            if (state.humidity != null || state.rainfall != null) {
+                AdditionalInfoCard(
+                    humidity = state.humidity,
+                    rainfall = state.rainfall,
+                )
+            }
         }
-        Spacer(
-            modifier = Modifier.height(16.dp),
-        )
-        Text(
-            text = state.temperature ?: "",
-            style = TextStyle(
-                fontWeight = FontWeight.Bold,
-                fontSize = 36.sp,
-            ),
-            maxLines = 1,
-        )
-        Spacer(
-            modifier = Modifier.height(16.dp),
-        )
-        AdditionalInfoText(
-            title = "Humidity:",
-            description = state.humidity ?: "",
-        )
-        AdditionalInfoText(
-            title = "Rainfall:",
-            description = state.rainfall ?: "",
-        )
+        if (state.isLoading) {
+            CircularProgressIndicator()
+        }
     }
 }
 

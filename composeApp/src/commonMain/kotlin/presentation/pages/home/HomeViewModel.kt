@@ -27,6 +27,7 @@ interface HomeViewModelOutput {
 @Stable
 data class HomeUiState(
     val title: String = CURRENT_LOCATION,
+    val description: String? = null,
     val temperature: String? = null,
     val humidity: String? = null,
     val rainfall: String? = null,
@@ -34,7 +35,7 @@ data class HomeUiState(
     val isLoading: Boolean = false,
 ) {
     companion object {
-        const val CURRENT_LOCATION = "Current Location"
+        const val CURRENT_LOCATION = "現在位置"
     }
 }
 
@@ -42,7 +43,6 @@ class HomeViewModel(
     private val weatherRepository: WeatherRepository,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
-    private val isLoading = MutableStateFlow(false)
     private val city = MutableStateFlow<City?>(null)
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -55,6 +55,16 @@ class HomeViewModel(
         initialValue = null,
     )
     private val weatherInfoError = MutableStateFlow<Throwable?>(null)
+    private val isLoading = combine(
+        weatherSnapshot,
+        weatherInfoError,
+    ) { snapshot, error ->
+        snapshot == null && error == null
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(DEFAULT_STOP_TIME_OUT_MILLIS),
+        initialValue = true,
+    )
 
     override val uiState: StateFlow<HomeUiState> = combine(
         weatherSnapshot,
@@ -64,6 +74,7 @@ class HomeViewModel(
         HomeUiState(
             title = weatherSnapshot.value?.let { it.city?.cityName ?: HomeUiState.CURRENT_LOCATION }
                 ?: HomeUiState.CURRENT_LOCATION,
+            description = info?.weather?.description,
             temperature = info?.let { "${it.weather.temperature.toInt()} ${it.weather.temperatureType.symbol}" },
             humidity = info?.let { "${it.weather.humidity} $PERCENT" },
             rainfall = info?.let { "${it.weather.rainfallPerHour * 100} $MILLI_MITER_PER_HOUR" },

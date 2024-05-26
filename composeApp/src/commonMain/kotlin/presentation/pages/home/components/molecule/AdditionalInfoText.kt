@@ -1,4 +1,4 @@
-package presentation.pages.home.components
+package presentation.pages.home.components.molecule
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-fun AdditionalInfoText(
+internal fun AdditionalInfoText(
     title: String,
     description: String,
 ) {
@@ -32,7 +32,7 @@ fun AdditionalInfoText(
 @Preview
 @Composable
 @Suppress("unused")
-fun AdditionalInfoTextPreview() {
+private fun AdditionalInfoTextPreview() {
     Box(
         modifier = Modifier.fillMaxSize(),
     ) {
