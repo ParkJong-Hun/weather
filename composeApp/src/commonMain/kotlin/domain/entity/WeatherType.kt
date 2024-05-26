@@ -1,54 +1,49 @@
 package domain.entity
 
-import presentation.WeatherColor
-
 enum class WeatherType {
-    HOT,
-    WARM,
-    PLEASANT,
-    COOL,
-    COLD,
-    FREEZING,
-    CLOUDY,
-    RAINY,
-    SNOWY,
+    SUNNY,
+    FEW_CLOUDS,
+    SCATTERED_CLOUDS,
+    BROKEN_CLOUDS,
+    SHOWER_RAIN,
+    RAIN,
+    SNOW,
+    THUNDERSTORM,
+    MIST,
     ;
 
     companion object {
-        fun find(
-            temperature: Double,
-            rainfall: Double,
-        ): WeatherType {
-            return when {
-                rainfall != 0.0 -> {
-                    when {
-                        rainfall < 10.0 -> CLOUDY
-                        temperature < 0 -> SNOWY
-                        else -> RAINY
-                    }
-                }
+        fun fromIcon(icon: String): WeatherType {
+            return when (icon) {
+                "01d",
+                "01n" -> SUNNY
 
-                temperature < 5 -> FREEZING
-                temperature < 12 -> COLD
-                temperature < 18 -> COOL
-                temperature < 26 -> PLEASANT
-                temperature < 31 -> WARM
-                temperature >= 31 -> HOT
+                "02d",
+                "02n" -> FEW_CLOUDS
 
-                else -> PLEASANT
+                "03d",
+                "03n" -> SCATTERED_CLOUDS
+
+                "04d",
+                "04n" -> BROKEN_CLOUDS
+
+                "09d",
+                "09n" -> SHOWER_RAIN
+
+                "10d",
+                "10n" -> RAIN
+
+                "11d",
+                "11n" -> THUNDERSTORM
+
+                "13d",
+                "13n" -> SNOW
+
+                "50d",
+                "50n" -> MIST
+
+                else -> SUNNY
             }
         }
     }
-}
-
-fun WeatherType.toWeatherColor() = when (this) {
-    WeatherType.HOT -> WeatherColor.Hot
-    WeatherType.WARM -> WeatherColor.Warm
-    WeatherType.PLEASANT -> WeatherColor.Pleasant
-    WeatherType.COOL -> WeatherColor.Cool
-    WeatherType.COLD -> WeatherColor.Cold
-    WeatherType.FREEZING -> WeatherColor.Freezing
-    WeatherType.CLOUDY -> WeatherColor.Cloudy
-    WeatherType.RAINY -> WeatherColor.Rainy
-    WeatherType.SNOWY -> WeatherColor.Snowy
 }
