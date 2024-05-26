@@ -3,7 +3,9 @@ package presentation.pages.home
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material.CircularProgressIndicator
@@ -69,12 +71,18 @@ private fun HomePageBody(
                 onClickSetting = onClickSetting,
                 onClickCurrentLocation = onClickCurrentLocation,
             )
+            Spacer(
+                modifier = Modifier.height(16.dp),
+            )
             if (state.temperature != null && state.description != null && state.weatherType != null) {
                 MainInfo(
                     baseColor = state.weatherColor,
                     weatherType = state.weatherType,
                     temperature = state.temperature,
                     description = state.description,
+                )
+                Spacer(
+                    modifier = Modifier.height(16.dp),
                 )
             }
             if (state.humidity != null || state.rainfall != null) {
