@@ -1,5 +1,6 @@
 package domain.entity
 
+import presentation.TemperatureColor
 import presentation.WeatherColor
 
 enum class TemperatureType {
@@ -49,13 +50,13 @@ enum class TemperatureType {
     }
 }
 
-fun TemperatureType.toTemperatureColor() = when (this) {
-    TemperatureType.HOT -> WeatherColor.Hot
-    TemperatureType.WARM -> WeatherColor.Warm
-    TemperatureType.PLEASANT -> WeatherColor.Pleasant
-    TemperatureType.COOL -> WeatherColor.Cool
-    TemperatureType.COLD -> WeatherColor.Cold
-    TemperatureType.FREEZING -> WeatherColor.Freezing
+fun TemperatureType.toColor() = when (this) {
+    TemperatureType.HOT -> TemperatureColor.Hot
+    TemperatureType.WARM -> TemperatureColor.Warm
+    TemperatureType.PLEASANT -> TemperatureColor.Pleasant
+    TemperatureType.COOL -> TemperatureColor.Cool
+    TemperatureType.COLD -> TemperatureColor.Cold
+    TemperatureType.FREEZING -> TemperatureColor.Freezing
     TemperatureType.CLOUDY -> WeatherColor.Cloudy
     TemperatureType.RAINY -> WeatherColor.Rainy
     TemperatureType.SNOWY -> WeatherColor.Snowy

@@ -69,9 +69,10 @@ private fun HomePageBody(
                 onClickSetting = onClickSetting,
                 onClickCurrentLocation = onClickCurrentLocation,
             )
-            if (state.temperature != null || state.description != null) {
+            if (state.temperature != null && state.description != null && state.weatherType != null) {
                 MainInfo(
                     baseColor = state.weatherColor,
+                    weatherType = state.weatherType,
                     temperature = state.temperature,
                     description = state.description,
                 )

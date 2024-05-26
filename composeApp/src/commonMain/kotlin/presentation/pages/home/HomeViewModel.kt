@@ -9,7 +9,8 @@ import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
 import domain.entity.TemperatureType
 import domain.entity.WeatherSnapshot
-import domain.entity.toTemperatureColor
+import domain.entity.WeatherType
+import domain.entity.toColor
 import domain.gateway.repository.WeatherRepository
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -20,7 +21,7 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import presentation.WeatherColor
+import presentation.TemperatureColor
 
 interface HomeViewModelInput {
     fun onClickCity(clickedCity: City)
@@ -34,6 +35,7 @@ interface HomeViewModelOutput {
 @Stable
 data class HomeUiState(
     val title: String = "...",
+    val weatherType: WeatherType? = null,
     val temperatureType: TemperatureType? = null,
     val description: String? = null,
     val temperature: String? = null,
@@ -43,7 +45,7 @@ data class HomeUiState(
     val isLoading: Boolean = false,
 ) {
     val weatherColor: Color
-        get() = temperatureType?.toTemperatureColor() ?: WeatherColor.Pleasant
+        get() = temperatureType?.toColor() ?: TemperatureColor.Pleasant
 }
 
 class HomeViewModel(
@@ -92,6 +94,7 @@ class HomeViewModel(
                 info?.location != null -> info.location
                 else -> "..."
             },
+            weatherType = info?.weatherInfo?.weatherType,
             temperatureType = info?.weatherInfo?.let {
                 TemperatureType.find(
                     temperature = it.temperature,
