@@ -15,7 +15,7 @@ object WeatherInfoEntityMapper : EntityMapper<OpenWeatherResponse, WeatherInfo> 
                 temperature = response.main.temp,
                 temperatureType = TemperatureType.CELSIUS,
                 humidity = response.main.humidity,
-                rainfallPerHour = response.rain.hour,
+                rainfallPerHour = response.rain?.hour ?: 0.0,
             ),
         )
     }

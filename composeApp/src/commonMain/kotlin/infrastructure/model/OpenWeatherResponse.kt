@@ -18,7 +18,7 @@ data class OpenWeatherResponse(
     @SerialName("wind")
     val wind: OpenWeatherResponseWind,
     @SerialName("rain")
-    val rain: OpenWeatherResponseRain,
+    val rain: OpenWeatherResponseRain? = null,
     @SerialName("clouds")
     val clouds: OpenWeatherResponseClouds,
     @SerialName("dt")
@@ -48,7 +48,7 @@ data class OpenWeatherResponseWeather(
     @SerialName("id")
     val id: Int,
     @SerialName("main")
-    val main: OpenWeatherResponseMain,
+    val main: String,
     @SerialName("description")
     val description: String,
     @SerialName("icon")
@@ -70,9 +70,9 @@ data class OpenWeatherResponseMain(
     @SerialName("humidity")
     val humidity: Int,
     @SerialName("sea_level")
-    val seaLevel: Int,
+    val seaLevel: Int? = null,
     @SerialName("grnd_level")
-    val grndLevel: Int,
+    val grndLevel: Int? = null,
 )
 
 @Serializable
