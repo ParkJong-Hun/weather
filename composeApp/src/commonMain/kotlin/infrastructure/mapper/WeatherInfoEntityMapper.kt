@@ -9,7 +9,6 @@ import infrastructure.model.OpenWeatherResponse
 object WeatherInfoEntityMapper : EntityMapper<OpenWeatherResponse, WeatherSnapshot> {
     override fun toEntity(response: OpenWeatherResponse): WeatherSnapshot {
         return WeatherSnapshot(
-            city = null,
             coordinate = response.coord.toEntity(),
             weather = Weather(
                 description = response.weather.first().description,

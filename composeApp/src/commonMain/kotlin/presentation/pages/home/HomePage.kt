@@ -13,12 +13,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import presentation.WeatherColor
 import presentation.di.koinViewModel
 import presentation.pages.home.components.organism.AdditionalInfoCard
 import presentation.pages.home.components.organism.MainInfo
@@ -43,36 +43,14 @@ private fun HomePageBody(
     onClickSetting: (City) -> Unit,
     onClickCurrentLocation: () -> Unit,
 ) {
-    val rainfall = state.rainfall?.filter { it.isDigit() }?.toInt() ?: 0
-    val baseColor = when {
-        rainfall != 0 -> {
-            when {
-                rainfall < 10 -> WeatherColor.Cloudy
-                else -> WeatherColor.Rainy
-            }
-        }
-
-        state.temperature != null -> {
-            val temperature = state.temperature.filter { it.isDigit() }.toInt()
-            when {
-                temperature < 12 -> WeatherColor.Cold
-                temperature < 18 -> WeatherColor.Cool
-                temperature < 26 -> WeatherColor.Pleasant
-                temperature < 31 -> WeatherColor.Warm
-                else -> WeatherColor.Hot
-            }
-        }
-
-        else -> WeatherColor.Pleasant
-    }
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(
                 brush = Brush.linearGradient(
                     colors = listOf(
-                        baseColor.copy(alpha = 0.1f),
-                        baseColor.copy(alpha = 0.4f),
+                        state.weatherColor.copy(alpha = 0.1f),
+                        state.weatherColor.copy(alpha = 0.4f),
                     ),
                     tileMode = TileMode.Clamp,
                 )
@@ -93,7 +71,7 @@ private fun HomePageBody(
             )
             if (state.temperature != null || state.description != null) {
                 MainInfo(
-                    baseColor = baseColor,
+                    baseColor = state.weatherColor,
                     temperature = state.temperature,
                     description = state.description,
                 )
@@ -106,7 +84,9 @@ private fun HomePageBody(
             }
         }
         if (state.isLoading) {
-            CircularProgressIndicator()
+            CircularProgressIndicator(
+                color = Color.White,
+            )
         }
     }
 }

@@ -1,11 +1,15 @@
 package presentation.pages.home
 
 import androidx.compose.runtime.Stable
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import common.Log
 import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
 import domain.entity.WeatherSnapshot
+import domain.entity.WeatherType
+import domain.entity.toWeatherColor
 import domain.gateway.repository.WeatherRepository
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -15,6 +19,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+import presentation.WeatherColor
 
 interface HomeViewModelInput {
     fun onClickCity(clickedCity: City)
@@ -28,6 +34,7 @@ interface HomeViewModelOutput {
 @Stable
 data class HomeUiState(
     val title: String = CURRENT_LOCATION,
+    val weatherType: WeatherType? = null,
     val description: String? = null,
     val temperature: String? = null,
     val humidity: String? = null,
@@ -35,6 +42,9 @@ data class HomeUiState(
     val errorMessage: String? = null,
     val isLoading: Boolean = false,
 ) {
+    val weatherColor: Color
+        get() = weatherType?.toWeatherColor() ?: WeatherColor.Pleasant
+
     companion object {
         const val CURRENT_LOCATION = "現在位置"
     }
@@ -45,6 +55,14 @@ class HomeViewModel(
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
     private val city = MutableStateFlow<City?>(null)
+
+    init {
+        viewModelScope.launch {
+            city.collect {
+                Log.d("city: $it")
+            }
+        }
+    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     private val weatherSnapshot: StateFlow<WeatherSnapshot?> = city.flatMapLatest { city ->
@@ -73,8 +91,13 @@ class HomeViewModel(
         isLoading,
     ) { info, error, loading ->
         HomeUiState(
-            title = weatherSnapshot.value?.let { it.city?.cityName ?: HomeUiState.CURRENT_LOCATION }
-                ?: HomeUiState.CURRENT_LOCATION,
+            title = city.value?.japaneseCityName ?: HomeUiState.CURRENT_LOCATION,
+            weatherType = info?.weather?.let {
+                WeatherType.find(
+                    temperature = it.temperature,
+                    rainfall = it.rainfallPerHour,
+                )
+            },
             description = info?.weather?.description,
             temperature = info?.let { "${it.weather.temperature.toInt()} ${it.weather.temperatureType.symbol}" },
             humidity = info?.let { "${it.weather.humidity} $PERCENT" },

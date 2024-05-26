@@ -8,8 +8,10 @@ object WeatherColor {
     val Pleasant = Color(0xFFA500)
     val Cool = Color(0x00BFFF)
     val Cold = Color(0x4169E1)
+    val Freezing = Color(0x4169E1)
     val Cloudy = Color(0x708090)
     val Rainy = Color(0x708090)
+    val Snowy = Color(0x708090)
 }
 
 object Color {
