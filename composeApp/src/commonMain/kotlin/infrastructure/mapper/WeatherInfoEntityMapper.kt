@@ -12,6 +12,7 @@ object WeatherInfoEntityMapper : EntityMapper<OpenWeatherResponse, WeatherSnapsh
             city = null,
             coordinate = response.coord.toEntity(),
             weather = Weather(
+                description = response.weather.first().description,
                 temperature = response.main.temp,
                 temperatureType = TemperatureType.CELSIUS,
                 humidity = response.main.humidity,
