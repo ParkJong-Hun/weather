@@ -6,11 +6,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -21,11 +21,12 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 internal fun MainInfo(
     temperature: String?,
     description: String?,
+    baseColor: Color,
 ) {
     Column(
         modifier = Modifier
             .background(
-                color = MaterialTheme.colors.primary.copy(alpha = 0.8f),
+                color = baseColor.copy(alpha = 0.8f),
                 shape = RoundedCornerShape(16.dp),
             )
             .padding(20.dp),
@@ -35,7 +36,7 @@ internal fun MainInfo(
             Text(
                 text = temperature,
                 style = TextStyle(
-                    color = MaterialTheme.colors.onPrimary,
+                    color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 36.sp,
                 ),
@@ -49,7 +50,7 @@ internal fun MainInfo(
             Text(
                 text = description,
                 style = TextStyle(
-                    color = MaterialTheme.colors.onPrimary.copy(alpha = 0.8f),
+                    color = Color.White.copy(alpha = 0.8f),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                 ),
@@ -69,5 +70,6 @@ private fun MainInfoPreview() {
     MainInfo(
         temperature = "25°C",
         description = "晴れ",
+        baseColor = Color.Green,
     )
 }

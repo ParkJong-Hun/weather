@@ -3,6 +3,7 @@ package presentation.pages.home.components.molecule
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,6 +17,7 @@ internal fun AdditionalInfoText(
     title: String,
     description: String,
     color: Color = Color.Unspecified,
+    valueColor: Color = Color.Unspecified,
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -25,8 +27,9 @@ internal fun AdditionalInfoText(
             text = title,
             fontSize = 14.sp,
         )
+        Spacer(modifier = Modifier.weight(1f))
         Text(
-            color = color,
+            color = if (valueColor != Color.Unspecified) color else valueColor,
             text = description,
             fontSize = 14.sp,
         )

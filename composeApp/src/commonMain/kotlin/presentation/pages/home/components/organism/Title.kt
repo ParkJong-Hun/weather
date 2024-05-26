@@ -6,11 +6,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextMotion
@@ -47,7 +47,7 @@ internal fun Title(
         Icon(
             painter = painterResource(Res.drawable.ic_map_24),
             contentDescription = "特定都市を調べる",
-            tint = MaterialTheme.colors.primary,
+            tint = Color.Blue,
             // FIXME : Navigate to the search page
             modifier = Modifier.clickable {
                 onClickSetting(City.Osaka)
@@ -57,7 +57,7 @@ internal fun Title(
         Icon(
             painter = painterResource(Res.drawable.ic_nearby_24),
             contentDescription = "現在位置を調べる",
-            tint = MaterialTheme.colors.primary,
+            tint = Color.Blue,
             modifier = Modifier.clickable(onClick = onClickCurrentLocation),
         )
     }
