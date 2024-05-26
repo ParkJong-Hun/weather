@@ -35,6 +35,7 @@ internal fun MainInfo(
             Text(
                 text = temperature,
                 style = TextStyle(
+                    color = MaterialTheme.colors.onPrimary,
                     fontWeight = FontWeight.Bold,
                     fontSize = 36.sp,
                 ),
@@ -48,6 +49,7 @@ internal fun MainInfo(
             Text(
                 text = description,
                 style = TextStyle(
+                    color = MaterialTheme.colors.onPrimary.copy(alpha = 0.8f),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                 ),

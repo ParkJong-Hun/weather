@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -14,15 +15,18 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 internal fun AdditionalInfoText(
     title: String,
     description: String,
+    color: Color = Color.Unspecified,
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
+            color = color.copy(alpha = 0.8f),
             text = title,
             fontSize = 14.sp,
         )
         Text(
+            color = color,
             text = description,
             fontSize = 14.sp,
         )

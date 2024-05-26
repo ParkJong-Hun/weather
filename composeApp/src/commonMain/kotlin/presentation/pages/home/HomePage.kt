@@ -3,9 +3,7 @@ package presentation.pages.home
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
@@ -31,7 +29,8 @@ fun NavGraphBuilder.HomePage(
     val state by homeViewModel.uiState.collectAsState()
     HomePageBody(
         state = state,
-        onClickSetting = (homeViewModel::onClickCity)
+        onClickSetting = homeViewModel::onClickCity,
+        onClickCurrentLocation = homeViewModel::onClickCurrentLocation,
     )
 }
 
@@ -39,6 +38,7 @@ fun NavGraphBuilder.HomePage(
 private fun HomePageBody(
     state: HomeUiState,
     onClickSetting: (City) -> Unit,
+    onClickCurrentLocation: () -> Unit,
 ) {
     Box(
         modifier = Modifier
@@ -54,14 +54,12 @@ private fun HomePageBody(
             Title(
                 title = state.title,
                 onClickSetting = onClickSetting,
+                onClickCurrentLocation = onClickCurrentLocation,
             )
             if (state.temperature != null || state.description != null) {
                 MainInfo(
                     temperature = state.temperature,
                     description = state.description,
-                )
-                Spacer(
-                    modifier = Modifier.height(16.dp),
                 )
             }
             if (state.humidity != null || state.rainfall != null) {
@@ -84,5 +82,6 @@ private fun HomePageBodyPreview() {
     HomePageBody(
         state = HomeUiState(),
         onClickSetting = {},
+        onClickCurrentLocation = {},
     )
 }

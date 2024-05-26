@@ -30,6 +30,7 @@ internal fun AdditionalInfoCard(
                 // FIXME : use Resource
                 title = "湿度:",
                 description = humidity,
+                color = MaterialTheme.colors.onSecondary,
             )
         }
         if (rainfall != null) {
@@ -37,6 +38,7 @@ internal fun AdditionalInfoCard(
                 // FIXME : use Resource
                 title = "降雨量:",
                 description = rainfall,
+                color = MaterialTheme.colors.onSecondary,
             )
         }
     }

@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.stateIn
 
 interface HomeViewModelInput {
     fun onClickCity(clickedCity: City)
+    fun onClickCurrentLocation()
 }
 
 interface HomeViewModelOutput {
@@ -89,6 +90,10 @@ class HomeViewModel(
 
     override fun onClickCity(clickedCity: City) {
         city.value = clickedCity
+    }
+
+    override fun onClickCurrentLocation() {
+        city.value = null
     }
 
     companion object {

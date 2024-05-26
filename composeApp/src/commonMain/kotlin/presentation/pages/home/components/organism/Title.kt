@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map_24
+import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_nearby_24
 import domain.entity.City
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
@@ -28,6 +29,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 internal fun Title(
     title: String,
     onClickSetting: (City) -> Unit,
+    onClickCurrentLocation: () -> Unit,
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -44,12 +46,19 @@ internal fun Title(
         Spacer(modifier = Modifier.width(8.dp))
         Icon(
             painter = painterResource(Res.drawable.ic_map_24),
-            contentDescription = "Location",
+            contentDescription = "特定都市を調べる",
             tint = MaterialTheme.colors.primary,
             // FIXME : Navigate to the search page
             modifier = Modifier.clickable {
                 onClickSetting(City.Osaka)
             }
+        )
+        Spacer(modifier = Modifier.width(4.dp))
+        Icon(
+            painter = painterResource(Res.drawable.ic_nearby_24),
+            contentDescription = "現在位置を調べる",
+            tint = MaterialTheme.colors.primary,
+            modifier = Modifier.clickable(onClick = onClickCurrentLocation),
         )
     }
     Spacer(
@@ -64,5 +73,6 @@ private fun TitlePreview() {
     Title(
         title = "Title",
         onClickSetting = {},
+        onClickCurrentLocation = {},
     )
 }
