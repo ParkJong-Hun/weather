@@ -20,7 +20,7 @@ internal fun AdditionalInfoCard(
     Column(
         modifier = Modifier.fillMaxWidth()
             .background(
-                color = MaterialTheme.colors.secondary,
+                color = MaterialTheme.colors.secondary.copy(alpha = 0.8f),
                 shape = RoundedCornerShape(8.dp),
             )
             .padding(16.dp),

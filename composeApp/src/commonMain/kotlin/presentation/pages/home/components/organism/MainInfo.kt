@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -25,8 +25,8 @@ internal fun MainInfo(
     Column(
         modifier = Modifier
             .background(
-                color = MaterialTheme.colors.primary,
-                shape = CircleShape,
+                color = MaterialTheme.colors.primary.copy(alpha = 0.8f),
+                shape = RoundedCornerShape(16.dp),
             )
             .padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,

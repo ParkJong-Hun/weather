@@ -43,7 +43,7 @@ private fun HomePageBody(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = MaterialTheme.colors.background)
+            .background(color = MaterialTheme.colors.primary.copy(alpha = 0.1f))
             .padding(20.dp),
         contentAlignment = Alignment.Center,
     ) {
