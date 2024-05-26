@@ -20,7 +20,7 @@ internal fun AdditionalInfoCard(
     Column(
         modifier = Modifier.fillMaxWidth()
             .background(
-                color = Color.White.copy(alpha = 0.2f),
+                color = Color.White.copy(alpha = 0.4f),
                 shape = RoundedCornerShape(8.dp),
             )
             .padding(16.dp),
@@ -28,7 +28,7 @@ internal fun AdditionalInfoCard(
         if (humidity != null) {
             AdditionalInfoText(
                 // FIXME : use Resource
-                title = "湿度:",
+                title = "湿度",
                 description = humidity,
                 color = Color.DarkGray,
             )
@@ -36,7 +36,7 @@ internal fun AdditionalInfoCard(
         if (rainfall != null) {
             AdditionalInfoText(
                 // FIXME : use Resource
-                title = "降雨量:",
+                title = "降雨量",
                 description = rainfall,
                 color = Color.DarkGray,
                 valueColor = if (rainfall.filter { it.isDigit() }
