@@ -42,7 +42,7 @@ internal fun AdditionalInfoText(
                     } else {
                         valueColor
                     },
-                    fontSize = 18.sp,
+                    fontSize = 24.sp,
                     fontWeight = FontWeight.SemiBold,
                 )
             )
