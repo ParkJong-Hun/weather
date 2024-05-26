@@ -11,3 +11,7 @@ object WeatherColor {
     val Cloudy = Color(0x708090)
     val Rainy = Color(0x708090)
 }
+
+object Color {
+    val Link = Color(0xFF0C43B7)
+}

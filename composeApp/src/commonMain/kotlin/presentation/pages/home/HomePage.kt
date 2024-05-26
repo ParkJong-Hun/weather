@@ -11,6 +11,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
@@ -65,7 +67,15 @@ private fun HomePageBody(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = baseColor.copy(alpha = 0.1f))
+            .background(
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        baseColor.copy(alpha = 0.1f),
+                        baseColor.copy(alpha = 0.4f),
+                    ),
+                    tileMode = TileMode.Clamp,
+                )
+            )
             .padding(20.dp),
         contentAlignment = Alignment.Center,
     ) {
