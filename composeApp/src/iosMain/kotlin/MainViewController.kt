@@ -1,4 +1,8 @@
 import androidx.compose.ui.window.ComposeUIViewController
 import presentation.App
+import presentation.navigation.AppNavigator
 
-fun MainViewController() = ComposeUIViewController { App() }
+@Suppress("unused", "FunctionName")
+fun MainViewController() = ComposeUIViewController {
+    App(appNavigator = AppNavigator())
+}

@@ -1,8 +1,8 @@
 package domain.entity
 
 enum class PermissionState {
-    GRANTED,
-    DENIED,
-    DENIED_FOREVER,
+    NOT_YET,
+    AVAILABLE,
+    UNAVAILABLE,
     ;
 }

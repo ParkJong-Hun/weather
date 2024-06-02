@@ -2,6 +2,8 @@ package infrastructure.di
 
 import common.Log
 import de.jensklingenberg.ktorfit.Ktorfit
+import infrastructure.permission.PermissionService
+import infrastructure.permission.PermissionServiceImpl
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
@@ -48,4 +50,5 @@ val infrastructureModule = module {
             .baseUrl(KtorfitConfig.OpenWeather.baseUrl)
             .build()
     }
+    single<PermissionService> { PermissionServiceImpl(get()) }
 }

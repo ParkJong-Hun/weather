@@ -8,17 +8,17 @@ import infrastructure.mapper.util.toEntity
 import infrastructure.model.OpenWeatherResponse
 
 object WeatherInfoEntityMapper : EntityMapper<OpenWeatherResponse, WeatherSnapshot> {
-    override fun toEntity(response: OpenWeatherResponse): WeatherSnapshot {
+    override fun toEntity(dataModel: OpenWeatherResponse): WeatherSnapshot {
         return WeatherSnapshot(
-            location = response.name,
-            coordinate = response.coord.toEntity(),
+            location = dataModel.name,
+            coordinate = dataModel.coord.toEntity(),
             weatherInfo = WeatherInfo(
-                weatherType = WeatherType.fromIcon(response.weather.first().icon),
-                description = response.weather.first().description,
-                temperature = response.main.temp,
+                weatherType = WeatherType.fromIcon(dataModel.weather.first().icon),
+                description = dataModel.weather.first().description,
+                temperature = dataModel.main.temp,
                 temperatureSymbolType = TemperatureSymbolType.CELSIUS,
-                humidity = response.main.humidity,
-                rainfallPerHour = response.rain?.hour ?: 0.0,
+                humidity = dataModel.main.humidity,
+                rainfallPerHour = dataModel.rain?.hour ?: 0.0,
             ),
         )
     }
