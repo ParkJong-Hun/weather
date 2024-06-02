@@ -2,7 +2,9 @@ package infrastructure.di
 
 import common.Log
 import de.jensklingenberg.ktorfit.Ktorfit
+import domain.gateway.device.LocationService
 import domain.gateway.device.PermissionService
+import infrastructure.device.LocationServiceImpl
 import infrastructure.device.PermissionServiceImpl
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -51,4 +53,5 @@ val infrastructureModule = module {
             .build()
     }
     single<PermissionService> { PermissionServiceImpl(get()) }
+    single<LocationService> { LocationServiceImpl() }
 }
