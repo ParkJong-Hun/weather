@@ -42,7 +42,7 @@ Thumbs.db
 !/.idea/dictionaries/dictionary.xml
 
 # Fleet
-.fleet/*
+.fleet
 
 # KMP Metadata
 .kotlin
