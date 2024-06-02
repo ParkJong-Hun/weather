@@ -6,3 +6,6 @@ import presentation.navigation.AppNavigator
 fun MainViewController() = ComposeUIViewController {
     App(appNavigator = AppNavigator())
 }
+
+// Add more view controller when needed
+// TODO: Try using SwiftUI and This together
