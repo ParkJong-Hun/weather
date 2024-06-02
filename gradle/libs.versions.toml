@@ -21,6 +21,7 @@ koin = "3.6.0-wasm-alpha2"
 koin-compose = "1.2.0-alpha3"
 okio = "3.9.0"
 kermit = "1.2.2"
+moko-permissions = "0.18.0"
 
 androidx-activityCompose = "1.9.0"
 androidx-appcompat = "1.6.1"
@@ -54,6 +55,8 @@ ktor-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", 
 ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+moko-permissions-compose = { module = "dev.icerock.moko:resources", version.ref = "moko-permissions" }
+moko-permissions-test = { module = "dev.icerock.moko:permissions-test", version.ref = "moko-permissions" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }

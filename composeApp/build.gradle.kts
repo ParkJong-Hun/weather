@@ -59,10 +59,12 @@ kotlin {
             implementation(libs.koin.compose)
             implementation(libs.okio)
             implementation(libs.kermit)
+            api(libs.moko.permissions.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
             implementation(libs.kotlin.test.junit)
+            implementation(libs.moko.permissions.test)
         }
     }
 
