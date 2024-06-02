@@ -13,7 +13,11 @@ import domain.usecase.GetWeatherByCurrentLocationUseCaseImpl
 import org.koin.dsl.module
 
 val useCaseModule = module {
-    single<GetCurrentLocationUseCase> { GetCurrentLocationUseCaseImpl() }
+    single<GetCurrentLocationUseCase> {
+        GetCurrentLocationUseCaseImpl(
+            locationService = get(),
+        )
+    }
     single<GetWeatherByCurrentLocationUseCase> {
         GetWeatherByCurrentLocationUseCaseImpl(
             getCurrentLocationUseCase = get(),
