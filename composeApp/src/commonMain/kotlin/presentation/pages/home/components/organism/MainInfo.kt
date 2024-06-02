@@ -54,7 +54,7 @@ internal fun MainInfo(
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.Start,
         ) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
