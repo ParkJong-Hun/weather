@@ -4,7 +4,6 @@ import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import common.Log
 import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
 import domain.entity.Permission
@@ -17,6 +16,7 @@ import domain.gateway.device.PermissionService
 import domain.gateway.repository.WeatherRepository
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -60,14 +60,11 @@ class HomeViewModel(
     private val permissionService: PermissionService,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
-    private val city = MutableStateFlow<City?>(null)
+    private val city = MutableSharedFlow<City?>(replay = 1)
 
     init {
-        viewModelScope.launch {
-            city.collect {
-                Log.d("city: $it")
-            }
-        }
+        // TODO : get city from preference
+        city.tryEmit(null)
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -93,14 +90,15 @@ class HomeViewModel(
     private val showDialog = MutableStateFlow<Pair<String, String>?>(null)
 
     override val uiState: StateFlow<HomeUiState> = combine(
+        city,
         weatherSnapshot,
         weatherInfoError,
         isLoading,
         showDialog,
-    ) { info, error, loading, dialog ->
+    ) { city, info, error, loading, dialog ->
         HomeUiState(
             title = when {
-                city.value?.japaneseCityName != null -> city.value?.japaneseCityName!!
+                city?.japaneseCityName != null -> city.japaneseCityName
                 info?.location != null -> info.location
                 else -> "..."
             },
@@ -129,7 +127,7 @@ class HomeViewModel(
     )
 
     override fun onClickCity(clickedCity: City) {
-        city.value = clickedCity
+        city.tryEmit(clickedCity)
     }
 
     override fun onClickCurrentLocation() {
@@ -140,7 +138,7 @@ class HomeViewModel(
                         permissionService.requestPermission(Permission.LOCATION)
                     }.onSuccess {
                         if (permissionService.isPermissionAvailable(Permission.LOCATION)) {
-                            city.value = null
+                            city.tryEmit(null)
                         } else {
                             showDialog.value =
                                 "Permission Error" to "Location permission is not available. Please enable it in the app settings."
@@ -152,7 +150,7 @@ class HomeViewModel(
                 }
 
                 PermissionState.AVAILABLE -> {
-                    city.value = null
+                    city.tryEmit(null)
                 }
 
                 PermissionState.UNAVAILABLE -> {
