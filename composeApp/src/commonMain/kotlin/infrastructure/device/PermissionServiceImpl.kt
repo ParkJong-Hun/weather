@@ -3,6 +3,7 @@ package infrastructure.device
 import dev.icerock.moko.permissions.DeniedAlwaysException
 import dev.icerock.moko.permissions.DeniedException
 import dev.icerock.moko.permissions.PermissionsController
+import domain.entity.Permission
 import domain.entity.PermissionDeniedAlwaysException
 import domain.entity.PermissionDeniedException
 import domain.gateway.device.PermissionService
@@ -26,5 +27,13 @@ class PermissionServiceImpl(
 
     override suspend fun checkPermission(permission: DomainPermission): DomainPermissionState {
         return permissionsController.getPermissionState(permission.asDataModel()).asEntity()
+    }
+
+    override suspend fun isPermissionAvailable(permission: Permission): Boolean {
+        return permissionsController.isPermissionGranted(permission.asDataModel())
+    }
+
+    override fun openAppSettings() {
+        permissionsController.openAppSettings()
     }
 }

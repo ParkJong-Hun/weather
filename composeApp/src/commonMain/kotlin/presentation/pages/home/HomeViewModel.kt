@@ -7,10 +7,13 @@ import androidx.lifecycle.viewModelScope
 import common.Log
 import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
+import domain.entity.Permission
+import domain.entity.PermissionState
 import domain.entity.TemperatureType
 import domain.entity.WeatherSnapshot
 import domain.entity.WeatherType
 import domain.entity.toColor
+import domain.gateway.device.PermissionService
 import domain.gateway.repository.WeatherRepository
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -26,6 +29,7 @@ import presentation.TemperatureColor
 interface HomeViewModelInput {
     fun onClickCity(clickedCity: City)
     fun onClickCurrentLocation()
+    fun onClickDialogOkButton()
 }
 
 interface HomeViewModelOutput {
@@ -43,6 +47,9 @@ data class HomeUiState(
     val rainfall: String? = null,
     val errorMessage: String? = null,
     val isLoading: Boolean = false,
+    val isShowDialog: Boolean = false,
+    val dialogTitle: String? = null,
+    val dialogMessage: String? = null,
 ) {
     val weatherColor: Color
         get() = temperatureType?.toColor() ?: TemperatureColor.Pleasant
@@ -50,6 +57,7 @@ data class HomeUiState(
 
 class HomeViewModel(
     private val weatherRepository: WeatherRepository,
+    private val permissionService: PermissionService,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
     private val city = MutableStateFlow<City?>(null)
@@ -82,12 +90,14 @@ class HomeViewModel(
         started = SharingStarted.WhileSubscribed(DEFAULT_STOP_TIME_OUT_MILLIS),
         initialValue = true,
     )
+    private val showDialog = MutableStateFlow<Pair<String, String>?>(null)
 
     override val uiState: StateFlow<HomeUiState> = combine(
         weatherSnapshot,
         weatherInfoError,
         isLoading,
-    ) { info, error, loading ->
+        showDialog,
+    ) { info, error, loading, dialog ->
         HomeUiState(
             title = when {
                 city.value?.japaneseCityName != null -> city.value?.japaneseCityName!!
@@ -105,9 +115,12 @@ class HomeViewModel(
             description = info?.weatherInfo?.description,
             temperature = info?.let { "${it.weatherInfo.temperature.toInt()} ${it.weatherInfo.temperatureSymbolType.symbol}" },
             humidity = info?.let { "${it.weatherInfo.humidity} $PERCENT" },
-            rainfall = info?.let { "${it.weatherInfo.rainfallPerHour * 100} $MILLI_MITER_PER_HOUR" },
+            rainfall = info?.let { "${it.weatherInfo.rainfallPerHour} $MILLI_MITER_PER_HOUR" },
             errorMessage = error?.message,
             isLoading = loading,
+            isShowDialog = dialog != null,
+            dialogTitle = dialog?.first,
+            dialogMessage = dialog?.second,
         )
     }.stateIn(
         scope = viewModelScope,
@@ -120,7 +133,39 @@ class HomeViewModel(
     }
 
     override fun onClickCurrentLocation() {
-        city.value = null
+        viewModelScope.launch {
+            when (permissionService.checkPermission(Permission.LOCATION)) {
+                PermissionState.NOT_YET -> {
+                    runCatching {
+                        permissionService.requestPermission(Permission.LOCATION)
+                    }.onSuccess {
+                        if (permissionService.isPermissionAvailable(Permission.LOCATION)) {
+                            city.value = null
+                        } else {
+                            showDialog.value =
+                                "Permission Error" to "Location permission is not available. Please enable it in the app settings."
+                        }
+                    }.onFailure {
+                        showDialog.value =
+                            "Permission Error" to "Location permission is not available. Please enable it in the app settings."
+                    }
+                }
+
+                PermissionState.AVAILABLE -> {
+                    city.value = null
+                }
+
+                PermissionState.UNAVAILABLE -> {
+                    showDialog.value =
+                        "Permission Error" to "Location permission is not available. Please enable it in the app settings."
+                }
+            }
+        }
+    }
+
+    override fun onClickDialogOkButton() {
+        showDialog.value = null
+        permissionService.openAppSettings()
     }
 
     companion object {

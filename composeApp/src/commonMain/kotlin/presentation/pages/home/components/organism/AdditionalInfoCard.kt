@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import common.extension.toDoubleSafety
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.pages.home.components.molecule.AdditionalInfoText
 
@@ -39,8 +40,7 @@ internal fun AdditionalInfoCard(
                 title = "降雨量",
                 description = rainfall,
                 color = Color.DarkGray,
-                valueColor = if (rainfall.filter { it.isDigit() }
-                        .toInt() > 0) {
+                valueColor = if (rainfall.toDoubleSafety() > 0.0) {
                     Color.Blue
                 } else {
                     Color.Gray

@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import presentation.components.template.CommonOkDialog
 import presentation.di.koinViewModel
 import presentation.pages.home.components.organism.AdditionalInfoCard
 import presentation.pages.home.components.organism.MainInfo
@@ -32,11 +33,20 @@ fun NavGraphBuilder.HomePage(
     homeViewModel: HomeViewModel = koinViewModel(),
 ) {
     val state by homeViewModel.uiState.collectAsState()
-    HomePageBody(
-        state = state,
-        onClickSetting = homeViewModel::onClickCity,
-        onClickCurrentLocation = homeViewModel::onClickCurrentLocation,
-    )
+    Box() {
+        HomePageBody(
+            state = state,
+            onClickSetting = homeViewModel::onClickCity,
+            onClickCurrentLocation = homeViewModel::onClickCurrentLocation,
+        )
+        if (state.isShowDialog) {
+            CommonOkDialog(
+                title = state.dialogTitle!!,
+                message = state.dialogMessage!!,
+                onDismiss = homeViewModel::onClickDialogOkButton,
+            )
+        }
+    }
 }
 
 @Composable
