@@ -1,4 +1,4 @@
-package domain.gateway.platform
+package infrastructure.device
 
 import IOSPlatform
 import domain.entity.Platform

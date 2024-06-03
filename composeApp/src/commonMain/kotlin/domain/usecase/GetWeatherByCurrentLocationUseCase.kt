@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 
 
 interface GetWeatherByCurrentLocationUseCase {
-    operator fun invoke(): Flow<WeatherSnapshot>
+    suspend operator fun invoke(): Flow<WeatherSnapshot>
 }
 
 class GetWeatherByCurrentLocationUseCaseImpl(
@@ -17,7 +17,7 @@ class GetWeatherByCurrentLocationUseCaseImpl(
 ) : GetWeatherByCurrentLocationUseCase {
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    override operator fun invoke(): Flow<WeatherSnapshot> {
+    override suspend operator fun invoke(): Flow<WeatherSnapshot> {
         return getCurrentLocationUseCase().flatMapLatest {
             weatherRepository.getWeatherByCoordinate(it)
         }
