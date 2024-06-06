@@ -33,7 +33,10 @@ fun NavGraphBuilder.HomePage(
     homeViewModel: HomeViewModel = koinViewModel(),
 ) {
     val state by homeViewModel.uiState.collectAsState()
-    Box() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center,
+    ) {
         HomePageBody(
             state = state,
             onClickSetting = homeViewModel::onClickCity,
