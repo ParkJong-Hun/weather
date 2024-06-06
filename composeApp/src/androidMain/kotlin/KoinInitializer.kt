@@ -6,7 +6,7 @@ import org.koin.core.context.startKoin
 actual class KoinInitializer(
     private val context: Context,
 ) {
-    actual fun init() {
+    actual fun start() {
         startKoin {
             androidContext(context)
             androidLogger()

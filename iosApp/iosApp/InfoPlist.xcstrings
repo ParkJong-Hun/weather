@@ -1,0 +1,35 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "LocationPermissionMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your location is used to provide weather information based on your location."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーザーの位置をもとに天気情報を提供するため、位置情報を取得します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "사용자의 위치를 기반으로 날씨 정보를 제공하기 위해 권한이 필요합니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要您的许可才能根据您的位置提供天气信息。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

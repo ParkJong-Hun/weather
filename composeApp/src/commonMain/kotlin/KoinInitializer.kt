@@ -1,3 +1,3 @@
 expect class KoinInitializer {
-    fun init()
+    fun start()
 }

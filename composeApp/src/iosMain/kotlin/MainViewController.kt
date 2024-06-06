@@ -3,7 +3,11 @@ import presentation.App
 import presentation.navigation.AppNavigator
 
 @Suppress("unused", "FunctionName")
-fun MainViewController() = ComposeUIViewController {
+fun MainViewController() = ComposeUIViewController(
+    configure = {
+        KoinInitializer().start()
+    }
+) {
     App(appNavigator = AppNavigator())
 }
 
