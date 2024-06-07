@@ -63,8 +63,14 @@ class HomeViewModel(
     private val city = MutableSharedFlow<City?>(replay = 1)
 
     init {
-        // TODO : get city from preference
-        city.tryEmit(null)
+        viewModelScope.launch {
+            if (permissionService.isPermissionAvailable(Permission.LOCATION)) {
+                city.tryEmit(null)
+            } else {
+                // TODO : get recent city from preference
+                city.tryEmit(City.Tokyo)
+            }
+        }
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
