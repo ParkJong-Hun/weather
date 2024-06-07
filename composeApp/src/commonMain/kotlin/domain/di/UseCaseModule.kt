@@ -6,6 +6,8 @@ import domain.usecase.GetCurrentLocationUseCase
 import domain.usecase.GetCurrentLocationUseCaseImpl
 import domain.usecase.GetDistanceUseCase
 import domain.usecase.GetDistanceUseCaseImpl
+import domain.usecase.GetLocaleUseCase
+import domain.usecase.GetLocaleUseCaseImpl
 import domain.usecase.GetRadiansUseCase
 import domain.usecase.GetRadiansUseCaseImpl
 import domain.usecase.GetWeatherByCurrentLocationUseCase
@@ -35,4 +37,5 @@ val useCaseModule = module {
             getDistanceUseCase = get(),
         )
     }
+    single<GetLocaleUseCase> { GetLocaleUseCaseImpl() }
 }

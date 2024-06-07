@@ -96,15 +96,13 @@ class HomeViewModel(
     private val showDialog = MutableStateFlow<Pair<String, String>?>(null)
 
     override val uiState: StateFlow<HomeUiState> = combine(
-        city,
         weatherSnapshot,
         weatherInfoError,
         isLoading,
         showDialog,
-    ) { city, info, error, loading, dialog ->
+    ) { info, error, loading, dialog ->
         HomeUiState(
             title = when {
-                city?.japaneseCityName != null -> city.japaneseCityName
                 info?.location != null -> info.location
                 else -> "..."
             },
@@ -116,7 +114,9 @@ class HomeViewModel(
                     weatherType = it.weatherType,
                 )
             },
-            description = info?.weatherInfo?.description,
+            description = info?.weatherInfo?.description.let {
+                it?.replaceFirstChar { c -> if (c.isLowerCase()) c.titlecase() else c.toString() }
+            },
             temperature = info?.let { "${it.weatherInfo.temperature.toInt()} ${it.weatherInfo.temperatureSymbolType.symbol}" },
             humidity = info?.let { "${it.weatherInfo.humidity} $PERCENT" },
             rainfall = info?.let { "${it.weatherInfo.rainfallPerHour} $MILLI_MITER_PER_HOUR" },

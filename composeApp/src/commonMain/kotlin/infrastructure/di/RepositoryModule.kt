@@ -5,5 +5,10 @@ import infrastructure.repository.weather.WeatherRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    single<WeatherRepository> { WeatherRepositoryImpl(openWeatherApi = get()) }
+    single<WeatherRepository> {
+        WeatherRepositoryImpl(
+            openWeatherApi = get(),
+            getLocaleUseCase = get(),
+        )
+    }
 }

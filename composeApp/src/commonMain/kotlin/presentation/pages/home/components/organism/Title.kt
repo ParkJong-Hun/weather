@@ -14,11 +14,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextMotion
 import androidx.compose.ui.unit.sp
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
+import compose_multiplatform_test_airfield.composeapp.generated.resources.current_location_icon_description
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map_24
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_nearby_24
+import compose_multiplatform_test_airfield.composeapp.generated.resources.map_icon_description
 import domain.entity.City
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.Color
 
@@ -36,7 +39,7 @@ internal fun Title(
     ) {
         Icon(
             painter = painterResource(Res.drawable.ic_map_24),
-            contentDescription = "特定都市を調べる",
+            contentDescription = stringResource(Res.string.map_icon_description),
             tint = Color.Link,
             // FIXME : Navigate to the search page
             modifier = Modifier.clickable {
@@ -54,7 +57,7 @@ internal fun Title(
         )
         Icon(
             painter = painterResource(Res.drawable.ic_nearby_24),
-            contentDescription = "現在位置を調べる",
+            contentDescription = stringResource(Res.string.current_location_icon_description),
             tint = Color.Link,
             modifier = Modifier.clickable(onClick = onClickCurrentLocation),
         )

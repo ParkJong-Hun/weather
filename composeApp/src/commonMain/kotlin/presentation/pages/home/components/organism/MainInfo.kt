@@ -30,9 +30,11 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sno
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_storm_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sunny_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_umbrella_96
+import compose_multiplatform_test_airfield.composeapp.generated.resources.weather_type_description
 import domain.entity.WeatherType
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.WeatherColor
 
@@ -92,7 +94,7 @@ internal fun MainInfo(
                     WeatherType.MIST -> Res.drawable.ic_mist_96
                 }
             ),
-            contentDescription = "Weather Type",
+            contentDescription = stringResource(Res.string.weather_type_description),
             tint = when (weatherType) {
                 WeatherType.SUNNY -> WeatherColor.Sun
                 WeatherType.FEW_CLOUDS -> WeatherColor.Sun

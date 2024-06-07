@@ -10,9 +10,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import common.extension.toDoubleSafety
+import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
+import compose_multiplatform_test_airfield.composeapp.generated.resources.humidity
+import compose_multiplatform_test_airfield.composeapp.generated.resources.rainfall
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import presentation.pages.home.components.molecule.AdditionalInfoText
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun AdditionalInfoCard(
     humidity: String?,
@@ -28,16 +34,14 @@ internal fun AdditionalInfoCard(
     ) {
         if (humidity != null) {
             AdditionalInfoText(
-                // FIXME : use Resource
-                title = "湿度",
+                title = stringResource(Res.string.humidity),
                 description = humidity,
                 color = Color.DarkGray,
             )
         }
         if (rainfall != null) {
             AdditionalInfoText(
-                // FIXME : use Resource
-                title = "降雨量",
+                title = stringResource(Res.string.rainfall),
                 description = rainfall,
                 color = Color.DarkGray,
                 valueColor = if (rainfall.toDoubleSafety() > 0.0) {

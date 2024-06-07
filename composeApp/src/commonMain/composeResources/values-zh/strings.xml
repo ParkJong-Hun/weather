@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rainfall">降雨量</string>
+    <string name="humidity">湿度</string>
+    <string name="description_permission_denied">由于不允许获取位置信息，因此无法使用此功能。\n要使用它，请从您的设备设置中授予位置权限。</string>
+    <string name="map_icon_description">搜索特定城市</string>
+    <string name="current_location_icon_description">找出你在哪里</string>
+    <string name="weather_type_description">天气种类</string>
+</resources>
