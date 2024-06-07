@@ -5,16 +5,35 @@
       "comment" : "Bundle name",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weather"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Compose-Multiplatform-Test-Airfield"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "날씨"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天气"
+          }
         }
       }
     },
-    "LocationPermissionMessage" : {
-      "extractionState" : "manual",
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location When In Use Usage Description",
+      "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -24,8 +43,8 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "ユーザーの位置をもとに天気情報を提供するため、位置情報を取得します。"
+            "state" : "new",
+            "value" : "LocationPermissionMessage"
           }
         },
         "ko" : {
@@ -38,18 +57,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "需要您的许可才能根据您的位置提供天气信息。"
-          }
-        }
-      }
-    },
-    "NSLocationWhenInUseUsageDescription" : {
-      "comment" : "Privacy - Location When In Use Usage Description",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "LocationPermissionMessage"
           }
         }
       }
