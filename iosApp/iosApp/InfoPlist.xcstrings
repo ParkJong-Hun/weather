@@ -1,6 +1,18 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Compose-Multiplatform-Test-Airfield"
+          }
+        }
+      }
+    },
     "LocationPermissionMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -26,6 +38,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "需要您的许可才能根据您的位置提供天气信息。"
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location When In Use Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "LocationPermissionMessage"
           }
         }
       }

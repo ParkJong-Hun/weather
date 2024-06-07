@@ -1,8 +1,11 @@
 import dev.icerock.moko.permissions.ios.PermissionsController
+import dev.icerock.moko.permissions.ios.PermissionsControllerProtocol
 import org.koin.dsl.module
-import platform.CoreLocation.CLLocationManager
 
 val iosNativeDIContainer = module {
-    single<PermissionsController> { PermissionsController() }
-    single<CLLocationManager> { CLLocationManager() }
+    single { PermissionsController() }
+    single<PermissionsControllerProtocol> { get<PermissionsController>() }
+
+    // FIXME: KClass for Objective-C classes is not supported yet
+    //    single { CLLocationManager() }
 }

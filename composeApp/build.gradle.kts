@@ -59,6 +59,8 @@ kotlin {
             implementation(libs.koin.compose)
             implementation(libs.okio)
             implementation(libs.kermit)
+            implementation(libs.stately.common)
+            implementation(libs.stately.collections)
             api(libs.moko.permissions)
             api(libs.moko.permissions.compose)
         }
