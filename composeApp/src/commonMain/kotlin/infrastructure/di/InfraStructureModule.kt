@@ -2,8 +2,8 @@ package infrastructure.di
 
 import de.jensklingenberg.ktorfit.Ktorfit
 import domain.logger.Log
-import infrastructure.adapter.device.di.deviceModule
-import infrastructure.adapter.repository.di.repositoryModule
+import infrastructure.adapter.controller.device.di.deviceModule
+import infrastructure.adapter.gateway.repository.di.repositoryModule
 import infrastructure.api.di.KtorfitConfig
 import infrastructure.api.di.apiModule
 import io.ktor.client.HttpClient

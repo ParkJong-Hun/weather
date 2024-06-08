@@ -7,9 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
 import dev.icerock.moko.permissions.PermissionsController
 import org.koin.android.ext.android.inject
-import presentation.App
-import presentation.navigation.AppNavigator
-import presentation.navigation.LocalNavigator
+import infrastructure.ui.App
+import infrastructure.ui.navigation.AppNavigator
+import infrastructure.ui.navigation.LocalNavigator
 
 class MainActivity : ComponentActivity() {
     private val appNavigator = AppNavigator()
