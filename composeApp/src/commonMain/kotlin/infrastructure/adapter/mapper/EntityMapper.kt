@@ -1,4 +1,4 @@
-package infrastructure.mapper
+package infrastructure.adapter.mapper
 
 interface EntityMapper<DataModel, Entity> {
 

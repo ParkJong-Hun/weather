@@ -7,7 +7,7 @@ import domain.entity.WeatherSnapshot
 import domain.adapter.repository.WeatherRepository
 import domain.usecase.GetLocaleUseCase
 import infrastructure.api.OpenWeatherApi
-import infrastructure.mapper.asEntity
+import infrastructure.adapter.mapper.asEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow

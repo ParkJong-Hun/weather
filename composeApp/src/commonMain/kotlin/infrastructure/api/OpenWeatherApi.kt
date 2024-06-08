@@ -3,7 +3,7 @@ package infrastructure.api
 import co.kr.parkjonghun.composemultiplatformtestairfield.BuildKonfig
 import de.jensklingenberg.ktorfit.http.GET
 import de.jensklingenberg.ktorfit.http.Query
-import infrastructure.model.OpenWeatherResponse
+import infrastructure.api.model.OpenWeatherResponse
 
 private enum class OpenWeatherUnits(val value: String?) {
     /** Returns temperature in degrees Celsius. */

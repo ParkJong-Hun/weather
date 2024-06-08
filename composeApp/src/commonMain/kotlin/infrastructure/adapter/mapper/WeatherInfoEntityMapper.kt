@@ -1,11 +1,11 @@
-package infrastructure.mapper
+package infrastructure.adapter.mapper
 
 import domain.entity.TemperatureSymbolType
 import domain.entity.WeatherInfo
 import domain.entity.WeatherSnapshot
 import domain.entity.WeatherType
-import infrastructure.mapper.util.toEntity
-import infrastructure.model.OpenWeatherResponse
+import infrastructure.adapter.mapper.util.toEntity
+import infrastructure.api.model.OpenWeatherResponse
 
 object WeatherInfoEntityMapper : EntityMapper<OpenWeatherResponse, WeatherSnapshot> {
     override fun toEntity(dataModel: OpenWeatherResponse): WeatherSnapshot {

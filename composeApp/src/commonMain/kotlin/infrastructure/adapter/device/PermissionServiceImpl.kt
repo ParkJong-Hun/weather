@@ -7,8 +7,8 @@ import domain.adapter.device.PermissionService
 import domain.entity.Permission
 import domain.entity.PermissionDeniedAlwaysException
 import domain.entity.PermissionDeniedException
-import infrastructure.mapper.asDataModel
-import infrastructure.mapper.asEntity
+import infrastructure.adapter.mapper.asDataModel
+import infrastructure.adapter.mapper.asEntity
 import domain.entity.Permission as DomainPermission
 import domain.entity.PermissionState as DomainPermissionState
 

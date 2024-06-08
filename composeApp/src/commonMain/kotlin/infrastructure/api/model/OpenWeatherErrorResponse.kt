@@ -1,4 +1,4 @@
-package infrastructure.model
+package infrastructure.api.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

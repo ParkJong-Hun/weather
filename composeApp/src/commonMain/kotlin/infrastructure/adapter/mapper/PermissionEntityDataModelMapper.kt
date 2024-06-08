@@ -1,4 +1,4 @@
-package infrastructure.mapper
+package infrastructure.adapter.mapper
 
 import dev.icerock.moko.permissions.Permission
 import domain.entity.Permission as DomainPermission

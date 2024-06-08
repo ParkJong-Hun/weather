@@ -1,7 +1,7 @@
-package infrastructure.mapper.util
+package infrastructure.adapter.mapper.util
 
 import domain.entity.Coordinate
-import infrastructure.model.OpenWeatherResponseCoord
+import infrastructure.api.model.OpenWeatherResponseCoord
 
 fun Coordinate.toFlattenString(): String {
     return "$latitude,$longitude"
