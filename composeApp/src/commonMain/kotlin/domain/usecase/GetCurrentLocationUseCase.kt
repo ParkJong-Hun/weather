@@ -1,7 +1,7 @@
 package domain.usecase
 
+import domain.adapter.device.LocationService
 import domain.entity.Coordinate
-import domain.gateway.device.LocationService
 import kotlinx.coroutines.flow.Flow
 
 interface GetCurrentLocationUseCase {

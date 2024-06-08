@@ -1,12 +1,12 @@
-package infrastructure.device
+package infrastructure.adapter.device
 
 import dev.icerock.moko.permissions.DeniedAlwaysException
 import dev.icerock.moko.permissions.DeniedException
 import dev.icerock.moko.permissions.PermissionsController
+import domain.adapter.device.PermissionService
 import domain.entity.Permission
 import domain.entity.PermissionDeniedAlwaysException
 import domain.entity.PermissionDeniedException
-import domain.gateway.device.PermissionService
 import infrastructure.mapper.asDataModel
 import infrastructure.mapper.asEntity
 import domain.entity.Permission as DomainPermission

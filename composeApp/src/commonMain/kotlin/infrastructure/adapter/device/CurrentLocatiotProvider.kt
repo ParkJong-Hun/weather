@@ -1,4 +1,4 @@
-package infrastructure.device
+package infrastructure.adapter.device
 
 import domain.entity.Coordinate
 import kotlinx.coroutines.flow.Flow

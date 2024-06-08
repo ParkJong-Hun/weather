@@ -1,4 +1,4 @@
-package infrastructure.device
+package infrastructure.adapter.device
 
 import AndroidPlatform
 import domain.entity.Platform

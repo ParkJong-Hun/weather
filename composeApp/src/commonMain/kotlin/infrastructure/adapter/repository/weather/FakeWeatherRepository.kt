@@ -1,9 +1,9 @@
-package infrastructure.repository.weather
+package infrastructure.adapter.repository.weather
 
 import domain.entity.City
 import domain.entity.Coordinate
 import domain.entity.WeatherSnapshot
-import domain.gateway.repository.WeatherRepository
+import domain.adapter.repository.WeatherRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 

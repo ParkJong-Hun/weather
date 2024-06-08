@@ -1,7 +1,7 @@
 package domain.usecase
 
+import domain.adapter.repository.WeatherRepository
 import domain.entity.WeatherSnapshot
-import domain.gateway.repository.WeatherRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest

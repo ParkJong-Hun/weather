@@ -1,4 +1,4 @@
-package infrastructure.device
+package infrastructure.adapter.device
 
 import android.annotation.SuppressLint
 import com.google.android.gms.location.FusedLocationProviderClient

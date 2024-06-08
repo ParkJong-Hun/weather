@@ -1,4 +1,4 @@
-package infrastructure.device
+package infrastructure.adapter.device
 
 import IOSPlatform
 import domain.entity.Platform

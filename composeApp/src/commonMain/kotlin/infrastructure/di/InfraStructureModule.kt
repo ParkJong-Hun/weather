@@ -2,12 +2,12 @@ package infrastructure.di
 
 import common.Log
 import de.jensklingenberg.ktorfit.Ktorfit
-import domain.gateway.device.LocaleService
-import domain.gateway.device.LocationService
-import domain.gateway.device.PermissionService
-import infrastructure.device.LocaleServiceImpl
-import infrastructure.device.LocationServiceImpl
-import infrastructure.device.PermissionServiceImpl
+import domain.adapter.device.LocaleService
+import domain.adapter.device.LocationService
+import domain.adapter.device.PermissionService
+import infrastructure.adapter.device.LocaleServiceImpl
+import infrastructure.adapter.device.LocationServiceImpl
+import infrastructure.adapter.device.PermissionServiceImpl
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel

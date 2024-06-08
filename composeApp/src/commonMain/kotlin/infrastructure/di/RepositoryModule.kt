@@ -1,7 +1,7 @@
 package infrastructure.di
 
-import domain.gateway.repository.WeatherRepository
-import infrastructure.repository.weather.WeatherRepositoryImpl
+import domain.adapter.repository.WeatherRepository
+import infrastructure.adapter.repository.weather.WeatherRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {

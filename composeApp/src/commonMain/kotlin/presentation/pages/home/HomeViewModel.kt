@@ -12,8 +12,8 @@ import domain.entity.TemperatureType
 import domain.entity.WeatherSnapshot
 import domain.entity.WeatherType
 import domain.entity.toColor
-import domain.gateway.device.PermissionService
-import domain.gateway.repository.WeatherRepository
+import domain.adapter.device.PermissionService
+import domain.adapter.repository.WeatherRepository
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow

@@ -1,7 +1,7 @@
 package domain.usecase
 
+import domain.adapter.device.LocaleService
 import domain.entity.Locale
-import domain.gateway.device.LocaleService
 
 interface GetLocaleUseCase {
     operator fun invoke(): Locale

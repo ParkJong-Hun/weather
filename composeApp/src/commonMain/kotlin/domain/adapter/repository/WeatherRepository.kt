@@ -1,4 +1,4 @@
-package domain.gateway.repository
+package domain.adapter.repository
 
 import domain.entity.City
 import domain.entity.Coordinate

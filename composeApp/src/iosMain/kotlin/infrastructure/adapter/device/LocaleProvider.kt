@@ -1,4 +1,4 @@
-package infrastructure.device
+package infrastructure.adapter.device
 
 import platform.Foundation.NSLocale
 import platform.Foundation.currentLocale
