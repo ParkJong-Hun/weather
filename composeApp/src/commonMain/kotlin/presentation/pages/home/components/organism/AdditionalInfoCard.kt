@@ -9,13 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import common.extension.toDoubleSafety
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
 import compose_multiplatform_test_airfield.composeapp.generated.resources.humidity
 import compose_multiplatform_test_airfield.composeapp.generated.resources.rainfall
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import presentation.pages.extension.toDoubleSafety
 import presentation.pages.home.components.molecule.AdditionalInfoText
 
 @OptIn(ExperimentalResourceApi::class)

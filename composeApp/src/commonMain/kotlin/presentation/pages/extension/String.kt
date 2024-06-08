@@ -1,4 +1,4 @@
-package common.extension
+package presentation.pages.extension
 
 fun String.toIntSafety(): Int =
     this.filter { it.isDigit() || it == '.' }.toDoubleOrNull()?.toInt() ?: 0

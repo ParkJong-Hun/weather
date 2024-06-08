@@ -4,7 +4,7 @@ import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import common.extension.DEFAULT_STOP_TIME_OUT_MILLIS
+import presentation.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
 import domain.entity.Permission
 import domain.entity.PermissionState

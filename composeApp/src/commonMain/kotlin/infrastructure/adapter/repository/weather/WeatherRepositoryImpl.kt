@@ -38,7 +38,7 @@ class WeatherRepositoryImpl(
     }.flowOn(Dispatchers.IO)
 
     companion object {
-        // I don't know why the language code is different from the common language code.
+        // I don't know why the language code is different from the domain.common language code.
         private fun Locale.toApiLanguageCode(): String = when (this) {
             Locale.JAPANESE -> "ja"
             Locale.ENGLISH -> "en"

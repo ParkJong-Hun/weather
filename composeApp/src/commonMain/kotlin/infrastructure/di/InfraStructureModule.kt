@@ -1,6 +1,6 @@
 package infrastructure.di
 
-import common.Log
+import domain.logger.Log
 import de.jensklingenberg.ktorfit.Ktorfit
 import domain.adapter.device.LocaleService
 import domain.adapter.device.LocationService

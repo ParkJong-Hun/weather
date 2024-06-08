@@ -1,4 +1,4 @@
-package common
+package domain.logger
 
 import co.touchlab.kermit.Logger as KermitLogger
 
