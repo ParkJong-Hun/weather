@@ -12,9 +12,12 @@ import domain.entity.TemperatureType
 import domain.entity.WeatherSnapshot
 import domain.entity.WeatherType
 import domain.entity.toColor
-import domain.adapter.device.PermissionService
-import domain.adapter.repository.WeatherRepository
+import domain.usecase.CheckPermissionUseCase
+import domain.usecase.GetWeatherByCityUseCase
 import domain.usecase.GetWeatherByCurrentLocationUseCase
+import domain.usecase.IsPermissionAvailableUseCase
+import domain.usecase.OpenAppSettingsUseCase
+import domain.usecase.RequestPermissionUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -56,15 +59,18 @@ data class HomeUiState(
 }
 
 class HomeViewModel(
-    private val weatherRepository: WeatherRepository,
-    private val permissionService: PermissionService,
+    private val getWeatherByCityUseCase: GetWeatherByCityUseCase,
+    private val isPermissionAvailableUseCase: IsPermissionAvailableUseCase,
+    private val checkPermissionUseCase: CheckPermissionUseCase,
+    private val requestPermissionUseCase: RequestPermissionUseCase,
+    private val openAppSettingsUseCase: OpenAppSettingsUseCase,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
     private val city = MutableSharedFlow<City?>(replay = 1)
 
     init {
         viewModelScope.launch {
-            if (permissionService.isPermissionAvailable(Permission.LOCATION)) {
+            if (isPermissionAvailableUseCase(Permission.LOCATION)) {
                 city.tryEmit(null)
             } else {
                 // TODO : get recent city from preference
@@ -75,7 +81,7 @@ class HomeViewModel(
 
     @OptIn(ExperimentalCoroutinesApi::class)
     private val weatherSnapshot: StateFlow<WeatherSnapshot?> = city.flatMapLatest { city ->
-        city?.let { clickedCity -> weatherRepository.getWeatherByCity(clickedCity) }
+        city?.let { clickedCity -> getWeatherByCityUseCase(clickedCity) }
             ?: getWeatherByCurrentLocationUseCase()
     }.stateIn(
         scope = viewModelScope,
@@ -138,12 +144,12 @@ class HomeViewModel(
 
     override fun onClickCurrentLocation() {
         viewModelScope.launch {
-            when (permissionService.checkPermission(Permission.LOCATION)) {
+            when (checkPermissionUseCase(Permission.LOCATION)) {
                 PermissionState.NOT_YET -> {
                     runCatching {
-                        permissionService.requestPermission(Permission.LOCATION)
+                        requestPermissionUseCase(Permission.LOCATION)
                     }.onSuccess {
-                        if (permissionService.isPermissionAvailable(Permission.LOCATION)) {
+                        if (isPermissionAvailableUseCase(Permission.LOCATION)) {
                             city.tryEmit(null)
                         } else {
                             showDialog.value =
@@ -169,7 +175,7 @@ class HomeViewModel(
 
     override fun onClickDialogOkButton() {
         showDialog.value = null
-        permissionService.openAppSettings()
+        openAppSettingsUseCase()
     }
 
     companion object {
