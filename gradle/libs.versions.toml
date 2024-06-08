@@ -58,7 +58,7 @@ ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 # ref: https://github.com/InsertKoinIO/koin/issues/1874
-stately-domain.common = { module = "co.touchlab:stately-domain.common", version.ref = "stately" }
+stately-common = { module = "co.touchlab:stately-common", version.ref = "stately" }
 stately-collections = { module = "co.touchlab:stately-concurrent-collections", version.ref = "stately" }
 
 moko-permissions = { module = "dev.icerock.moko:permissions", version.ref = "moko-permissions" }
