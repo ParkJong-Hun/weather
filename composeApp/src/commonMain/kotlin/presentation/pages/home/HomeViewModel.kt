@@ -12,12 +12,8 @@ import domain.entity.TemperatureType
 import domain.entity.WeatherSnapshot
 import domain.entity.WeatherType
 import domain.entity.toColor
-import domain.usecase.CheckPermissionUseCase
 import domain.usecase.GetWeatherByCityUseCase
 import domain.usecase.GetWeatherByCurrentLocationUseCase
-import domain.usecase.IsPermissionAvailableUseCase
-import domain.usecase.OpenAppSettingsUseCase
-import domain.usecase.RequestPermissionUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,6 +24,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import presentation.TemperatureColor
+import presentation.utility.PermissionUtility
 
 interface HomeViewModelInput {
     fun onClickCity(clickedCity: City)
@@ -60,17 +57,14 @@ data class HomeUiState(
 
 class HomeViewModel(
     private val getWeatherByCityUseCase: GetWeatherByCityUseCase,
-    private val isPermissionAvailableUseCase: IsPermissionAvailableUseCase,
-    private val checkPermissionUseCase: CheckPermissionUseCase,
-    private val requestPermissionUseCase: RequestPermissionUseCase,
-    private val openAppSettingsUseCase: OpenAppSettingsUseCase,
+    private val permissionUtility: PermissionUtility,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
     private val city = MutableSharedFlow<City?>(replay = 1)
 
     init {
         viewModelScope.launch {
-            if (isPermissionAvailableUseCase(Permission.LOCATION)) {
+            if (permissionUtility.isPermissionAvailable(Permission.LOCATION)) {
                 city.tryEmit(null)
             } else {
                 // TODO : get recent city from preference
@@ -144,12 +138,12 @@ class HomeViewModel(
 
     override fun onClickCurrentLocation() {
         viewModelScope.launch {
-            when (checkPermissionUseCase(Permission.LOCATION)) {
+            when (permissionUtility.checkPermission(Permission.LOCATION)) {
                 PermissionState.NOT_YET -> {
                     runCatching {
-                        requestPermissionUseCase(Permission.LOCATION)
+                        permissionUtility.requestPermission(Permission.LOCATION)
                     }.onSuccess {
-                        if (isPermissionAvailableUseCase(Permission.LOCATION)) {
+                        if (permissionUtility.isPermissionAvailable(Permission.LOCATION)) {
                             city.tryEmit(null)
                         } else {
                             showDialog.value =
@@ -175,7 +169,7 @@ class HomeViewModel(
 
     override fun onClickDialogOkButton() {
         showDialog.value = null
-        openAppSettingsUseCase()
+        permissionUtility.openAppSettings()
     }
 
     companion object {
