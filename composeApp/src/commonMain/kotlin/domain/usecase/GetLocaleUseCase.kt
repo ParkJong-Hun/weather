@@ -1,12 +1,14 @@
 package domain.usecase
 
 import domain.entity.Locale
-import infrastructure.device.getLocale
+import domain.gateway.device.LocaleService
 
 interface GetLocaleUseCase {
     operator fun invoke(): Locale
 }
 
-class GetLocaleUseCaseImpl : GetLocaleUseCase {
-    override fun invoke(): Locale = Locale.fromLanguageCode(getLocale)
+class GetLocaleUseCaseImpl(
+    private val localeService: LocaleService,
+) : GetLocaleUseCase {
+    override fun invoke(): Locale = localeService.getLocale()
 }

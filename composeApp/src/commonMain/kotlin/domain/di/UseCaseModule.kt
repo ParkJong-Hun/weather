@@ -37,5 +37,9 @@ val useCaseModule = module {
             getDistanceUseCase = get(),
         )
     }
-    single<GetLocaleUseCase> { GetLocaleUseCaseImpl() }
+    single<GetLocaleUseCase> {
+        GetLocaleUseCaseImpl(
+            localeService = get(),
+        )
+    }
 }

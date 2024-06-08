@@ -2,8 +2,10 @@ package infrastructure.di
 
 import common.Log
 import de.jensklingenberg.ktorfit.Ktorfit
+import domain.gateway.device.LocaleService
 import domain.gateway.device.LocationService
 import domain.gateway.device.PermissionService
+import infrastructure.device.LocaleServiceImpl
 import infrastructure.device.LocationServiceImpl
 import infrastructure.device.PermissionServiceImpl
 import io.ktor.client.HttpClient
@@ -54,4 +56,5 @@ val infrastructureModule = module {
     }
     single<PermissionService> { PermissionServiceImpl(get()) }
     single<LocationService> { LocationServiceImpl() }
+    single<LocaleService> { LocaleServiceImpl() }
 }
