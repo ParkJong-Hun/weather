@@ -1,13 +1,11 @@
 package infrastructure.di
 
-import domain.logger.Log
 import de.jensklingenberg.ktorfit.Ktorfit
-import domain.adapter.device.LocaleService
-import domain.adapter.device.LocationService
-import domain.adapter.device.PermissionService
-import infrastructure.adapter.device.LocaleServiceImpl
-import infrastructure.adapter.device.LocationServiceImpl
-import infrastructure.adapter.device.PermissionServiceImpl
+import domain.logger.Log
+import infrastructure.adapter.device.di.deviceModule
+import infrastructure.adapter.repository.di.repositoryModule
+import infrastructure.api.di.KtorfitConfig
+import infrastructure.api.di.apiModule
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
@@ -21,6 +19,7 @@ val infrastructureModule = module {
     includes(
         apiModule,
         repositoryModule,
+        deviceModule,
     )
     single<HttpClient> {
         HttpClient {
@@ -54,7 +53,4 @@ val infrastructureModule = module {
             .baseUrl(KtorfitConfig.OpenWeather.baseUrl)
             .build()
     }
-    single<PermissionService> { PermissionServiceImpl(get()) }
-    single<LocationService> { LocationServiceImpl() }
-    single<LocaleService> { LocaleServiceImpl() }
 }

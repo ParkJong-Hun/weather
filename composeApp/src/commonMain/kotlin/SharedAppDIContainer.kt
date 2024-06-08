@@ -1,4 +1,4 @@
-import domain.di.domainModule
+import domain.usecase.di.domainModule
 import infrastructure.di.infrastructureModule
 import org.koin.dsl.module
 import presentation.di.presentationModule

@@ -1,4 +1,4 @@
-package infrastructure.di
+package infrastructure.api.di
 
 import de.jensklingenberg.ktorfit.Ktorfit
 import infrastructure.api.OpenWeatherApi

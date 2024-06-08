@@ -1,4 +1,4 @@
-package infrastructure.di
+package infrastructure.adapter.repository.di
 
 import domain.adapter.repository.WeatherRepository
 import infrastructure.adapter.repository.weather.WeatherRepositoryImpl
