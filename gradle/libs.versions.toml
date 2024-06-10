@@ -23,6 +23,7 @@ okio = "3.9.0"
 kermit = "1.2.2"
 stately = "2.0.6"
 moko-permissions = "0.18.0"
+multiplatform-settings = "1.1.1"
 
 androidx-activityCompose = "1.9.0"
 androidx-appcompat = "1.6.1"
@@ -43,8 +44,8 @@ kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", 
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlin-datetime" }
 viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "viewmodel" }
 compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
-compose-infrastructure.ui-tooling = { module = "androidx.compose.infrastructure.ui:infrastructure.ui-tooling", version.ref = "compose" }
-compose-infrastructure.ui-tooling-preview = { module = "androidx.compose.infrastructure.ui:infrastructure.ui-tooling-preview", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.infrastructure.ui:infrastructure.ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.infrastructure.ui:infrastructure.ui-tooling-preview", version.ref = "compose" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
@@ -56,6 +57,7 @@ ktor-contentnegotiation = { module = "io.ktor:ktor-client-content-negotiation", 
 ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatform-settings" }
 
 # ref: https://github.com/InsertKoinIO/koin/issues/1874
 stately-common = { module = "co.touchlab:stately-common", version.ref = "stately" }
