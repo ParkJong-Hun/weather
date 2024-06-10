@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
@@ -20,12 +21,12 @@ import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import infrastructure.ui.components.template.CommonOkDialog
 import infrastructure.ui.di.koinViewModel
 import infrastructure.ui.pages.home.components.organism.AdditionalInfoCard
 import infrastructure.ui.pages.home.components.organism.MainInfo
 import infrastructure.ui.pages.home.components.organism.Title
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 // TODO use SharedTransitionScope
 @Composable
@@ -42,6 +43,11 @@ fun NavGraphBuilder.HomePage(
             onClickSetting = homeViewModel::onClickCity,
             onClickCurrentLocation = homeViewModel::onClickCurrentLocation,
         )
+        if (state.isLoading) {
+            CircularProgressIndicator(
+                color = Color.White,
+            )
+        }
         if (state.isShowDialog) {
             CommonOkDialog(
                 title = state.dialogTitle!!,
@@ -58,7 +64,7 @@ private fun HomePageBody(
     onClickSetting: (City) -> Unit,
     onClickCurrentLocation: () -> Unit,
 ) {
-    Box(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(
@@ -72,42 +78,35 @@ private fun HomePageBody(
             )
             .safeDrawingPadding()
             .padding(20.dp),
-        contentAlignment = Alignment.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Column(
-            Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            // TODO : to AppBar
-            Title(
-                title = state.title,
-                onClickSetting = onClickSetting,
-                onClickCurrentLocation = onClickCurrentLocation,
+        // TODO : to AppBar
+        Title(
+            title = state.title,
+            onClickSetting = onClickSetting,
+            onClickCurrentLocation = onClickCurrentLocation,
+            modifier = Modifier.fillMaxWidth(),
+        )
+        Spacer(
+            modifier = Modifier.height(16.dp),
+        )
+        if (state.temperature != null && state.description != null && state.weatherType != null) {
+            MainInfo(
+                baseColor = state.weatherColor,
+                weatherType = state.weatherType,
+                temperature = state.temperature,
+                description = state.description,
+                modifier = Modifier.fillMaxWidth(),
             )
             Spacer(
                 modifier = Modifier.height(16.dp),
             )
-            if (state.temperature != null && state.description != null && state.weatherType != null) {
-                MainInfo(
-                    baseColor = state.weatherColor,
-                    weatherType = state.weatherType,
-                    temperature = state.temperature,
-                    description = state.description,
-                )
-                Spacer(
-                    modifier = Modifier.height(16.dp),
-                )
-            }
-            if (state.humidity != null || state.rainfall != null) {
-                AdditionalInfoCard(
-                    humidity = state.humidity,
-                    rainfall = state.rainfall,
-                )
-            }
         }
-        if (state.isLoading) {
-            CircularProgressIndicator(
-                color = Color.White,
+        if (state.humidity != null || state.rainfall != null) {
+            AdditionalInfoCard(
+                humidity = state.humidity,
+                rainfall = state.rainfall,
+                modifier = Modifier.fillMaxWidth(),
             )
         }
     }

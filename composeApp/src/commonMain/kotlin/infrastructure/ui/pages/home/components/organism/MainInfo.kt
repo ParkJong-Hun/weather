@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -32,11 +31,11 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sun
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_umbrella_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.weather_type_description
 import domain.entity.WeatherType
+import infrastructure.ui.WeatherColor
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import infrastructure.ui.WeatherColor
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
@@ -45,9 +44,10 @@ internal fun MainInfo(
     baseColor: Color,
     temperature: String,
     description: String,
+    modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
             .background(
                 color = baseColor.copy(alpha = 0.8f),
                 shape = RoundedCornerShape(16.dp),

@@ -2,7 +2,6 @@ package infrastructure.ui.pages.home.components.organism
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -12,20 +11,21 @@ import androidx.compose.ui.unit.dp
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
 import compose_multiplatform_test_airfield.composeapp.generated.resources.humidity
 import compose_multiplatform_test_airfield.composeapp.generated.resources.rainfall
+import infrastructure.ui.pages.extension.toDoubleSafety
+import infrastructure.ui.pages.home.components.molecule.AdditionalInfoText
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import infrastructure.ui.pages.extension.toDoubleSafety
-import infrastructure.ui.pages.home.components.molecule.AdditionalInfoText
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun AdditionalInfoCard(
     humidity: String?,
     rainfall: String?,
+    modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
             .background(
                 color = Color.White.copy(alpha = 0.4f),
                 shape = RoundedCornerShape(8.dp),

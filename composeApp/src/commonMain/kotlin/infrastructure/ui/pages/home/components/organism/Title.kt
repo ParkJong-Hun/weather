@@ -3,7 +3,6 @@ package infrastructure.ui.pages.home.components.organism
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,11 +18,11 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_nearby_24
 import compose_multiplatform_test_airfield.composeapp.generated.resources.map_icon_description
 import domain.entity.City
+import infrastructure.ui.Color
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import infrastructure.ui.Color
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
@@ -31,9 +30,10 @@ internal fun Title(
     title: String,
     onClickSetting: (City) -> Unit,
     onClickCurrentLocation: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier,
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {

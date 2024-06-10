@@ -23,6 +23,7 @@ internal fun AdditionalInfoText(
     description: String,
     color: Color = Color.Unspecified,
     valueColor: Color = Color.Unspecified,
+    modifier: Modifier = Modifier,
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
