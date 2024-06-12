@@ -23,6 +23,9 @@ import androidx.navigation.NavGraphBuilder
 import domain.entity.City
 import infrastructure.ui.components.template.CommonOkDialog
 import infrastructure.ui.di.koinViewModel
+import infrastructure.ui.navigation.AppPages
+import infrastructure.ui.navigation.NavigateEvent
+import infrastructure.ui.navigation.currentNavigator
 import infrastructure.ui.pages.home.components.organism.AdditionalInfoCard
 import infrastructure.ui.pages.home.components.organism.MainInfo
 import infrastructure.ui.pages.home.components.organism.Title
@@ -34,13 +37,15 @@ fun NavGraphBuilder.HomePage(
     homeViewModel: HomeViewModel = koinViewModel(),
 ) {
     val state by homeViewModel.uiState.collectAsState()
+    val appNavigator = currentNavigator
+
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
         HomePageBody(
             state = state,
-            onClickSetting = homeViewModel::onClickCity,
+            onClickSetting = { appNavigator.emitEvent(NavigateEvent.NavigateTo(AppPages.Search)) },
             onClickCurrentLocation = homeViewModel::onClickCurrentLocation,
         )
         if (state.isLoading) {

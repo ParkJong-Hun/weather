@@ -15,6 +15,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
 import infrastructure.ui.di.koinViewModel
+import infrastructure.ui.navigation.NavigateEvent
+import infrastructure.ui.navigation.NavigationResultKey
+import infrastructure.ui.navigation.currentNavigator
 import infrastructure.ui.pages.search.components.organism.CityList
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -24,6 +27,8 @@ fun NavGraphBuilder.SearchPage(
     searchViewModel: SearchViewModel = koinViewModel(),
 ) {
     val state by searchViewModel.uiState.collectAsState()
+    val appNavigator = currentNavigator
+
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
@@ -31,7 +36,11 @@ fun NavGraphBuilder.SearchPage(
         SearchPageBody(
             state = state,
             onClickCity = {
-                // TODO
+                appNavigator.emitEvent(
+                    NavigateEvent.PopBackStackWithResult(
+                        results = mapOf(NavigationResultKey.CITY to it),
+                    ),
+                )
             },
         )
 //        if (false) {

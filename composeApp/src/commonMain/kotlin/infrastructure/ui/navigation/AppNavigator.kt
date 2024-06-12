@@ -43,6 +43,17 @@ class AppNavigator {
                         appNavHostController.value?.popBackStack()
                             ?: error("NavHostController is not initialized.")
                     }
+
+                    is NavigateEvent.PopBackStackWithResult<*> -> {
+                        appNavHostController.value?.let {
+                            event.results.forEach { (key, value) ->
+                                it.currentBackStackEntry?.savedStateHandle?.set(
+                                    key = key,
+                                    value = value,
+                                ) ?: error("BackStackEntry is not found.")
+                            }
+                        } ?: error("NavHostController is not initialized.")
+                    }
                 }
             }
     }
@@ -57,4 +68,5 @@ class AppNavigator {
 sealed class NavigateEvent {
     data class NavigateTo(val page: AppPages) : NavigateEvent()
     data object PopBackStack : NavigateEvent()
+    data class PopBackStackWithResult<V>(val results: Map<String, V>) : NavigateEvent()
 }

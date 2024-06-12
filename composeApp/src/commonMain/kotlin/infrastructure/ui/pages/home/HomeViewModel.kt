@@ -2,9 +2,9 @@ package infrastructure.ui.pages.home
 
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import infrastructure.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import domain.entity.City
 import domain.entity.Permission
 import domain.entity.PermissionState
@@ -14,6 +14,10 @@ import domain.entity.WeatherType
 import domain.entity.toColor
 import domain.usecase.GetWeatherByCityUseCase
 import domain.usecase.GetWeatherByCurrentLocationUseCase
+import infrastructure.ui.TemperatureColor
+import infrastructure.ui.navigation.NavigationResultKey
+import infrastructure.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
+import infrastructure.ui.utility.PermissionUtility
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,11 +27,8 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import infrastructure.ui.TemperatureColor
-import infrastructure.ui.utility.PermissionUtility
 
 interface HomeViewModelInput {
-    fun onClickCity(clickedCity: City)
     fun onClickCurrentLocation()
     fun onClickDialogOkButton()
 }
@@ -56,22 +57,13 @@ data class HomeUiState(
 }
 
 class HomeViewModel(
+    savedStateHandle: SavedStateHandle,
     private val getWeatherByCityUseCase: GetWeatherByCityUseCase,
     private val permissionUtility: PermissionUtility,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
+    private val result = savedStateHandle.get<City?>(NavigationResultKey.CITY)
     private val city = MutableSharedFlow<City?>(replay = 1)
-
-    init {
-        viewModelScope.launch {
-            if (permissionUtility.isPermissionAvailable(Permission.LOCATION)) {
-                city.tryEmit(null)
-            } else {
-                // TODO : get recent city from preference
-                city.tryEmit(City.Tokyo)
-            }
-        }
-    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     private val weatherSnapshot: StateFlow<WeatherSnapshot?> = city.flatMapLatest { city ->
@@ -132,8 +124,24 @@ class HomeViewModel(
         initialValue = HomeUiState(),
     )
 
-    override fun onClickCity(clickedCity: City) {
-        city.tryEmit(clickedCity)
+    init {
+        viewModelScope.launch {
+            when {
+                result != null -> {
+                    city.tryEmit(result)
+                }
+
+                // TODO : get recent city from preference
+
+                permissionUtility.isPermissionAvailable(Permission.LOCATION) -> {
+                    city.tryEmit(null)
+                }
+
+                else -> {
+                    city.tryEmit(City.Tokyo)
+                }
+            }
+        }
     }
 
     override fun onClickCurrentLocation() {
