@@ -1,8 +1,9 @@
 package infrastructure.ui
 
-import androidx.compose.runtime.Stable
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import infrastructure.ui.navigation.AppPages
 import infrastructure.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
@@ -10,7 +11,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
-import infrastructure.ui.navigation.AppPages
 
 interface AppViewModelInput
 
@@ -18,7 +18,7 @@ interface AppViewModelOutput {
     val uiState: StateFlow<AppUiState>
 }
 
-@Stable
+@Immutable
 data class AppUiState(
     val text: String = "",
 ) {

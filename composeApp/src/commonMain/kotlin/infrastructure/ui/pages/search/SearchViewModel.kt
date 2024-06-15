@@ -1,6 +1,6 @@
 package infrastructure.ui.pages.search
 
-import androidx.compose.runtime.Stable
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import infrastructure.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
@@ -16,7 +16,7 @@ interface SearchViewModelOutput {
     val uiState: StateFlow<SearchUiState>
 }
 
-@Stable
+@Immutable
 data class SearchUiState(
     val isLoading: Boolean = false,
     val isError: Pair<Boolean, String?> = false to null,

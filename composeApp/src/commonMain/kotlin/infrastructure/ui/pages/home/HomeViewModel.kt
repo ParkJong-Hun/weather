@@ -1,6 +1,6 @@
 package infrastructure.ui.pages.home
 
-import androidx.compose.runtime.Stable
+import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -37,7 +37,7 @@ interface HomeViewModelOutput {
     val uiState: StateFlow<HomeUiState>
 }
 
-@Stable
+@Immutable
 data class HomeUiState(
     val title: String = "...",
     val weatherType: WeatherType? = null,
