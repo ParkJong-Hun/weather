@@ -1,6 +1,6 @@
-package domain.usecase.di
+package domain.di
 
-import domain.di.useCaseModule
+import domain.usecase.di.useCaseModule
 import org.koin.dsl.module
 
 internal val domainModule = module {

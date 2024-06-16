@@ -11,13 +11,17 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 internal fun CityList(
     cities: List<City>,
+    onClickCity: (City) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
         modifier = modifier,
     ) {
         items(cities) { city ->
-            CityCell(city = city)
+            CityCell(
+                city = city,
+                onClickCity = onClickCity,
+            )
         }
     }
 }
@@ -39,5 +43,6 @@ private fun CityListPreview() {
             City.Fukuoka,
             City.Okinawa,
         ),
+        onClickCity = {},
     )
 }

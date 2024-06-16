@@ -1,5 +1,6 @@
 package infrastructure.ui.pages.search.components.molecule
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -19,10 +20,11 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 internal fun CityCell(
     city: City,
+    onClickCity: (City) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = modifier,
+        modifier = modifier.clickable { onClickCity(city) },
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -49,5 +51,6 @@ internal fun CityCell(
 private fun CityCellPreview() {
     CityCell(
         city = City.Tokyo,
+        onClickCity = {},
     )
 }

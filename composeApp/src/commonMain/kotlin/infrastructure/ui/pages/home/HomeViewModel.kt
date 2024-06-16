@@ -2,7 +2,6 @@ package infrastructure.ui.pages.home
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import domain.entity.City
@@ -12,10 +11,10 @@ import domain.entity.TemperatureType
 import domain.entity.WeatherSnapshot
 import domain.entity.WeatherType
 import domain.entity.toColor
+import domain.usecase.GetSelectedCityUseCase
 import domain.usecase.GetWeatherByCityUseCase
 import domain.usecase.GetWeatherByCurrentLocationUseCase
 import infrastructure.ui.TemperatureColor
-import infrastructure.ui.navigation.NavigationResultKey
 import infrastructure.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import infrastructure.ui.utility.PermissionUtility
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,6 +23,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -57,12 +57,11 @@ data class HomeUiState(
 }
 
 class HomeViewModel(
-    savedStateHandle: SavedStateHandle,
     private val getWeatherByCityUseCase: GetWeatherByCityUseCase,
     private val permissionUtility: PermissionUtility,
     getWeatherByCurrentLocationUseCase: GetWeatherByCurrentLocationUseCase,
+    getSelectedCityUseCase: GetSelectedCityUseCase,
 ) : ViewModel(), HomeViewModelInput, HomeViewModelOutput {
-    private val result = savedStateHandle.get<City?>(NavigationResultKey.CITY)
     private val city = MutableSharedFlow<City?>(replay = 1)
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -126,12 +125,11 @@ class HomeViewModel(
 
     init {
         viewModelScope.launch {
+            val selected = getSelectedCityUseCase().first()
             when {
-                result != null -> {
-                    city.tryEmit(result)
+                selected != null -> {
+                    city.tryEmit(selected)
                 }
-
-                // TODO : get recent city from preference
 
                 permissionUtility.isPermissionAvailable(Permission.LOCATION) -> {
                     city.tryEmit(null)

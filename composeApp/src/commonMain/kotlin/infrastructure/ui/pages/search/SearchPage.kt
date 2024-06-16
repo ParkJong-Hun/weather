@@ -6,17 +6,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
+import infrastructure.ui.components.template.CommonOkDialog
 import infrastructure.ui.di.koinViewModel
 import infrastructure.ui.navigation.NavigateEvent
-import infrastructure.ui.navigation.NavigationResultKey
 import infrastructure.ui.navigation.currentNavigator
 import infrastructure.ui.pages.search.components.organism.CityList
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -29,33 +32,38 @@ fun NavGraphBuilder.SearchPage(
     val state by searchViewModel.uiState.collectAsState()
     val appNavigator = currentNavigator
 
+    LaunchedEffect(state.isComplete) {
+        if (state.isComplete) {
+            appNavigator.emitEvent(
+                NavigateEvent.PopBackStack,
+            )
+        }
+    }
+
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
         SearchPageBody(
-            state = state,
-            onClickCity = {
-                appNavigator.emitEvent(
-                    NavigateEvent.PopBackStackWithResult(
-                        results = mapOf(NavigationResultKey.CITY to it),
-                    ),
-                )
-            },
+            onClickCity = searchViewModel::onClickCity,
         )
-//        if (false) {
-//            CommonOkDialog(
-//                title = state.dialogTitle!!,
-//                message = state.dialogMessage!!,
-//                onDismiss = searchViewModel::onClickDialogOkButton,
-//            )
-//        }
+        if (state.isLoading) {
+            CircularProgressIndicator(
+                color = Color.White,
+            )
+        }
+        if (state.isShowDialog) {
+            CommonOkDialog(
+                title = state.dialogTitle!!,
+                message = state.dialogMessage!!,
+                onDismiss = searchViewModel::onClickDialogOkButton,
+            )
+        }
     }
 }
 
 @Composable
 private fun SearchPageBody(
-    state: SearchUiState,
     onClickCity: (City) -> Unit,
 ) {
     Column(
@@ -67,6 +75,7 @@ private fun SearchPageBody(
     ) {
         CityList(
             cities = City.entries,
+            onClickCity = onClickCity,
             modifier = Modifier.fillMaxWidth(),
         )
     }
@@ -74,11 +83,9 @@ private fun SearchPageBody(
 
 @Preview
 @Composable
+@Suppress("unused")
 private fun SearchPageBodyPreview() {
     SearchPageBody(
-        state = SearchUiState(
-            isLoading = false,
-        ),
         onClickCity = {},
     )
 }

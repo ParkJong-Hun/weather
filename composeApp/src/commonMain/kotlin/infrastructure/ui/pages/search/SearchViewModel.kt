@@ -3,6 +3,8 @@ package infrastructure.ui.pages.search
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import domain.entity.City
+import domain.usecase.UpdateSelectedCityUseCase
 import infrastructure.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -10,7 +12,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 
-interface SearchViewModelInput
+interface SearchViewModelInput {
+    fun onClickCity(city: City)
+    fun onClickDialogOkButton()
+}
 
 interface SearchViewModelOutput {
     val uiState: StateFlow<SearchUiState>
@@ -19,24 +24,53 @@ interface SearchViewModelOutput {
 @Immutable
 data class SearchUiState(
     val isLoading: Boolean = false,
-    val isError: Pair<Boolean, String?> = false to null,
+    val isShowDialog: Boolean = false,
+    val dialogTitle: String? = null,
+    val dialogMessage: String? = null,
+    val isComplete: Boolean = false,
 )
 
-class SearchViewModel : ViewModel(),
+class SearchViewModel(
+    private val updateSelectedCityUseCase: UpdateSelectedCityUseCase,
+) : ViewModel(),
     SearchViewModelInput,
     SearchViewModelOutput {
-    private val dummy = MutableStateFlow("dummy")
+    private val isLoading = MutableStateFlow(false)
+    private val error = MutableStateFlow<Throwable?>(null)
+    private val done = MutableStateFlow(false)
 
     override val uiState: StateFlow<SearchUiState> = combine(
-        dummy,
-    ) { a ->
+        isLoading,
+        error,
+        done,
+    ) { loading, error, done ->
         SearchUiState(
-            isLoading = a.last().isEmpty(),
-            isError = false to null,
+            isLoading = loading,
+            isShowDialog = error != null,
+            dialogTitle = if (error != null) "Store Error" else null,
+            dialogMessage = if (error != null) "Please try again." else null,
+            isComplete = done,
         )
     }.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(DEFAULT_STOP_TIME_OUT_MILLIS),
         initialValue = SearchUiState(),
     )
+
+    override fun onClickCity(city: City) {
+        runCatching {
+            isLoading.value = true
+            updateSelectedCityUseCase(city)
+        }.onSuccess {
+            isLoading.value = false
+            done.value = true
+        }.onFailure {
+            isLoading.value = true
+            error.value = it
+        }
+    }
+
+    override fun onClickDialogOkButton() {
+        error.value = null
+    }
 }

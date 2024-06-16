@@ -1,4 +1,4 @@
-package domain.di
+package domain.usecase.di
 
 import domain.usecase.CheckPermissionUseCase
 import domain.usecase.CheckPermissionUseCaseImpl
@@ -12,6 +12,8 @@ import domain.usecase.GetLocaleUseCase
 import domain.usecase.GetLocaleUseCaseImpl
 import domain.usecase.GetRadiansUseCase
 import domain.usecase.GetRadiansUseCaseImpl
+import domain.usecase.GetSelectedCityUseCase
+import domain.usecase.GetSelectedCityUseCaseImpl
 import domain.usecase.GetWeatherByCityUseCase
 import domain.usecase.GetWeatherByCityUseCaseImpl
 import domain.usecase.GetWeatherByCoordinateUseCase
@@ -24,6 +26,8 @@ import domain.usecase.OpenAppSettingsUseCase
 import domain.usecase.OpenAppSettingsUseCaseImpl
 import domain.usecase.RequestPermissionUseCase
 import domain.usecase.RequestPermissionUseCaseImpl
+import domain.usecase.UpdateSelectedCityUseCase
+import domain.usecase.UpdateSelectedCityUseCaseImpl
 import org.koin.dsl.module
 
 val useCaseModule = module {
@@ -82,6 +86,16 @@ val useCaseModule = module {
     single<OpenAppSettingsUseCase> {
         OpenAppSettingsUseCaseImpl(
             permissionService = get(),
+        )
+    }
+    single<GetSelectedCityUseCase> {
+        GetSelectedCityUseCaseImpl(
+            preferences = get(),
+        )
+    }
+    single<UpdateSelectedCityUseCase> {
+        UpdateSelectedCityUseCaseImpl(
+            preferences = get(),
         )
     }
 }
