@@ -65,6 +65,7 @@ kotlin {
             api(libs.moko.permissions.compose)
             implementation(libs.multiplatform.settings)
             implementation(libs.multiplatform.settings.coroutines)
+            implementation(libs.multiplatform.settings.no.args)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

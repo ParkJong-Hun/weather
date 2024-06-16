@@ -59,6 +59,7 @@ ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatform-settings" }
 multiplatform-settings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "multiplatform-settings" }
+multiplatform-settings-no-args = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "multiplatform-settings" }
 
 # ref: https://github.com/InsertKoinIO/koin/issues/1874
 stately-common = { module = "co.touchlab:stately-common", version.ref = "stately" }
