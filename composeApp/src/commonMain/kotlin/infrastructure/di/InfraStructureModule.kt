@@ -6,6 +6,7 @@ import infrastructure.adapter.controller.device.di.deviceModule
 import infrastructure.adapter.gateway.repository.di.repositoryModule
 import infrastructure.api.di.KtorfitConfig
 import infrastructure.api.di.apiModule
+import infrastructure.adapter.gateway.preferences.di.preferencesModule
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
@@ -20,6 +21,7 @@ val infrastructureModule = module {
         apiModule,
         repositoryModule,
         deviceModule,
+        preferencesModule,
     )
     single<HttpClient> {
         HttpClient {

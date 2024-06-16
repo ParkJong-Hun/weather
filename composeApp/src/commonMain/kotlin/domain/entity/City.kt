@@ -52,4 +52,10 @@ enum class City(val cityName: String, val japaneseCityName: String, val coordina
         coordinate = Coordinate(35.0116, 135.7681)
     ),
     ;
+
+    companion object {
+        fun findByCityName(cityName: String): City? {
+            return City.entries.find { it.cityName == cityName }
+        }
+    }
 }
