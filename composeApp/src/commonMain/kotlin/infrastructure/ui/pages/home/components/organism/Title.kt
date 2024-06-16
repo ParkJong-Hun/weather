@@ -17,7 +17,6 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.curren
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map_24
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_nearby_24
 import compose_multiplatform_test_airfield.composeapp.generated.resources.map_icon_description
-import domain.entity.City
 import infrastructure.ui.Color
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
@@ -28,7 +27,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 internal fun Title(
     title: String,
-    onClickSetting: (City) -> Unit,
+    onClickSetting: () -> Unit,
     onClickCurrentLocation: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -43,7 +42,7 @@ internal fun Title(
             tint = Color.Link,
             // FIXME : Navigate to the search page
             modifier = Modifier.clickable {
-                onClickSetting(City.Osaka)
+                onClickSetting()
             }
         )
         Text(

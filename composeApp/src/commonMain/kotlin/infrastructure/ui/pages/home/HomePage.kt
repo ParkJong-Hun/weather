@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
-import domain.entity.City
 import infrastructure.ui.components.template.CommonOkDialog
 import infrastructure.ui.di.koinViewModel
 import infrastructure.ui.navigation.AppPages
@@ -66,7 +65,7 @@ fun NavGraphBuilder.HomePage(
 @Composable
 private fun HomePageBody(
     state: HomeUiState,
-    onClickSetting: (City) -> Unit,
+    onClickSetting: () -> Unit,
     onClickCurrentLocation: () -> Unit,
 ) {
     Column(
