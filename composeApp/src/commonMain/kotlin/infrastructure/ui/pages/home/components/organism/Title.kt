@@ -40,10 +40,7 @@ internal fun Title(
             painter = painterResource(Res.drawable.ic_map_24),
             contentDescription = stringResource(Res.string.map_icon_description),
             tint = Color.Link,
-            // FIXME : Navigate to the search page
-            modifier = Modifier.clickable {
-                onClickSetting()
-            }
+            modifier = Modifier.clickable(onClick = onClickSetting),
         )
         Text(
             text = title,

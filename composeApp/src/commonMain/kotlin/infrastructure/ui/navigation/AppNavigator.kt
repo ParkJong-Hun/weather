@@ -7,7 +7,9 @@ import androidx.compose.runtime.compositionLocalOf
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.onEach
 
 val LocalNavigator: ProvidableCompositionLocal<AppNavigator> =
     compositionLocalOf { error("No Navigator provided in the composition hierarchy. Make sure to provide a Navigator.") }
@@ -32,7 +34,7 @@ class AppNavigator {
         navHostController.init()
         navigateEvents
             .distinctUntilChanged()
-            .collect { event ->
+            .onEach { event ->
                 when (event) {
                     is NavigateEvent.NavigateTo -> {
                         appNavHostController.value?.navigate(event.page.route)
@@ -56,6 +58,7 @@ class AppNavigator {
                     }
                 }
             }
+            .collect()
     }
 
     private fun NavHostController.init() {
