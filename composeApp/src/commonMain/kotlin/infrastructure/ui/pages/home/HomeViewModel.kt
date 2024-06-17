@@ -23,8 +23,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -125,12 +126,11 @@ class HomeViewModel(
 
     init {
         viewModelScope.launch {
-            val selected = getSelectedCityUseCase().first()
-            when {
-                selected != null -> {
-                    city.tryEmit(selected)
-                }
+            getSelectedCityUseCase()
+                .onEach { it?.let { city.tryEmit(it) } }
+                .launchIn(viewModelScope)
 
+            when {
                 permissionUtility.isPermissionAvailable(Permission.LOCATION) -> {
                     city.tryEmit(null)
                 }

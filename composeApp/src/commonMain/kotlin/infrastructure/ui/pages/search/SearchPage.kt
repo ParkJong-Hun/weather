@@ -22,6 +22,7 @@ import infrastructure.ui.di.koinViewModel
 import infrastructure.ui.navigation.NavigateEvent
 import infrastructure.ui.navigation.currentNavigator
 import infrastructure.ui.pages.search.components.organism.CityList
+import infrastructure.ui.pages.search.components.organism.SearchTitle
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 // TODO use SharedTransitionScope
@@ -45,6 +46,7 @@ fun NavGraphBuilder.SearchPage(
         contentAlignment = Alignment.Center,
     ) {
         SearchPageBody(
+            onClickBack = { appNavigator.emitEvent(NavigateEvent.PopBackStack) },
             onClickCity = searchViewModel::onClickCity,
         )
         if (state.isLoading) {
@@ -64,6 +66,7 @@ fun NavGraphBuilder.SearchPage(
 
 @Composable
 private fun SearchPageBody(
+    onClickBack: () -> Unit,
     onClickCity: (City) -> Unit,
 ) {
     Column(
@@ -73,6 +76,10 @@ private fun SearchPageBody(
             .padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        SearchTitle(
+            onClickBack = onClickBack,
+            modifier = Modifier.fillMaxWidth(),
+        )
         CityList(
             cities = City.entries,
             onClickCity = onClickCity,
@@ -86,6 +93,7 @@ private fun SearchPageBody(
 @Suppress("unused")
 private fun SearchPageBodyPreview() {
     SearchPageBody(
+        onClickBack = {},
         onClickCity = {},
     )
 }
