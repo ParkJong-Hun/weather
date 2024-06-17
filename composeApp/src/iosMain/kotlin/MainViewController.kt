@@ -1,5 +1,5 @@
 import androidx.compose.ui.window.ComposeUIViewController
-import infrastructure.ui.App
+import ui.App
 
 @Suppress("unused", "FunctionName")
 fun MainViewController() = ComposeUIViewController(

@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dev.icerock.moko.permissions.PermissionsController
-import infrastructure.ui.App
+import ui.App
 import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {

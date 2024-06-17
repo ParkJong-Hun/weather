@@ -1,7 +1,7 @@
 package domain.entity
 
-import infrastructure.ui.TemperatureColor
-import infrastructure.ui.WeatherColor
+import ui.TemperatureColor
+import ui.WeatherColor
 
 enum class TemperatureType {
     HOT,
