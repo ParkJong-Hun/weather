@@ -17,11 +17,11 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.curren
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map_24
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_nearby_24
 import compose_multiplatform_test_airfield.composeapp.generated.resources.map_icon_description
-import ui.Color
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import ui.Color
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable

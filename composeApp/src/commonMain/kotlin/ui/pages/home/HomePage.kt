@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material.CircularProgressIndicator
@@ -20,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import ui.components.template.CommonOkDialog
 import ui.di.koinViewModel
 import ui.navigation.AppPages
@@ -28,7 +30,6 @@ import ui.navigation.currentNavigator
 import ui.pages.home.components.organism.AdditionalInfoCard
 import ui.pages.home.components.organism.MainInfo
 import ui.pages.home.components.organism.Title
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 // TODO use SharedTransitionScope
 @Composable
@@ -89,7 +90,7 @@ private fun HomePageBody(
             title = state.title,
             onClickSetting = onClickSetting,
             onClickCurrentLocation = onClickCurrentLocation,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().heightIn(70.dp),
         )
         Spacer(
             modifier = Modifier.height(16.dp),

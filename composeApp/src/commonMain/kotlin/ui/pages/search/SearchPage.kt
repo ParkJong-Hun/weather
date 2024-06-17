@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material.CircularProgressIndicator
@@ -17,13 +18,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import domain.entity.City
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import ui.components.template.CommonOkDialog
 import ui.di.koinViewModel
 import ui.navigation.NavigateEvent
 import ui.navigation.currentNavigator
 import ui.pages.search.components.organism.CityList
 import ui.pages.search.components.organism.SearchTitle
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 // TODO use SharedTransitionScope
 @Composable
@@ -78,7 +79,7 @@ private fun SearchPageBody(
     ) {
         SearchTitle(
             onClickBack = onClickBack,
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.heightIn(70.dp).fillMaxWidth(),
         )
         CityList(
             cities = City.entries,
