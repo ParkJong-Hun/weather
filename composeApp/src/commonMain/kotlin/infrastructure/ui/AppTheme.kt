@@ -5,16 +5,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import infrastructure.ui.navigation.AppNavigator
 import infrastructure.ui.navigation.LocalNavigator
+import org.koin.compose.KoinContext
+import org.koin.compose.koinInject
 
 @Composable
 fun AppTheme(
     content: @Composable () -> Unit,
 ) {
-    CompositionLocalProvider(
-        LocalNavigator provides AppNavigator(),
-    ) {
-        MaterialTheme {
-            content()
+    KoinContext {
+        val appNavigatorInstance: AppNavigator = koinInject()
+        CompositionLocalProvider(
+            LocalNavigator provides appNavigatorInstance,
+        ) {
+            MaterialTheme {
+                content()
+            }
         }
     }
 }

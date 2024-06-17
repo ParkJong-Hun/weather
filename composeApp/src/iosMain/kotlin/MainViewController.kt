@@ -1,6 +1,5 @@
 import androidx.compose.ui.window.ComposeUIViewController
 import infrastructure.ui.App
-import infrastructure.ui.navigation.AppNavigator
 
 @Suppress("unused", "FunctionName")
 fun MainViewController() = ComposeUIViewController(
@@ -8,7 +7,7 @@ fun MainViewController() = ComposeUIViewController(
         KoinInitializer().start()
     }
 ) {
-    App(appNavigator = AppNavigator())
+    App()
 }
 
 // Add more view controller when needed
