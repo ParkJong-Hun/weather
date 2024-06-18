@@ -5,7 +5,7 @@ import infrastructure.adapter.gateway.repository.weather.WeatherRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    single<WeatherRepository> {
+    factory<WeatherRepository> {
         WeatherRepositoryImpl(
             openWeatherApi = get(),
             getLocaleUseCase = get(),

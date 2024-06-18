@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -28,22 +29,28 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sun
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_umbrella_96
 import domain.entity.City
 import domain.entity.WeatherType
-import domain.usecase.GetWeatherByCityUseCase
+import domain.logger.Log
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import org.koin.compose.koinInject
+import org.koin.core.parameter.parametersOf
+import ui.di.koinViewModel
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun CityCell(
     city: City,
     onClickCity: (City) -> Unit,
+    cityCellViewModel: CityCellViewModel = koinViewModel(city.hashCode().toString()) {
+        parametersOf(city)
+    },
     modifier: Modifier = Modifier,
 ) {
-    // remembered
-    val useCase: GetWeatherByCityUseCase = koinInject()
-    val state by useCase(city).collectAsState(null)
+    val state by cityCellViewModel.uiState.collectAsState()
+
+    LaunchedEffect(Unit) {
+        Log.d("CityCell: ${city.cityName}, ${cityCellViewModel.hashCode()}")
+    }
 
     Row(
         modifier = modifier.heightIn(64.dp).clickable { onClickCity(city) },
@@ -51,7 +58,7 @@ internal fun CityCell(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
-            text = state?.location ?: "...",
+            text = state.location,
             fontSize = 18.sp,
         )
         Spacer(modifier = Modifier.weight(1f))
@@ -59,14 +66,14 @@ internal fun CityCell(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = if (state != null) "${state?.weatherInfo?.temperature}${state?.weatherInfo?.temperatureSymbolType?.symbol}" else "...",
+                text = state.degrees,
                 fontSize = 16.sp,
             )
             Spacer(modifier = Modifier.width(8.dp))
-            if (state != null) {
+            if (state.weatherType != null) {
                 Icon(
                     painter = painterResource(
-                        when (state?.weatherInfo?.weatherType) {
+                        when (state.weatherType) {
                             WeatherType.SUNNY -> Res.drawable.ic_sunny_96
                             WeatherType.FEW_CLOUDS -> Res.drawable.ic_little_cloudy_96
                             WeatherType.SCATTERED_CLOUDS -> Res.drawable.ic_cloudy_96

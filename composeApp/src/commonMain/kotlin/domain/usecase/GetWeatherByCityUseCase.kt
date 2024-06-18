@@ -3,6 +3,7 @@ package domain.usecase
 import domain.adapter.repository.WeatherRepository
 import domain.entity.City
 import domain.entity.WeatherSnapshot
+import domain.logger.Log
 import kotlinx.coroutines.flow.Flow
 
 interface GetWeatherByCityUseCase {
@@ -12,6 +13,8 @@ interface GetWeatherByCityUseCase {
 class GetWeatherByCityUseCaseImpl(
     private val weatherRepository: WeatherRepository,
 ) : GetWeatherByCityUseCase {
-    override fun invoke(city: City): Flow<WeatherSnapshot> =
-        weatherRepository.getWeatherByCity(city)
+    override fun invoke(city: City): Flow<WeatherSnapshot> {
+        Log.d("City UseCase: ${city.cityName}")
+        return weatherRepository.getWeatherByCity(city)
+    }
 }

@@ -98,11 +98,11 @@ data class OpenWeatherResponseClouds(
 @Serializable
 data class OpenWeatherResponseSys(
     @SerialName("type")
-    val type: Int,
+    val type: Int? = null,
     @SerialName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerialName("country")
-    val country: String,
+    val country: String? = null,
     @SerialName("sunrise")
     val sunrise: Int,
     @SerialName("sunset")

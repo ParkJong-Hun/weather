@@ -31,69 +31,69 @@ import domain.usecase.UpdateSelectedCityUseCaseImpl
 import org.koin.dsl.module
 
 val useCaseModule = module {
-    single<GetCurrentLocationUseCase> {
+    factory<GetCurrentLocationUseCase> {
         GetCurrentLocationUseCaseImpl(
             locationService = get(),
         )
     }
-    single<GetWeatherByCurrentLocationUseCase> {
+    factory<GetWeatherByCurrentLocationUseCase> {
         GetWeatherByCurrentLocationUseCaseImpl(
             getCurrentLocationUseCase = get(),
             weatherRepository = get(),
         )
     }
-    single<GetRadiansUseCase> { GetRadiansUseCaseImpl() }
-    single<GetDistanceUseCase> {
+    factory<GetRadiansUseCase> { GetRadiansUseCaseImpl() }
+    factory<GetDistanceUseCase> {
         GetDistanceUseCaseImpl(
             getRadiansUseCase = get(),
         )
     }
-    single<FindNearestCityCoordinateUseCase> {
+    factory<FindNearestCityCoordinateUseCase> {
         FindNearestCityCoordinateUseCaseImpl(
             getDistanceUseCase = get(),
         )
     }
-    single<GetLocaleUseCase> {
+    factory<GetLocaleUseCase> {
         GetLocaleUseCaseImpl(
             localeService = get(),
         )
     }
-    single<GetWeatherByCoordinateUseCase> {
+    factory<GetWeatherByCoordinateUseCase> {
         GetWeatherByCoordinateUseCaseImpl(
             weatherRepository = get(),
         )
     }
-    single<GetWeatherByCityUseCase> {
+    factory<GetWeatherByCityUseCase> {
         GetWeatherByCityUseCaseImpl(
             weatherRepository = get(),
         )
     }
-    single<RequestPermissionUseCase> {
+    factory<RequestPermissionUseCase> {
         RequestPermissionUseCaseImpl(
             permissionService = get(),
         )
     }
-    single<CheckPermissionUseCase> {
+    factory<CheckPermissionUseCase> {
         CheckPermissionUseCaseImpl(
             permissionService = get(),
         )
     }
-    single<IsPermissionAvailableUseCase> {
+    factory<IsPermissionAvailableUseCase> {
         IsPermissionAvailableUseCaseImpl(
             permissionService = get(),
         )
     }
-    single<OpenAppSettingsUseCase> {
+    factory<OpenAppSettingsUseCase> {
         OpenAppSettingsUseCaseImpl(
             permissionService = get(),
         )
     }
-    single<GetSelectedCityUseCase> {
+    factory<GetSelectedCityUseCase> {
         GetSelectedCityUseCaseImpl(
             preferences = get(),
         )
     }
-    single<UpdateSelectedCityUseCase> {
+    factory<UpdateSelectedCityUseCase> {
         UpdateSelectedCityUseCaseImpl(
             preferences = get(),
         )
