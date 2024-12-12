@@ -21,12 +21,33 @@ mkdir -p "$MODULE_DIR/src/iosMain/kotlin"
 cat > "$MODULE_DIR/build.gradle.kts" <<EOL
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidLibrary)
 }
 
 kotlin {
+    androidTarget {
+        compilations.all {
+            kotlinOptions {
+                jvmTarget = "11"
+            }
+        }
+    }
+
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
+    sourceSets {
+    }
 }
 
-dependencies {
+android {
+    namespace = "co.kr.parkjonghun.composemultiplatformtestairfield.$MODULE_NAME"
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 }
 
 EOL
