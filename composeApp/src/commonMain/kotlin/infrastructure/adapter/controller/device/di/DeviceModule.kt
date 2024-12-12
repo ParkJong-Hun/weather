@@ -1,8 +1,8 @@
 package infrastructure.adapter.controller.device.di
 
-import domain.adapter.device.LocaleService
-import domain.adapter.device.LocationService
-import domain.adapter.device.PermissionService
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.device.LocaleService
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.device.LocationService
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.device.PermissionService
 import infrastructure.adapter.controller.device.LocaleServiceImpl
 import infrastructure.adapter.controller.device.LocationServiceImpl
 import infrastructure.adapter.controller.device.PermissionServiceImpl

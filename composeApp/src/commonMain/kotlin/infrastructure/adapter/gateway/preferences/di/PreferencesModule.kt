@@ -1,7 +1,7 @@
 package infrastructure.adapter.gateway.preferences.di
 
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.preferences.SelectedCityPreferences
 import com.russhwolf.settings.Settings
-import domain.adapter.preferences.SelectedCityPreferences
 import infrastructure.adapter.gateway.preferences.SelectedCityPreferencesImpl
 import org.koin.dsl.module
 

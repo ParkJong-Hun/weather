@@ -1,11 +1,11 @@
 package ui.utility
 
-import domain.entity.Permission
-import domain.entity.PermissionState
-import domain.usecase.CheckPermissionUseCase
-import domain.usecase.IsPermissionAvailableUseCase
-import domain.usecase.OpenAppSettingsUseCase
-import domain.usecase.RequestPermissionUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.CheckPermissionUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.IsPermissionAvailableUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.OpenAppSettingsUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.RequestPermissionUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Permission
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionState
 
 interface PermissionUtility {
     suspend fun requestPermission(permission: Permission)

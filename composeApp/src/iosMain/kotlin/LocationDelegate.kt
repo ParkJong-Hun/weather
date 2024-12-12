@@ -1,5 +1,5 @@
-import domain.entity.Coordinate
-import domain.entity.GetLocationFailedException
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.GetLocationFailedException
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.useContents
 import platform.CoreLocation.CLLocation

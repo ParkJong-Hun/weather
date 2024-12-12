@@ -3,10 +3,10 @@ package ui.pages.search.components.molecule
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import domain.entity.City
-import domain.entity.WeatherType
-import domain.logger.Log
-import domain.usecase.GetWeatherByCityUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.logger.Log
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetWeatherByCityUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.City
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherType
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

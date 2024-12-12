@@ -1,7 +1,7 @@
 package infrastructure.adapter.mapper
 
 import dev.icerock.moko.permissions.PermissionState
-import domain.entity.PermissionState as DomainPermissionState
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionState as DomainPermissionState
 
 object PermissionStateEntityMapper : EntityMapper<PermissionState, DomainPermissionState> {
 

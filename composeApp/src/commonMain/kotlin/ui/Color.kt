@@ -1,6 +1,7 @@
 package ui
 
 import androidx.compose.ui.graphics.Color
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.TemperatureType
 
 object TemperatureColor {
     val Hot = Color(0xFFc92913)
@@ -24,4 +25,16 @@ object WeatherColor {
 
 object Color {
     val Link = Color(0xFF0C43B7)
+}
+
+fun TemperatureType.toColor() = when (this) {
+    TemperatureType.HOT -> TemperatureColor.Hot
+    TemperatureType.WARM -> TemperatureColor.Warm
+    TemperatureType.PLEASANT -> TemperatureColor.Pleasant
+    TemperatureType.COOL -> TemperatureColor.Cool
+    TemperatureType.COLD -> TemperatureColor.Cold
+    TemperatureType.FREEZING -> TemperatureColor.Freezing
+    TemperatureType.CLOUDY -> WeatherColor.Cloudy
+    TemperatureType.RAINY -> WeatherColor.Rainy
+    TemperatureType.SNOWY -> WeatherColor.Snowy
 }

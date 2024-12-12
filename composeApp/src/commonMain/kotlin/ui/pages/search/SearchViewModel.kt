@@ -3,14 +3,14 @@ package ui.pages.search
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import domain.entity.City
-import domain.usecase.UpdateSelectedCityUseCase
-import ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.UpdateSelectedCityUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.City
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
 
 interface SearchViewModelInput {
     fun onClickCity(city: City)

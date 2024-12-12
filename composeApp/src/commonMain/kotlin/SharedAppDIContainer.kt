@@ -1,4 +1,5 @@
-import domain.di.domainModule
+
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.di.applicationModule
 import infrastructure.di.infrastructureModule
 import org.koin.dsl.module
 import ui.di.presentationModule
@@ -6,7 +7,7 @@ import ui.di.presentationModule
 val sharedAppDIContainer = module {
     includes(
         infrastructureModule,
-        domainModule,
+        applicationModule,
         presentationModule,
     )
 }

@@ -1,5 +1,5 @@
 package infrastructure.adapter.controller.device
 
-import domain.entity.Platform
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Platform
 
 expect fun getPlatform(): Platform

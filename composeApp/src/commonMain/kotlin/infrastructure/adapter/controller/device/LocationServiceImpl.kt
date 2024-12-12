@@ -1,7 +1,7 @@
 package infrastructure.adapter.controller.device
 
-import domain.entity.Coordinate
-import domain.adapter.device.LocationService
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.device.LocationService
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
 import kotlinx.coroutines.flow.Flow
 import infrastructure.adapter.controller.device.getCurrentLocation as getCurrentLocationFlow
 

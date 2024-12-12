@@ -1,6 +1,6 @@
 package infrastructure.adapter.mapper.util
 
-import domain.entity.Coordinate
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
 import infrastructure.api.model.OpenWeatherResponseCoord
 
 fun Coordinate.toFlattenString(): String {

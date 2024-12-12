@@ -19,6 +19,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherType
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_cloudy_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_little_cloudy_96
@@ -30,12 +31,11 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sto
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sunny_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_umbrella_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.weather_type_description
-import domain.entity.WeatherType
-import ui.WeatherColor
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import ui.WeatherColor
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable

@@ -1,16 +1,16 @@
 package infrastructure.adapter.controller.device
 
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.device.PermissionService
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Permission
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionDeniedAlwaysException
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionDeniedException
 import dev.icerock.moko.permissions.DeniedAlwaysException
 import dev.icerock.moko.permissions.DeniedException
 import dev.icerock.moko.permissions.PermissionsController
-import domain.adapter.device.PermissionService
-import domain.entity.Permission
-import domain.entity.PermissionDeniedAlwaysException
-import domain.entity.PermissionDeniedException
 import infrastructure.adapter.mapper.asDataModel
 import infrastructure.adapter.mapper.asEntity
-import domain.entity.Permission as DomainPermission
-import domain.entity.PermissionState as DomainPermissionState
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Permission as DomainPermission
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionState as DomainPermissionState
 
 class PermissionServiceImpl(
     private val permissionsController: PermissionsController

@@ -1,9 +1,9 @@
 package infrastructure.adapter.gateway.preferences
 
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.preferences.SelectedCityPreferences
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.City
 import com.russhwolf.settings.Settings
 import com.russhwolf.settings.set
-import domain.adapter.preferences.SelectedCityPreferences
-import domain.entity.City
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

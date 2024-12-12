@@ -1,12 +1,12 @@
 package infrastructure.di
 
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.logger.Log
 import de.jensklingenberg.ktorfit.Ktorfit
-import domain.logger.Log
 import infrastructure.adapter.controller.device.di.deviceModule
+import infrastructure.adapter.gateway.preferences.di.preferencesModule
 import infrastructure.adapter.gateway.repository.di.repositoryModule
 import infrastructure.api.di.KtorfitConfig
 import infrastructure.api.di.apiModule
-import infrastructure.adapter.gateway.preferences.di.preferencesModule
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel

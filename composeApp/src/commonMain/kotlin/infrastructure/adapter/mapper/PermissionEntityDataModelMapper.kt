@@ -1,7 +1,7 @@
 package infrastructure.adapter.mapper
 
 import dev.icerock.moko.permissions.Permission
-import domain.entity.Permission as DomainPermission
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Permission as DomainPermission
 
 object PermissionEntityDataModelMapper : EntityDataModelMapper<Permission, DomainPermission> {
     override fun toEntity(dataModel: Permission): DomainPermission {

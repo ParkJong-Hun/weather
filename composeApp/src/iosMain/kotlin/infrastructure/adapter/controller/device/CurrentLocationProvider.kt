@@ -1,7 +1,7 @@
 package infrastructure.adapter.controller.device
 
 import LocationDelegate
-import domain.entity.Coordinate
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow

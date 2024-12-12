@@ -1,13 +1,13 @@
 package infrastructure.adapter.gateway.repository.weather
 
-import domain.entity.City
-import domain.entity.Coordinate
-import domain.entity.Locale
-import domain.entity.WeatherSnapshot
-import domain.adapter.repository.WeatherRepository
-import domain.usecase.GetLocaleUseCase
-import infrastructure.api.OpenWeatherApi
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.adapter.repository.WeatherRepository
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLocaleUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.City
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Locale
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherSnapshot
 import infrastructure.adapter.mapper.asEntity
+import infrastructure.api.OpenWeatherApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow

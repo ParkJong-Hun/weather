@@ -1,9 +1,9 @@
 package infrastructure.adapter.mapper
 
-import domain.entity.TemperatureSymbolType
-import domain.entity.WeatherInfo
-import domain.entity.WeatherSnapshot
-import domain.entity.WeatherType
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.TemperatureSymbolType
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherInfo
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherSnapshot
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherType
 import infrastructure.adapter.mapper.util.toEntity
 import infrastructure.api.model.OpenWeatherResponse
 

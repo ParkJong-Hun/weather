@@ -1,6 +1,6 @@
 package infrastructure.adapter.controller.device
 
 import IOSPlatform
-import domain.entity.Platform
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Platform
 
 actual fun getPlatform(): Platform = IOSPlatform()

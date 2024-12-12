@@ -4,19 +4,15 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import domain.entity.City
-import domain.entity.Permission
-import domain.entity.PermissionState
-import domain.entity.TemperatureType
-import domain.entity.WeatherSnapshot
-import domain.entity.WeatherType
-import domain.entity.toColor
-import domain.usecase.GetSelectedCityUseCase
-import domain.usecase.GetWeatherByCityUseCase
-import domain.usecase.GetWeatherByCurrentLocationUseCase
-import ui.TemperatureColor
-import ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
-import ui.utility.PermissionUtility
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetSelectedCityUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetWeatherByCityUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetWeatherByCurrentLocationUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.City
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Permission
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionState
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.TemperatureType
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherSnapshot
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherType
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,6 +24,10 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import ui.TemperatureColor
+import ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
+import ui.toColor
+import ui.utility.PermissionUtility
 
 interface HomeViewModelInput {
     fun onClickCurrentLocation()

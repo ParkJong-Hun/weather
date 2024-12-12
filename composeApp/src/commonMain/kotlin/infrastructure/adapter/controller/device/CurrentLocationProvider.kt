@@ -1,6 +1,6 @@
 package infrastructure.adapter.controller.device
 
-import domain.entity.Coordinate
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
 import kotlinx.coroutines.flow.Flow
 
 expect fun getCurrentLocation(): Flow<Coordinate>

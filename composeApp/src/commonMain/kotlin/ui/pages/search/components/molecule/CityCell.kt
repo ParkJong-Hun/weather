@@ -17,6 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.logger.Log
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.City
+import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherType
 import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_cloudy_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_little_cloudy_96
@@ -27,9 +30,6 @@ import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sno
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_storm_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_sunny_96
 import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_umbrella_96
-import domain.entity.City
-import domain.entity.WeatherType
-import domain.logger.Log
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
