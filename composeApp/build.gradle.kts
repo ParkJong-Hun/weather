@@ -38,8 +38,10 @@ kotlin {
             implementation(libs.gms.location)
         }
         commonMain.dependencies {
-            implementation(project(":application"))
             implementation(project(":domain"))
+            implementation(project(":application"))
+            implementation(project(":feature:main"))
+            implementation(project(":ui-component"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
