@@ -1,6 +1,6 @@
 package co.kr.parkjonghun.composemultiplatformtestairfield
 
-import KoinInitializer
+import co.kr.parkjonghun.composemultiplatformairfield.shared.KoinInitializer
 import android.app.Application
 
 class MyApplication : Application() {

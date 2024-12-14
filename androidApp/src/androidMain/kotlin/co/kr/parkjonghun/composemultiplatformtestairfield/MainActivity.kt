@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import co.kr.parkjonghun.composemultiplatformairfield.shared.ui.App
 import dev.icerock.moko.permissions.PermissionsController
 import org.koin.android.ext.android.inject
-import ui.App
 
 class MainActivity : ComponentActivity() {
     private val permissionsController: PermissionsController by inject()
