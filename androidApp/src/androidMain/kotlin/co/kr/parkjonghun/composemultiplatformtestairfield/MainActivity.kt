@@ -5,8 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dev.icerock.moko.permissions.PermissionsController
-import ui.App
 import org.koin.android.ext.android.inject
+import ui.App
 
 class MainActivity : ComponentActivity() {
     private val permissionsController: PermissionsController by inject()

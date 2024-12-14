@@ -29,8 +29,9 @@ dependencyResolutionManagement {
     }
 }
 
-include(":composeApp")
+include(":lib")
 include(":domain")
 include(":application")
 include(":ui-component")
 include(":feature:main")
+include(":androidApp")

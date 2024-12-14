@@ -1,7 +1,7 @@
 package co.kr.parkjonghun.composemultiplatformtestairfield
 
-import android.app.Application
 import KoinInitializer
+import android.app.Application
 
 class MyApplication : Application() {
     override fun onCreate() {
