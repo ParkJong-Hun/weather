@@ -1,7 +1,7 @@
 package co.kr.parkjonghun.composemultiplatformairfield.shared
 
 import androidx.compose.ui.window.ComposeUIViewController
-import ui.App
+import co.kr.parkjonghun.composemultiplatformairfield.shared.ui.App
 
 @Suppress("unused", "FunctionName")
 fun MainViewController() = ComposeUIViewController(
