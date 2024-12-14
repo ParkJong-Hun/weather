@@ -12,16 +12,16 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextMotion
 import androidx.compose.ui.unit.sp
-import compose_multiplatform_test_airfield.composeapp.generated.resources.Res
-import compose_multiplatform_test_airfield.composeapp.generated.resources.current_location_icon_description
-import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_map_24
-import compose_multiplatform_test_airfield.composeapp.generated.resources.ic_nearby_24
-import compose_multiplatform_test_airfield.composeapp.generated.resources.map_icon_description
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.Color
+import compose_multiplatform_test_airfield.lib.generated.resources.Res
+import compose_multiplatform_test_airfield.lib.generated.resources.current_location_icon_description
+import compose_multiplatform_test_airfield.lib.generated.resources.ic_map_24
+import compose_multiplatform_test_airfield.lib.generated.resources.ic_nearby_24
+import compose_multiplatform_test_airfield.lib.generated.resources.map_icon_description
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.Color
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable

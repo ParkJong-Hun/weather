@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.Color
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun SearchTitle(
     onClickBack: () -> Unit,
