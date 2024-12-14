@@ -13,6 +13,8 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.domain.PermissionState
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.TemperatureType
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherSnapshot
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.WeatherType
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.TemperatureColor
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.WeatherColor
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,9 +26,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import ui.TemperatureColor
 import ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
-import ui.toColor
 import ui.utility.PermissionUtility
 
 interface HomeViewModelInput {
@@ -55,6 +55,20 @@ data class HomeUiState(
 ) {
     val weatherColor: Color
         get() = temperatureType?.toColor() ?: TemperatureColor.Pleasant
+
+    companion object {
+        fun TemperatureType.toColor() = when (this) {
+            TemperatureType.HOT -> TemperatureColor.Hot
+            TemperatureType.WARM -> TemperatureColor.Warm
+            TemperatureType.PLEASANT -> TemperatureColor.Pleasant
+            TemperatureType.COOL -> TemperatureColor.Cool
+            TemperatureType.COLD -> TemperatureColor.Cold
+            TemperatureType.FREEZING -> TemperatureColor.Freezing
+            TemperatureType.CLOUDY -> WeatherColor.Cloudy
+            TemperatureType.RAINY -> WeatherColor.Rainy
+            TemperatureType.SNOWY -> WeatherColor.Snowy
+        }
+    }
 }
 
 class HomeViewModel(

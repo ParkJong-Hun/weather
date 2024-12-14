@@ -35,7 +35,7 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import ui.WeatherColor
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.WeatherColor
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
