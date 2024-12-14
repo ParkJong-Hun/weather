@@ -38,10 +38,10 @@ kotlin {
             implementation(libs.gms.location)
         }
         commonMain.dependencies {
-            implementation(project(":domain"))
-            implementation(project(":application"))
-            implementation(project(":feature:main"))
-            implementation(project(":ui-component"))
+            implementation(project(":lib:domain"))
+            implementation(project(":lib:application"))
+            implementation(project(":lib:feature:main"))
+            implementation(project(":lib:ui-component"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -86,7 +86,7 @@ kotlin {
 }
 
 android {
-    namespace = "co.kr.parkjonghun.composemultiplatformtestairfield"
+    namespace = "co.kr.parkjonghun.composemultiplatformtestairfield.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

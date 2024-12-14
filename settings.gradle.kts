@@ -29,9 +29,9 @@ dependencyResolutionManagement {
     }
 }
 
-include(":lib")
-include(":domain")
-include(":application")
-include(":ui-component")
-include(":feature:main")
 include(":androidApp")
+include(":lib:shared")
+include(":lib:domain")
+include(":lib:application")
+include(":lib:ui-component")
+include(":lib:feature:main")

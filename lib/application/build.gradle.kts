@@ -18,7 +18,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":domain"))
+            implementation(project(":lib:domain"))
             implementation(libs.kotlin.stdlib)
             implementation(libs.kotlin.serialization)
             implementation(libs.kotlin.coroutines)

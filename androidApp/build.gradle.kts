@@ -25,7 +25,7 @@ kotlin {
             implementation(libs.gms.location)
         }
         commonMain.dependencies {
-            implementation(project(":lib"))
+            implementation(project(":lib:shared"))
         }
     }
 }
