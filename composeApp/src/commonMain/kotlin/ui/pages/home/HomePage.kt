@@ -21,8 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.template.CommonOkDialog
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import ui.components.template.CommonOkDialog
 import ui.di.koinViewModel
 import ui.navigation.AppPages
 import ui.navigation.NavigateEvent

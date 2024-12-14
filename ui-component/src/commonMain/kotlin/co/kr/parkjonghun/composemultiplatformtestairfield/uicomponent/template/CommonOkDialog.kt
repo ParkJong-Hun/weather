@@ -1,4 +1,4 @@
-package ui.components.template
+package co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.template
 
 import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
