@@ -54,6 +54,7 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.gms.location)
+            implementation(libs.moko.permissions)
         }
         commonMain.dependencies {
             implementation(project(":lib:shared"))
