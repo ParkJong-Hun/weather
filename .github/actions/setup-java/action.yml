@@ -4,7 +4,7 @@ description: "setup JDK and gradle caching"
 inputs:
   java-version:
     description: "Java version. Just for DRY inside of this file."
-    default: "11"
+    default: "17"
 
 runs:
   using: "composite"
