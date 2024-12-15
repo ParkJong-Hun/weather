@@ -1,0 +1,17 @@
+name: SwiftLint
+on:
+  pull_request:
+    paths:
+      - '.swiftlint.yml'
+      - '**/*.swift'
+jobs:
+  swift-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Danger
+        uses: 417-72KI/danger-swiftlint@v5.10
+        with:
+          dangerfile: iosApp/Dangerfile.swift
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
