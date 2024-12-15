@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.di.koinViewModel
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.AppPages
+import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.composablePush
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.currentNavigator
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.HomePage
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.search.SearchPage
@@ -42,7 +43,9 @@ private fun NavGraphBuilder.appNavigation() {
         HomePage()
     }
 
-    composable(AppPages.Search.route) {
+    composablePush(
+        AppPages.Search.route,
+    ) {
         SearchPage()
     }
 }
