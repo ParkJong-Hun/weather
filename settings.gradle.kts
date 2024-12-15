@@ -31,6 +31,7 @@ dependencyResolutionManagement {
 
 include(":androidApp")
 include(":lib:shared")
+include(":lib:infrastructure")
 include(":lib:domain")
 include(":lib:application")
 include(":lib:ui-component")
