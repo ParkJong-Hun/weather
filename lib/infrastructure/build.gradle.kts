@@ -85,7 +85,7 @@ buildkonfig {
         buildConfigField(
             type = FieldSpec.Type.STRING,
             name = "WEATHER_APP_ID",
-            value = gradleLocalProperties(rootDir).getProperty("api_key")
+            value = gradleLocalProperties(rootDir).getProperty("api_key") ?: ""
         )
     }
 }
