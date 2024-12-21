@@ -9,4 +9,5 @@ plugins {
     alias(libs.plugins.ktorfit) apply false
     alias(libs.plugins.kotlinSerialization) apply false
     alias(libs.plugins.buildKonfig) apply false
+    alias(libs.plugins.licensee) apply false
 }

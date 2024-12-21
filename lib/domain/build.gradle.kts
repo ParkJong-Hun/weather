@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -18,6 +19,9 @@ kotlin {
     iosSimulatorArm64()
 
     sourceSets {
+        commonMain.dependencies {
+            implementation(libs.ktor.serialization.json)
+        }
     }
 }
 

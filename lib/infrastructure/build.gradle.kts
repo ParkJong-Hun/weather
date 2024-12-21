@@ -3,6 +3,7 @@ import com.codingfeline.buildkonfig.compiler.FieldSpec
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
@@ -31,6 +32,7 @@ kotlin {
         commonMain.dependencies {
             implementation(project(":lib:domain"))
             implementation(project(":lib:application"))
+            implementation(compose.components.resources)
             implementation(libs.kotlin.stdlib)
             implementation(libs.kotlin.serialization)
             implementation(libs.kotlin.coroutines)

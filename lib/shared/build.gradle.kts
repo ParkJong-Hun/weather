@@ -1,13 +1,15 @@
+import com.android.build.gradle.internal.tasks.factory.dependsOn
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.licensee)
 }
 
 kotlin {
-    val iosTarget = listOf(iosX64(), iosArm64(), iosSimulatorArm64())
     androidTarget {
         compilations.all {
             kotlinOptions {
@@ -16,6 +18,7 @@ kotlin {
         }
     }
 
+    val iosTarget = listOf(iosX64(), iosArm64(), iosSimulatorArm64())
     iosTarget.forEach {
         it.binaries.framework {
             baseName = "ComposeApp"
@@ -72,3 +75,49 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
+licensee {
+    // Google
+    allowUrl("https://developer.android.com/studio/terms.html")
+
+    allow("Apache-2.0")
+    allow("MIT")
+
+    allowUrl("https://github.com/icerockdev/moko-permissions/blob/master/LICENSE.md") {
+        because("Apache-2.0, but self-hosted copy of the license")
+    }
+}
+
+private class Licensee(
+    val from: File,
+    val to: File,
+)
+
+tasks.register("fetchLicensee") {
+    val platformLicenseeMappings = setOf(
+        // Android
+        Licensee(
+            from = File("lib/shared/build/reports/licensee/androidRelease/artifacts.json"),
+            to = File("lib/infrastructure/src/commonMain/composeResources/files/licensee/android/artifacts.json")
+        ),
+        // iOS
+        Licensee(
+            from = File("lib/shared/build/reports/licensee/iosX64/artifacts.json"),
+            to = File("lib/infrastructure/src/commonMain/composeResources/files/licensee/iosX64/artifacts.json"),
+        ),
+        Licensee(
+            from = File("lib/shared/build/reports/licensee/iosArm64/artifacts.json"),
+            to = File("lib/infrastructure/src/commonMain/composeResources/files/licensee/iosArm64/artifacts.json"),
+        ),
+        Licensee(
+            from = File("lib/shared/build/reports/licensee/iosSimulatorArm64/artifacts.json"),
+            to = File("lib/infrastructure/src/commonMain/composeResources/files/licensee/iosSimulatorArm64/artifacts.json"),
+        ),
+    )
+
+    doFirst {
+        platformLicenseeMappings.forEach { item ->
+            item.from.copyTo(item.to, true)
+        }
+    }
+}.dependsOn(tasks.check)

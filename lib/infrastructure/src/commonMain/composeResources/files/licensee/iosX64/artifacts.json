@@ -1,0 +1,2302 @@
+[
+    {
+        "groupId": "androidx.annotation",
+        "artifactId": "annotation",
+        "version": "1.8.0-rc01",
+        "name": "Annotation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.annotation",
+        "artifactId": "annotation-iosx64",
+        "version": "1.8.0-rc01",
+        "name": "Annotation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.collection",
+        "artifactId": "collection",
+        "version": "1.4.0",
+        "name": "collections",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.collection",
+        "artifactId": "collection-iosx64",
+        "version": "1.4.0",
+        "name": "collections",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.lifecycle",
+        "artifactId": "lifecycle-common",
+        "version": "2.8.0-rc01",
+        "name": "Lifecycle-Common",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.lifecycle",
+        "artifactId": "lifecycle-common-iosx64",
+        "version": "2.8.0-rc01",
+        "name": "Lifecycle-Common",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.lifecycle",
+        "artifactId": "lifecycle-runtime",
+        "version": "2.8.0-rc01",
+        "name": "Lifecycle Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.lifecycle",
+        "artifactId": "lifecycle-runtime-iosx64",
+        "version": "2.8.0-rc01",
+        "name": "Lifecycle Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel",
+        "version": "2.8.0-rc01",
+        "name": "Lifecycle ViewModel",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel-iosx64",
+        "version": "2.8.0-rc01",
+        "name": "Lifecycle ViewModel",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://cs.android.com/androidx/platform/frameworks/support"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "kermit",
+        "version": "1.2.2",
+        "name": "Kermit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Kermit"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "kermit-iosx64",
+        "version": "1.2.2",
+        "name": "Kermit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Kermit"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-common",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-common-iosx64",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-concurrency",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-concurrency-iosx64",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-concurrent-collections",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-concurrent-collections-iosx64",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-strict",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "co.touchlab",
+        "artifactId": "stately-strict-iosx64",
+        "version": "2.0.6",
+        "name": "Stately",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/touchlab/Stately"
+        }
+    },
+    {
+        "groupId": "com.russhwolf",
+        "artifactId": "multiplatform-settings",
+        "version": "1.1.1",
+        "name": "Multiplatform Settings",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/russhwolf/multiplatform-settings"
+        }
+    },
+    {
+        "groupId": "com.russhwolf",
+        "artifactId": "multiplatform-settings-coroutines",
+        "version": "1.1.1",
+        "name": "Multiplatform Settings",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/russhwolf/multiplatform-settings"
+        }
+    },
+    {
+        "groupId": "com.russhwolf",
+        "artifactId": "multiplatform-settings-coroutines-iosx64",
+        "version": "1.1.1",
+        "name": "Multiplatform Settings",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/russhwolf/multiplatform-settings"
+        }
+    },
+    {
+        "groupId": "com.russhwolf",
+        "artifactId": "multiplatform-settings-iosx64",
+        "version": "1.1.1",
+        "name": "Multiplatform Settings",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/russhwolf/multiplatform-settings"
+        }
+    },
+    {
+        "groupId": "com.russhwolf",
+        "artifactId": "multiplatform-settings-no-arg",
+        "version": "1.1.1",
+        "name": "Multiplatform Settings",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/russhwolf/multiplatform-settings"
+        }
+    },
+    {
+        "groupId": "com.russhwolf",
+        "artifactId": "multiplatform-settings-no-arg-iosx64",
+        "version": "1.1.1",
+        "name": "Multiplatform Settings",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/russhwolf/multiplatform-settings"
+        }
+    },
+    {
+        "groupId": "com.squareup.okio",
+        "artifactId": "okio",
+        "version": "3.9.0",
+        "name": "okio",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/square/okio/"
+        }
+    },
+    {
+        "groupId": "com.squareup.okio",
+        "artifactId": "okio-iosx64",
+        "version": "3.9.0",
+        "name": "okio",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/square/okio/"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-annotations",
+        "version": "1.13.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-annotations-iosx64",
+        "version": "1.13.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-converters-call",
+        "version": "1.12.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-converters-call-iosx64",
+        "version": "1.12.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-converters-flow",
+        "version": "1.12.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-converters-flow-iosx64",
+        "version": "1.12.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-lib",
+        "version": "1.13.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-lib-iosx64",
+        "version": "1.13.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-lib-light",
+        "version": "1.13.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "de.jensklingenberg.ktorfit",
+        "artifactId": "ktorfit-lib-light-iosx64",
+        "version": "1.13.0",
+        "name": "Ktorfit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Foso/Ktorfit"
+        }
+    },
+    {
+        "groupId": "dev.icerock.moko",
+        "artifactId": "permissions",
+        "version": "0.18.0",
+        "name": "MOKO permissions",
+        "unknownLicenses": [
+            {
+                "name": "Apache-2.0",
+                "url": "https://github.com/icerockdev/moko-permissions/blob/master/LICENSE.md"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/icerockdev/moko-permissions"
+        }
+    },
+    {
+        "groupId": "dev.icerock.moko",
+        "artifactId": "permissions-compose",
+        "version": "0.18.0",
+        "name": "MOKO permissions",
+        "unknownLicenses": [
+            {
+                "name": "Apache-2.0",
+                "url": "https://github.com/icerockdev/moko-permissions/blob/master/LICENSE.md"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/icerockdev/moko-permissions"
+        }
+    },
+    {
+        "groupId": "dev.icerock.moko",
+        "artifactId": "permissions-compose-iosx64",
+        "version": "0.18.0",
+        "name": "MOKO permissions",
+        "unknownLicenses": [
+            {
+                "name": "Apache-2.0",
+                "url": "https://github.com/icerockdev/moko-permissions/blob/master/LICENSE.md"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/icerockdev/moko-permissions"
+        }
+    },
+    {
+        "groupId": "dev.icerock.moko",
+        "artifactId": "permissions-iosx64",
+        "version": "0.18.0",
+        "name": "MOKO permissions",
+        "unknownLicenses": [
+            {
+                "name": "Apache-2.0",
+                "url": "https://github.com/icerockdev/moko-permissions/blob/master/LICENSE.md"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/icerockdev/moko-permissions"
+        }
+    },
+    {
+        "groupId": "io.insert-koin",
+        "artifactId": "koin-compose",
+        "version": "1.2.0-alpha3",
+        "name": "Koin",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/InsertKoinIO/koin"
+        }
+    },
+    {
+        "groupId": "io.insert-koin",
+        "artifactId": "koin-compose-iosx64",
+        "version": "1.2.0-alpha3",
+        "name": "Koin",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/InsertKoinIO/koin"
+        }
+    },
+    {
+        "groupId": "io.insert-koin",
+        "artifactId": "koin-core",
+        "version": "3.6.0-wasm-alpha2",
+        "name": "Koin",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/InsertKoinIO/koin"
+        }
+    },
+    {
+        "groupId": "io.insert-koin",
+        "artifactId": "koin-core-iosx64",
+        "version": "3.6.0-wasm-alpha2",
+        "name": "Koin",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/InsertKoinIO/koin"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-content-negotiation",
+        "version": "2.3.11",
+        "name": "ktor-client-content-negotiation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-content-negotiation-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-client-content-negotiation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-core",
+        "version": "2.3.11",
+        "name": "ktor-client-core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-core-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-client-core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-darwin",
+        "version": "2.3.10",
+        "name": "ktor-client-darwin",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-darwin-iosx64",
+        "version": "2.3.10",
+        "name": "ktor-client-darwin",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-ios",
+        "version": "2.3.10",
+        "name": "ktor-client-ios",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-ios-iosx64",
+        "version": "2.3.10",
+        "name": "ktor-client-ios",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-logging",
+        "version": "2.3.11",
+        "name": "ktor-client-logging",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-client-logging-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-client-logging",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-events",
+        "version": "2.3.11",
+        "name": "ktor-events",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-events-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-events",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-http",
+        "version": "2.3.11",
+        "name": "ktor-http",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-http-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-http",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-io",
+        "version": "2.3.11",
+        "name": "ktor-io",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-io-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-io",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-serialization",
+        "version": "2.3.11",
+        "name": "ktor-serialization",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-serialization-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-serialization",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-serialization-kotlinx",
+        "version": "2.3.11",
+        "name": "ktor-serialization-kotlinx",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-serialization-kotlinx-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-serialization-kotlinx",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-serialization-kotlinx-json",
+        "version": "2.3.11",
+        "name": "ktor-serialization-kotlinx-json",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-serialization-kotlinx-json-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-serialization-kotlinx-json",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-utils",
+        "version": "2.3.11",
+        "name": "ktor-utils",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-utils-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-utils",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-websocket-serialization",
+        "version": "2.3.11",
+        "name": "ktor-websocket-serialization",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-websocket-serialization-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-websocket-serialization",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-websockets",
+        "version": "2.3.11",
+        "name": "ktor-websockets",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "io.ktor",
+        "artifactId": "ktor-websockets-iosx64",
+        "version": "2.3.11",
+        "name": "ktor-websockets",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/ktorio/ktor.git"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.core",
+        "artifactId": "core-bundle",
+        "version": "1.0.0-beta02",
+        "name": "androidx.core:core-bundle",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.core",
+        "artifactId": "core-bundle-iosx64",
+        "version": "1.0.0-beta02",
+        "name": "androidx.core:core-bundle",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-common",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle-Common",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-runtime",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-runtime-compose",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle Runtime Compose",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-runtime-compose-uikitx64",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle Runtime Compose",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle ViewModel",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel-compose",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle ViewModel Compose",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel-compose-uikitx64",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle ViewModel Compose",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel-savedstate",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle ViewModel with SavedState",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.lifecycle",
+        "artifactId": "lifecycle-viewmodel-savedstate-iosx64",
+        "version": "2.8.0-beta02",
+        "name": "Lifecycle ViewModel with SavedState",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.navigation",
+        "artifactId": "navigation-common",
+        "version": "2.7.0-alpha03",
+        "name": "Navigation Common",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.navigation",
+        "artifactId": "navigation-common-iosx64",
+        "version": "2.7.0-alpha03",
+        "name": "Navigation Common",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.navigation",
+        "artifactId": "navigation-compose",
+        "version": "2.7.0-alpha03",
+        "name": "Compose Navigation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.navigation",
+        "artifactId": "navigation-compose-uikitx64",
+        "version": "2.7.0-alpha03",
+        "name": "Compose Navigation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.navigation",
+        "artifactId": "navigation-runtime",
+        "version": "2.7.0-alpha03",
+        "name": "Navigation Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.navigation",
+        "artifactId": "navigation-runtime-iosx64",
+        "version": "2.7.0-alpha03",
+        "name": "Navigation Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.savedstate",
+        "artifactId": "savedstate",
+        "version": "1.2.0-beta02",
+        "name": "Saved State",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.androidx.savedstate",
+        "artifactId": "savedstate-iosx64",
+        "version": "1.2.0-beta02",
+        "name": "Saved State",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.animation",
+        "artifactId": "animation",
+        "version": "1.6.10-beta03",
+        "name": "Compose Animation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.animation",
+        "artifactId": "animation-core",
+        "version": "1.6.10-beta03",
+        "name": "Compose Animation Core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.animation",
+        "artifactId": "animation-core-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Animation Core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.animation",
+        "artifactId": "animation-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Animation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.annotation-internal",
+        "artifactId": "annotation",
+        "version": "1.6.10-beta03",
+        "name": "Annotation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.collection-internal",
+        "artifactId": "collection",
+        "version": "1.6.10-beta03",
+        "name": "collections",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.components",
+        "artifactId": "components-resources",
+        "version": "1.6.2",
+        "name": "Resources for Compose JB",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.components",
+        "artifactId": "components-resources-iosX64",
+        "version": "1.6.2",
+        "name": "Resources for Compose JB",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.components",
+        "artifactId": "components-ui-tooling-preview",
+        "version": "1.6.2",
+        "name": "Experimental Compose Multiplatform tooling library API. This library provides the API required to declare @Preview composables in user apps.",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.components",
+        "artifactId": "components-ui-tooling-preview-iosX64",
+        "version": "1.6.2",
+        "name": "Experimental Compose Multiplatform tooling library API. This library provides the API required to declare @Preview composables in user apps.",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.foundation",
+        "artifactId": "foundation",
+        "version": "1.6.2",
+        "name": "Compose Foundation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.foundation",
+        "artifactId": "foundation-layout",
+        "version": "1.6.10-beta03",
+        "name": "Compose Layouts",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.foundation",
+        "artifactId": "foundation-layout-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Layouts",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.foundation",
+        "artifactId": "foundation-uikitx64",
+        "version": "1.6.2",
+        "name": "Compose Foundation",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.material",
+        "artifactId": "material",
+        "version": "1.6.2",
+        "name": "Compose Material Components",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.material",
+        "artifactId": "material-icons-core",
+        "version": "1.6.2",
+        "name": "Compose Material Icons Core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.material",
+        "artifactId": "material-icons-core-uikitx64",
+        "version": "1.6.2",
+        "name": "Compose Material Icons Core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.material",
+        "artifactId": "material-ripple",
+        "version": "1.6.2",
+        "name": "Compose Material Ripple",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.material",
+        "artifactId": "material-ripple-uikitx64",
+        "version": "1.6.2",
+        "name": "Compose Material Ripple",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.material",
+        "artifactId": "material-uikitx64",
+        "version": "1.6.2",
+        "name": "Compose Material Components",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.runtime",
+        "artifactId": "runtime",
+        "version": "1.6.10-beta03",
+        "name": "Compose Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.runtime",
+        "artifactId": "runtime-saveable",
+        "version": "1.6.10-beta03",
+        "name": "Compose Saveable",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.runtime",
+        "artifactId": "runtime-saveable-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Saveable",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.runtime",
+        "artifactId": "runtime-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Runtime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui",
+        "version": "1.6.10-beta03",
+        "name": "Compose UI primitives",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-geometry",
+        "version": "1.6.10-beta03",
+        "name": "Compose Geometry",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-geometry-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Geometry",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-graphics",
+        "version": "1.6.10-beta03",
+        "name": "Compose Graphics",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-graphics-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Graphics",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-text",
+        "version": "1.6.10-beta03",
+        "name": "Compose UI Text",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-text-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose UI Text",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-uikit",
+        "version": "1.6.10-beta03",
+        "name": "Compose UIKit Utils",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-uikit-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose UIKit Utils",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose UI primitives",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-unit",
+        "version": "1.6.10-beta03",
+        "name": "Compose Unit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-unit-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Unit",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-util",
+        "version": "1.6.10-beta03",
+        "name": "Compose Util",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.compose.ui",
+        "artifactId": "ui-util-uikitx64",
+        "version": "1.6.10-beta03",
+        "name": "Compose Util",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/compose-jb"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlin",
+        "artifactId": "kotlin-stdlib",
+        "version": "1.9.23",
+        "name": "Kotlin Stdlib",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/JetBrains/kotlin"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "atomicfu",
+        "version": "0.23.2",
+        "name": "atomicfu",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.atomicfu"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "atomicfu-iosx64",
+        "version": "0.23.2",
+        "name": "atomicfu",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.atomicfu"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-coroutines-core",
+        "version": "1.8.1",
+        "name": "kotlinx-coroutines-core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.coroutines"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-coroutines-core-iosx64",
+        "version": "1.8.1",
+        "name": "kotlinx-coroutines-core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.coroutines"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-datetime",
+        "version": "0.6.0-RC.2",
+        "name": "kotlinx-datetime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx-datetime"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-datetime-iosx64",
+        "version": "0.6.0-RC.2",
+        "name": "kotlinx-datetime",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx-datetime"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-serialization-core",
+        "version": "1.6.3",
+        "name": "kotlinx-serialization-core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.serialization"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-serialization-core-iosx64",
+        "version": "1.6.3",
+        "name": "kotlinx-serialization-core",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.serialization"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-serialization-json",
+        "version": "1.6.3",
+        "name": "kotlinx-serialization-json",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.serialization"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.kotlinx",
+        "artifactId": "kotlinx-serialization-json-iosx64",
+        "version": "1.6.3",
+        "name": "kotlinx-serialization-json",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://github.com/Kotlin/kotlinx.serialization"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.skiko",
+        "artifactId": "skiko",
+        "version": "0.8.4",
+        "name": "Skiko MPP",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://www.github.com/JetBrains/skiko"
+        }
+    },
+    {
+        "groupId": "org.jetbrains.skiko",
+        "artifactId": "skiko-iosx64",
+        "version": "0.8.4",
+        "name": "Skiko IosX64",
+        "spdxLicenses": [
+            {
+                "identifier": "Apache-2.0",
+                "name": "Apache License 2.0",
+                "url": "https://www.apache.org/licenses/LICENSE-2.0"
+            }
+        ],
+        "scm": {
+            "url": "https://www.github.com/JetBrains/skiko"
+        }
+    }
+]
