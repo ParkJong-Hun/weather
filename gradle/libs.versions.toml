@@ -12,7 +12,7 @@ ktor = "2.3.11"
 build-konfig = "0.15.1"
 
 compose = "1.6.7"
-compose-navigation = "2.7.0-alpha03"
+compose-navigation = "2.7.0-alpha07"
 kotlin-serialization = "1.6.3"
 kotlin-coroutines = "1.8.1"
 kotlin-datetime = "0.6.0-RC.2"
