@@ -25,7 +25,7 @@ stately = "2.0.6"
 moko-permissions = "0.18.0"
 multiplatform-settings = "1.1.1"
 
-androidx-activityCompose = "1.9.0"
+androidx-activityCompose = "1.9.3"
 androidx-appcompat = "1.6.1"
 androidx-constraintlayout = "2.1.4"
 androidx-core-ktx = "1.13.1"
