@@ -9,7 +9,7 @@ agp = "8.2.2"
 compose-plugin = "1.6.2"
 ksp = "1.9.23-1.0.20"
 ktor = "2.3.11"
-build-konfig = "0.15.1"
+build-konfig = "0.15.2"
 
 compose = "1.6.7"
 compose-navigation = "2.7.0-alpha03"
