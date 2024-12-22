@@ -10,6 +10,6 @@ import org.koin.dsl.module
 
 val deviceModule = module {
     single<PermissionService> { PermissionServiceImpl(get()) }
-    single<LocationService> { LocationServiceImpl(get()) }
+    single<LocationService> { LocationServiceImpl() }
     single<LocaleService> { LocaleServiceImpl() }
 }
