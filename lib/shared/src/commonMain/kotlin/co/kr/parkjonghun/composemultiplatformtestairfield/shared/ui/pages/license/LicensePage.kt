@@ -3,6 +3,10 @@ package co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.licen
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -13,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraphBuilder
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLibraryLicensesUseCase
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.LibraryLicense
@@ -46,9 +51,15 @@ fun LicensePageBody(
     libraryLicenses: List<LibraryLicense>,
     onClickBack: () -> Unit,
 ) {
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .safeDrawingPadding()
+            .padding(20.dp),
+    ) {
         LicenseTitle(
             onClickBack = onClickBack,
+            modifier = Modifier.heightIn(70.dp).fillMaxWidth(),
         )
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
@@ -56,7 +67,12 @@ fun LicensePageBody(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             items(libraryLicenses) { libraryLicense ->
-                LibraryLicenseCard(libraryLicense)
+                LibraryLicenseCard(
+                    libraryLicense = libraryLicense,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                )
             }
         }
     }

@@ -11,6 +11,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextMotion
 import androidx.compose.ui.unit.sp
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.Color
 
 @Composable
 internal fun Footer(
@@ -18,13 +19,14 @@ internal fun Footer(
     modifier: Modifier = Modifier,
 ) {
     Row(
-        modifier = Modifier,
+        modifier = modifier,
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
             // TODO: i18n
             text = "License",
+            color = Color.Link,
             style = TextStyle(
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 14.sp,

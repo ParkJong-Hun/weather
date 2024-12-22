@@ -29,7 +29,7 @@ fun LibraryLicenseCard(
         remember { "${libraryLicense.groupId}:${libraryLicense.artifactId}:${libraryLicense.version}" }
 
     Card(
-        modifier = modifier.defaultMinSize(48.dp).padding(20.dp),
+        modifier = modifier.defaultMinSize(48.dp),
     ) {
         Column(
             modifier = Modifier.padding(12.dp),

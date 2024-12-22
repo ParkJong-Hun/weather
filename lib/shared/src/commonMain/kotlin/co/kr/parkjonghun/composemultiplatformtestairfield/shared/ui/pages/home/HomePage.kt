@@ -72,54 +72,62 @@ private fun HomePageBody(
     onClickCurrentLocation: () -> Unit,
     onClickLicense: () -> Unit,
 ) {
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                brush = Brush.linearGradient(
-                    colors = listOf(
-                        state.weatherColor.copy(alpha = 0.1f),
-                        state.weatherColor.copy(alpha = 0.4f),
-                    ),
-                    tileMode = TileMode.Clamp,
-                )
-            )
-            .safeDrawingPadding()
-            .padding(20.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        // TODO : to AppBar
-        Title(
-            title = state.title,
-            onClickSetting = onClickSetting,
-            onClickCurrentLocation = onClickCurrentLocation,
-            modifier = Modifier.fillMaxWidth().heightIn(70.dp),
-        )
-        Spacer(
-            modifier = Modifier.height(16.dp),
-        )
-        if (state.temperature != null && state.description != null && state.weatherType != null) {
-            MainInfo(
-                baseColor = state.weatherColor,
-                weatherType = state.weatherType,
-                temperature = state.temperature,
-                description = state.description,
-                modifier = Modifier.fillMaxWidth(),
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    brush = Brush.linearGradient(
+                        colors = listOf(
+                            state.weatherColor.copy(alpha = 0.1f),
+                            state.weatherColor.copy(alpha = 0.4f),
+                        ),
+                        tileMode = TileMode.Clamp,
+                    )
+                )
+                .safeDrawingPadding()
+                .padding(20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            // TODO : to AppBar
+            Title(
+                title = state.title,
+                onClickSetting = onClickSetting,
+                onClickCurrentLocation = onClickCurrentLocation,
+                modifier = Modifier.fillMaxWidth().heightIn(70.dp),
             )
             Spacer(
                 modifier = Modifier.height(16.dp),
             )
-        }
-        if (state.humidity != null || state.rainfall != null) {
-            AdditionalInfoCard(
-                humidity = state.humidity,
-                rainfall = state.rainfall,
-                modifier = Modifier.fillMaxWidth(),
-            )
+            if (state.temperature != null && state.description != null && state.weatherType != null) {
+                MainInfo(
+                    baseColor = state.weatherColor,
+                    weatherType = state.weatherType,
+                    temperature = state.temperature,
+                    description = state.description,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(
+                    modifier = Modifier.height(16.dp),
+                )
+            }
+            if (state.humidity != null || state.rainfall != null) {
+                AdditionalInfoCard(
+                    humidity = state.humidity,
+                    rainfall = state.rainfall,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
         }
         Footer(
             onClickLicense = onClickLicense,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+                .align(Alignment.BottomEnd)
         )
     }
 }

@@ -4,8 +4,13 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextMotion
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.sp
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.Color
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -14,6 +19,8 @@ fun Link(
     text: String,
     url: String,
     annotation: String = url,
+    fontSize: TextUnit = 14.sp,
+    color: androidx.compose.ui.graphics.Color = Color.Link,
 ) {
     val uriHandler = LocalUriHandler.current
 
@@ -35,6 +42,12 @@ fun Link(
                 end = text.length,
             )
         },
+        style = TextStyle(
+            color = color,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = fontSize,
+            textMotion = TextMotion.Animated,
+        ),
         onClick = {
             uriHandler.openUri(url)
         },
