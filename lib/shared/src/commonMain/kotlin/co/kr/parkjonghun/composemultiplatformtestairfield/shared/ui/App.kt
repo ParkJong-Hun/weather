@@ -13,6 +13,7 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.A
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.composablePush
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.currentNavigator
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.HomePage
+import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.LicensePage
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.search.SearchPage
 
 @Composable
@@ -47,5 +48,11 @@ private fun NavGraphBuilder.appNavigation() {
         AppPages.Search.route,
     ) {
         SearchPage()
+    }
+
+    composablePush(
+        AppPages.License.route,
+    ) {
+        LicensePage()
     }
 }

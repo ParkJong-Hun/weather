@@ -8,6 +8,8 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.Ge
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetCurrentLocationUseCaseImpl
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetDistanceUseCase
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetDistanceUseCaseImpl
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLibraryLicensesUseCase
+import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLibraryLicensesUseCaseImpl
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLocaleUseCase
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLocaleUseCaseImpl
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetRadiansUseCase
@@ -96,6 +98,11 @@ internal val useCaseModule = module {
     factory<UpdateSelectedCityUseCase> {
         UpdateSelectedCityUseCaseImpl(
             preferences = get(),
+        )
+    }
+    factory<GetLibraryLicensesUseCase> {
+        GetLibraryLicensesUseCaseImpl(
+            libraryLicenseService = get(),
         )
     }
 }

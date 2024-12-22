@@ -1,4 +1,4 @@
-package co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components
+package co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components.organism
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -20,7 +20,7 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.atom.Link
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun LibraryLicense(
+fun LibraryLicenseCard(
     libraryLicense: LibraryLicense,
     modifier: Modifier = Modifier,
 ) {

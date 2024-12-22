@@ -26,6 +26,7 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.A
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.NavigateEvent
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.currentNavigator
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.components.organism.AdditionalInfoCard
+import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.components.organism.Footer
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.components.organism.MainInfo
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.components.organism.Title
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicomponent.template.CommonOkDialog
@@ -47,6 +48,7 @@ fun NavGraphBuilder.HomePage(
             state = state,
             onClickSetting = { appNavigator.emitEvent(NavigateEvent.NavigateTo(AppPages.Search)) },
             onClickCurrentLocation = homeViewModel::onClickCurrentLocation,
+            onClickLicense = { appNavigator.emitEvent(NavigateEvent.NavigateTo(AppPages.License)) }
         )
         if (state.isLoading) {
             CircularProgressIndicator(
@@ -68,6 +70,7 @@ private fun HomePageBody(
     state: HomeUiState,
     onClickSetting: () -> Unit,
     onClickCurrentLocation: () -> Unit,
+    onClickLicense: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -114,6 +117,10 @@ private fun HomePageBody(
                 modifier = Modifier.fillMaxWidth(),
             )
         }
+        Footer(
+            onClickLicense = onClickLicense,
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 
@@ -125,5 +132,6 @@ private fun HomePageBodyPreview() {
         state = HomeUiState(),
         onClickSetting = {},
         onClickCurrentLocation = {},
+        onClickLicense = {},
     )
 }

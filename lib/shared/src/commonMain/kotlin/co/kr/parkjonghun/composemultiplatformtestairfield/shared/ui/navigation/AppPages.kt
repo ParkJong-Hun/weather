@@ -10,4 +10,8 @@ sealed interface AppPages {
     data object Search : AppPages {
         override val route: String = "weather/search"
     }
+
+    data object License : AppPages {
+        override val route: String = "weather/license"
+    }
 }
