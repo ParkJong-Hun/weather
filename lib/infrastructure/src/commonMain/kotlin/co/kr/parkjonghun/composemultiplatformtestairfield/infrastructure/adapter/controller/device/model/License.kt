@@ -1,4 +1,4 @@
-package co.kr.parkjonghun.composemultiplatformtestairfield.domain
+package co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.adapter.controller.device.model
 
 import kotlinx.serialization.Serializable
 

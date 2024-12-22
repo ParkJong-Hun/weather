@@ -1,3 +1,5 @@
 package co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.adapter.controller.device
 
-expect suspend fun getLicenseResource(): ByteArray
+import co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.adapter.controller.device.model.License
+
+expect suspend fun getLicenseResource(): List<License>
