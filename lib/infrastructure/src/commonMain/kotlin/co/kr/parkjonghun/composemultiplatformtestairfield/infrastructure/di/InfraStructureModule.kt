@@ -4,7 +4,7 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.adapter
 import co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.api.di.KtorfitConfig
 import co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.api.di.apiModule
 import co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.repository.di.repositoryModule
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.infrastructure.adapter.controller.device.di.deviceModule
+import co.kr.parkjonghun.composemultiplatformtestairfield.infrastructure.adapter.controller.device.di.deviceModule
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.logger.Log
 import de.jensklingenberg.ktorfit.Ktorfit
 import io.ktor.client.HttpClient
