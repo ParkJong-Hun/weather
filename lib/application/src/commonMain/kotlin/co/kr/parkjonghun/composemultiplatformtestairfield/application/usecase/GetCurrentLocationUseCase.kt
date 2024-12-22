@@ -11,5 +11,5 @@ interface GetCurrentLocationUseCase {
 class GetCurrentLocationUseCaseImpl(
     private val locationService: LocationService,
 ) : GetCurrentLocationUseCase {
-    override suspend operator fun invoke() = locationService.getCurrentLocation()
+    override suspend operator fun invoke() = locationService.getCoordinate()
 }

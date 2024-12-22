@@ -4,5 +4,5 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.domain.Coordinate
 import kotlinx.coroutines.flow.Flow
 
 interface LocationService {
-    suspend fun getCurrentLocation(): Flow<Coordinate>
+    suspend fun getCoordinate(): Flow<Coordinate>
 }
