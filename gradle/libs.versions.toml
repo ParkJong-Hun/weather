@@ -22,7 +22,7 @@ koin = "3.6.0-wasm-alpha2"
 koin-compose = "1.2.0-alpha3"
 okio = "3.9.0"
 kermit = "1.2.3"
-stately = "2.0.6"
+stately = "2.1.0"
 moko-permissions = "0.18.1"
 multiplatform-settings = "1.1.1"
 
