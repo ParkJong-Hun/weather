@@ -3,12 +3,12 @@ android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
 
-kotlin = "1.9.23"
-ktorfit = "2.2.0-1.0.29"
-agp = "8.2.2"
-compose-plugin = "1.7.3"
-ksp = "1.9.23-1.0.20"
-ktor = "2.3.13"
+kotlin = "2.1.0"
+ktorfit = "2.1.0-1.0.29"
+agp = "8.7.3"
+compose-multiplatform-plugin = "1.7.3"
+ksp = "2.1.0-1.0.29"
+ktor = "3.0.3"
 build-konfig = "0.15.1"
 licensee = "1.12.0"
 
@@ -19,9 +19,9 @@ kotlin-coroutines = "1.8.1"
 kotlin-datetime = "0.6.1"
 viewmodel = "2.8.7"
 koin = "4.0.1"
-koin-compose = "1.2.0-alpha3"
+koin-compose = "4.0.1"
 okio = "3.9.1"
-kermit = "1.2.3"
+kermit = "2.0.5"
 stately = "2.1.0"
 moko-permissions = "0.18.1"
 multiplatform-settings = "1.1.1"
@@ -39,7 +39,6 @@ gms = "21.3.0"
 [libraries]
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlin-datetime" }
@@ -83,7 +82,8 @@ gms-location = { group = "com.google.android.gms", name = "play-services-locatio
 [plugins]
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+jetbrainsComposeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform-plugin" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "build-konfig" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
