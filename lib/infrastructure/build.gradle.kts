@@ -3,7 +3,8 @@ import com.codingfeline.buildkonfig.compiler.FieldSpec
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.composeCompiler)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
@@ -58,7 +59,6 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
-            implementation(libs.kotlin.test.junit)
             implementation(libs.moko.permissions.test)
         }
     }
@@ -87,7 +87,7 @@ buildkonfig {
         buildConfigField(
             type = FieldSpec.Type.STRING,
             name = "WEATHER_APP_ID",
-            value = gradleLocalProperties(rootDir).getProperty("api_key") ?: ""
+            value = gradleLocalProperties(rootDir, providers).getProperty("api_key") ?: ""
         )
     }
 }
