@@ -2,7 +2,8 @@ import com.android.build.gradle.internal.tasks.factory.dependsOn
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.androidLibrary)
@@ -62,7 +63,6 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
-            implementation(libs.kotlin.test.junit)
         }
     }
 }
