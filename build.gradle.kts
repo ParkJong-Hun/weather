@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.kotlinSerialization) apply false
     alias(libs.plugins.buildKonfig) apply false
     alias(libs.plugins.licensee) apply false
+    alias(libs.plugins.roborazzi) apply false
 }
 
 tasks.register("clean") {

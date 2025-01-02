@@ -25,6 +25,8 @@ kermit = "2.0.5"
 stately = "2.1.0"
 moko-permissions = "0.18.1"
 multiplatform-settings = "1.3.0"
+robolectric = "4.14"
+roborazzi = "1.38.0"
 
 androidx-activityCompose = "1.9.3"
 androidx-appcompat = "1.7.0"
@@ -69,6 +71,8 @@ moko-permissions = { module = "dev.icerock.moko:permissions", version.ref = "mok
 moko-permissions-compose = { module = "dev.icerock.moko:permissions-compose", version.ref = "moko-permissions" }
 moko-permissions-test = { module = "dev.icerock.moko:permissions-test", version.ref = "moko-permissions" }
 
+roborazzi-ios = { module = "io.github.takahirom.roborazzi:roborazzi-compose-ios", version.ref = "roborazzi" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
@@ -78,6 +82,11 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 gms-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "gms" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+roborazzi = { module = "io.github.takahirom.roborazzi:roborazzi", version.ref = "roborazzi" }
+roborazzi-compose = { module = "io.github.takahirom.roborazzi:roborazzi-compose", version.ref = "roborazzi" }
+roborazzi-rule = { module = "io.github.takahirom.roborazzi:roborazzi-junit-rule", version.ref = "roborazzi" }
+roborazzi-preview-scanner-support = { module = "io.github.takahirom.roborazzi:roborazzi-compose-preview-scanner-support", version.ref = "roborazzi" }
 
 [plugins]
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -87,6 +96,7 @@ composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "k
 ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "build-konfig" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
+roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
