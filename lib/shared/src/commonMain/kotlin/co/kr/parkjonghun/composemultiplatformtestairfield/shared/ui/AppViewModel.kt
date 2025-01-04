@@ -3,8 +3,8 @@ package co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.AppPages
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.extension.DEFAULT_STOP_TIME_OUT_MILLIS
+import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.extension.DEFAULT_STOP_TIME_OUT_MILLIS
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppPages
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

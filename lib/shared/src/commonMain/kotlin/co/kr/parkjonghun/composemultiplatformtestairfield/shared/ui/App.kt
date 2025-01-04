@@ -8,13 +8,13 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.di.koinViewModel
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.AppPages
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.composablePush
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.currentNavigator
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.home.HomePage
+import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.home.HomePage
+import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.search.SearchPage
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.LicensePage
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.search.SearchPage
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.di.koinViewModel
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppPages
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.composablePush
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.currentNavigator
 
 @Composable
 fun App() {

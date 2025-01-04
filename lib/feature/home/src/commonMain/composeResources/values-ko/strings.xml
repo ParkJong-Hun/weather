@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rainfall">강우량</string>
+    <string name="humidity">습도</string>
+    <string name="description_permission_denied">이 기능은 위치정보 취득이 허가되지 않아서 사용할 수 없습니다.\n사용하기 위해서는 장치의 설정에서 위치정보 권한을 허가해주십시오.</string>
+    <string name="map_icon_description">특정 도시를 알아보기</string>
+    <string name="current_location_icon_description">현재 위치를 알아보기</string>
+    <string name="weather_type_description">날씨종류</string>
+</resources>

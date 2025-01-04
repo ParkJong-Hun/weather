@@ -22,10 +22,10 @@ import androidx.navigation.NavGraphBuilder
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLibraryLicensesUseCase
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.LibraryLicense
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.LicenseInfo
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.NavigateEvent
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.navigation.currentNavigator
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components.organism.LibraryLicenseCard
 import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components.organism.LicenseTitle
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.NavigateEvent
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.currentNavigator
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.koinInject
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rainfall">降雨量</string>
+    <string name="humidity">湿度</string>
+    <string name="description_permission_denied">この機能は位置情報の取得が許可されていないので使えません。\n使うためには端末の設定から位置情報の権限を許可してください。</string>
+    <string name="map_icon_description">特定都市を調べる</string>
+    <string name="current_location_icon_description">現在位置を調べる</string>
+    <string name="weather_type_description">天気種類</string>
+</resources>
