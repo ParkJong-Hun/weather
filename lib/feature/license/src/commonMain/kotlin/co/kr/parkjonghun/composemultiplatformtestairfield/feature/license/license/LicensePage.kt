@@ -1,4 +1,4 @@
-package co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license
+package co.kr.parkjonghun.composemultiplatformtestairfield.feature.license.license
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -22,21 +20,20 @@ import androidx.navigation.NavGraphBuilder
 import co.kr.parkjonghun.composemultiplatformtestairfield.application.usecase.GetLibraryLicensesUseCase
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.LibraryLicense
 import co.kr.parkjonghun.composemultiplatformtestairfield.domain.LicenseInfo
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components.organism.LibraryLicenseCard
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components.organism.LicenseTitle
+import co.kr.parkjonghun.composemultiplatformtestairfield.feature.license.license.components.organism.LibraryLicenseCard
+import co.kr.parkjonghun.composemultiplatformtestairfield.feature.license.license.components.organism.LicenseTitle
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.NavigateEvent
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.currentNavigator
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.koinInject
 
 // TODO use SharedTransitionScope
-@Composable
+@androidx.compose.runtime.Composable
 fun NavGraphBuilder.LicensePage() {
     val getLibraryLicensesUseCase: GetLibraryLicensesUseCase = koinInject()
     var libraryLicenses by remember { mutableStateOf<List<LibraryLicense>>(emptyList()) }
     val appNavigator = currentNavigator
 
-    LaunchedEffect(getLibraryLicensesUseCase) {
+    androidx.compose.runtime.LaunchedEffect(getLibraryLicensesUseCase) {
         libraryLicenses = getLibraryLicensesUseCase().toList()
     }
 
@@ -46,30 +43,30 @@ fun NavGraphBuilder.LicensePage() {
     )
 }
 
-@Composable
+@androidx.compose.runtime.Composable
 fun LicensePageBody(
     libraryLicenses: List<LibraryLicense>,
     onClickBack: () -> Unit,
 ) {
     Column(
-        modifier = Modifier
+        modifier = Modifier.Companion
             .fillMaxSize()
             .safeDrawingPadding()
             .padding(20.dp),
     ) {
         LicenseTitle(
             onClickBack = onClickBack,
-            modifier = Modifier.heightIn(70.dp).fillMaxWidth(),
+            modifier = Modifier.Companion.heightIn(70.dp).fillMaxWidth(),
         )
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.Companion.fillMaxSize(),
             verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.Companion.CenterHorizontally,
         ) {
             items(libraryLicenses) { libraryLicense ->
                 LibraryLicenseCard(
                     libraryLicense = libraryLicense,
-                    modifier = Modifier
+                    modifier = Modifier.Companion
                         .fillMaxWidth()
                         .padding(8.dp),
                 )
@@ -79,8 +76,8 @@ fun LicensePageBody(
 }
 
 
-@Preview
-@Composable
+@org.jetbrains.compose.ui.tooling.preview.Preview
+@androidx.compose.runtime.Composable
 @Suppress("unused")
 private fun LicensePagePreview() {
     LicensePageBody(

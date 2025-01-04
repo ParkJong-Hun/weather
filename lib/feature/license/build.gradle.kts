@@ -1,7 +1,10 @@
+
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.composeCompiler)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.ksp)
 }
@@ -18,6 +21,22 @@ kotlin {
     iosSimulatorArm64()
 
     sourceSets {
+        commonMain.dependencies {
+            implementation(project(":lib:application"))
+            implementation(project(":lib:domain"))
+            implementation(project(":lib:ui-component"))
+            implementation(project(":lib:ui-core"))
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.ui)
+            implementation(compose.components.resources)
+            implementation(compose.components.uiToolingPreview)
+            implementation(compose.animation)
+            implementation(libs.compose.navigation)
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+        }
     }
 }
 

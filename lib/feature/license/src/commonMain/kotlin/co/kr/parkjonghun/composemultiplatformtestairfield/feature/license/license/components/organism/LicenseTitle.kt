@@ -1,4 +1,4 @@
-package co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.components.organism
+package co.kr.parkjonghun.composemultiplatformtestairfield.feature.license.license.components.organism
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

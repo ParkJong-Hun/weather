@@ -10,7 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.home.HomePage
 import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.search.SearchPage
-import co.kr.parkjonghun.composemultiplatformtestairfield.shared.ui.pages.license.LicensePage
+import co.kr.parkjonghun.composemultiplatformtestairfield.feature.license.license.LicensePage
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.di.koinViewModel
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppPages
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.composablePush
