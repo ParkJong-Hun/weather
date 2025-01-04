@@ -22,10 +22,10 @@ interface AppViewModelOutput {
 data class AppUiState(
     val text: String = "",
 ) {
-    val startDestinationRoute: String = defaultRoute
+    val startDestinationRoute = defaultRoute
 
     private companion object {
-        val defaultRoute = AppPages.Home.route
+        val defaultRoute = AppPages.Home
     }
 }
 

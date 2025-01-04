@@ -37,7 +37,7 @@ class AppNavigator {
             .onEach { event ->
                 when (event) {
                     is NavigateEvent.NavigateTo -> {
-                        appNavHostController.value?.navigate(event.page.route)
+                        appNavHostController.value?.navigate(event.page)
                             ?: error("NavHostController is not initialized.")
                     }
 

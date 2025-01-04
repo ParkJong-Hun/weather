@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.jetbrainsComposeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -43,6 +44,7 @@ kotlin {
             implementation(libs.compose.navigation)
             api(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(libs.kotlin.serialization)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

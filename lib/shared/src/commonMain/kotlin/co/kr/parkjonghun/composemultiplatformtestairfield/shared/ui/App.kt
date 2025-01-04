@@ -38,21 +38,16 @@ fun App() {
     }
 }
 
-// TODO use type safety navArgs
 private fun NavGraphBuilder.appNavigation() {
-    composable(AppPages.Home.route) {
+    composable<AppPages.Home> {
         HomePage()
     }
 
-    composablePush(
-        AppPages.Search.route,
-    ) {
+    composablePush<AppPages.Search> {
         SearchPage()
     }
 
-    composablePush(
-        AppPages.License.route,
-    ) {
+    composablePush<AppPages.License> {
         LicensePage()
     }
 }
