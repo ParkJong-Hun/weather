@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="rainfall">Rainfall</string>
-    <string name="humidity">Humidity</string>
-    <string name="description_permission_denied">This function cannot be used because location information is not permitted.\nTo use this function, please allow location information permission from the device settings.</string>
-    <string name="map_icon_description">Search for a specific city</string>
-    <string name="current_location_icon_description">Find your current location</string>
-    <string name="weather_type_description">Weather type</string>
-</resources>
