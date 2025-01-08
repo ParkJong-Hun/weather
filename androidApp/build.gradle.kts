@@ -1,10 +1,18 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsComposeMultiplatform)
     alias(libs.plugins.composeCompiler)
+}
+
+val localProperties = rootProject.file("local.properties")
+val properties = Properties().apply {
+    if (localProperties.exists()) {
+        localProperties.inputStream().use { load(it) }
+    }
 }
 
 android {
@@ -27,9 +35,26 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    signingConfigs {
+        create("dev") {
+            storeFile = project.file("dev.keystore")
+            storePassword = properties["dev_store_password"] as String
+            keyAlias = "dev"
+            keyPassword = properties["dev_key_password"] as String
+        }
+    }
     buildTypes {
-        getByName("release") {
+        debug {
             isMinifyEnabled = false
+            signingConfig = null
+        }
+        release {
+            isMinifyEnabled = true
+            signingConfig = signingConfigs.getByName("dev")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
         }
     }
     compileOptions {
