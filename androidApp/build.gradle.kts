@@ -38,9 +38,9 @@ android {
     signingConfigs {
         create("dev") {
             storeFile = project.file("dev.keystore")
-            storePassword = properties["dev_store_password"] as String
+            storePassword = (properties["dev_store_password"] ?: "") as String
             keyAlias = "dev"
-            keyPassword = properties["dev_key_password"] as String
+            keyPassword = (properties["dev_key_password"] ?: "") as String
         }
     }
     buildTypes {
