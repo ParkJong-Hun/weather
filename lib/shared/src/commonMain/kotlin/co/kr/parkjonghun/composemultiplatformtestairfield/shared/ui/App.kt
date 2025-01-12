@@ -12,6 +12,7 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.home.Home
 import co.kr.parkjonghun.composemultiplatformtestairfield.feature.home.search.SearchPage
 import co.kr.parkjonghun.composemultiplatformtestairfield.feature.license.license.LicensePage
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.di.koinViewModel
+import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppDeepLinks
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppPages
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.composablePush
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.currentNavigator
@@ -39,7 +40,9 @@ fun App() {
 }
 
 private fun NavGraphBuilder.appNavigation() {
-    composable<AppPages.Home> {
+    composable<AppPages.Home>(
+        deepLinks = listOf(AppDeepLinks.Home.deepLink),
+    ) {
         HomePage()
     }
 
