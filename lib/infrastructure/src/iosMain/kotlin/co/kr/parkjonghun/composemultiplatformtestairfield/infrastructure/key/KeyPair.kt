@@ -5,4 +5,7 @@ import kotlinx.cinterop.ExperimentalForeignApi
 actual typealias KeyPair = IosKeyPair
 
 @OptIn(ExperimentalForeignApi::class)
-class IosKeyPair(val secKeyRef: platform.Security.SecKeyRef)
+class IosKeyPair(
+    val publicKey: platform.Security.SecKeyRef,
+    val privateKey: platform.Security.SecKeyRef,
+)
