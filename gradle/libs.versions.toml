@@ -13,7 +13,7 @@ build-konfig = "0.15.2"
 licensee = "1.12.0"
 
 compose = "1.7.8"
-compose-navigation = "2.8.0-alpha12"
+compose-navigation = "2.8.0-alpha13"
 kotlin-serialization = "1.8.0"
 kotlin-coroutines = "1.10.1"
 kotlin-datetime = "0.6.2"
