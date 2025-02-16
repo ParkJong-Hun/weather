@@ -4,7 +4,7 @@ android-minSdk = "24"
 android-targetSdk = "35"
 
 kotlin = "2.1.10"
-ktorfit = "2.2.0"
+ktorfit = "2.2.0-1.0.30"
 agp = "8.8.0"
 compose-multiplatform-plugin = "1.7.3"
 ksp = "2.1.10-1.0.29"
