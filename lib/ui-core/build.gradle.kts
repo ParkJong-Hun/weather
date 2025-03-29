@@ -2,6 +2,7 @@
 import org.gradle.kotlin.dsl.android
 import org.gradle.kotlin.dsl.compose
 import org.gradle.kotlin.dsl.kotlin
+import org.jetbrains.kotlin.compose.compiler.gradle.ComposeFeatureFlag
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -62,3 +63,6 @@ android {
     }
 }
 
+composeCompiler {
+    featureFlags.add(ComposeFeatureFlag.OptimizeNonSkippingGroups)
+}
