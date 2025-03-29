@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.jetbrainsComposeHotReload)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
 }
