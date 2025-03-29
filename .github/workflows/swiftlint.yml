@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
       - name: Danger
-        uses: 417-72KI/danger-swiftlint@v5.10
+        uses: 417-72KI/danger-swiftlint@v6.0
         with:
           dangerfile: iosApp/Dangerfile.swift
         env:
