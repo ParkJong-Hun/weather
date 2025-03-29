@@ -48,7 +48,7 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = false
-            signingConfig = null
+            signingConfig = signingConfigs.getByName("debug")
         }
         release {
             isMinifyEnabled = true
