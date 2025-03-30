@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidLibrary) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.jetbrainsComposeMultiplatform) apply false
+    alias(libs.plugins.jetbrainsComposeHotReload) apply false
     alias(libs.plugins.composeCompiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.ktorfit) apply false

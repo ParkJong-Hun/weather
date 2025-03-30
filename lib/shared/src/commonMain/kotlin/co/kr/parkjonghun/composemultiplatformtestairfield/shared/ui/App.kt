@@ -16,25 +16,28 @@ import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppD
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.AppPages
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.composablePush
 import co.kr.parkjonghun.composemultiplatformtestairfield.uicore.navigation.currentNavigator
+import org.jetbrains.compose.reload.DevelopmentEntryPoint
 
 @Composable
 fun App() {
-    AppTheme {
-        val appNavHostController = rememberNavController()
-        val appViewModel: AppViewModel = koinViewModel()
-        val state by appViewModel.uiState.collectAsState()
+    DevelopmentEntryPoint {
+        AppTheme {
+            val appNavHostController = rememberNavController()
+            val appViewModel: AppViewModel = koinViewModel()
+            val state by appViewModel.uiState.collectAsState()
 
-        val appNavigator = currentNavigator
+            val appNavigator = currentNavigator
 
-        LaunchedEffect(Unit) {
-            appNavigator.handleEvents(appNavHostController)
-        }
+            LaunchedEffect(Unit) {
+                appNavigator.handleEvents(appNavHostController)
+            }
 
-        NavHost(
-            navController = appNavHostController,
-            startDestination = state.startDestinationRoute,
-        ) {
-            appNavigation()
+            NavHost(
+                navController = appNavHostController,
+                startDestination = state.startDestinationRoute,
+            ) {
+                appNavigation()
+            }
         }
     }
 }
