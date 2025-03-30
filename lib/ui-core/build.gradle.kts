@@ -2,12 +2,14 @@
 import org.gradle.kotlin.dsl.android
 import org.gradle.kotlin.dsl.compose
 import org.gradle.kotlin.dsl.kotlin
+import org.jetbrains.kotlin.compose.compiler.gradle.ComposeFeatureFlag
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.jetbrainsComposeHotReload)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
@@ -61,3 +63,6 @@ android {
     }
 }
 
+composeCompiler {
+    featureFlags.add(ComposeFeatureFlag.OptimizeNonSkippingGroups)
+}

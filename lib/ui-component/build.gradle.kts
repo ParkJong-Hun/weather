@@ -1,9 +1,11 @@
+import org.jetbrains.kotlin.compose.compiler.gradle.ComposeFeatureFlag
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsComposeMultiplatform)
+    alias(libs.plugins.jetbrainsComposeHotReload)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
 }
@@ -41,3 +43,6 @@ android {
     }
 }
 
+composeCompiler {
+    featureFlags.add(ComposeFeatureFlag.OptimizeNonSkippingGroups)
+}
